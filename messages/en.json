@@ -1,0 +1,52 @@
+{
+  "landing": {
+    "title": "Transform Art into Investment Opportunities",
+    "subtitle": "Connect collectors and galleries in a revolutionary fintech platform for the art world",
+    "cta": "Get Started",
+    "login": "Sign In",
+    "features": {
+      "title": "Why Choose Us",
+      "portfolio": {
+        "title": "Portfolio Management",
+        "description": "Track the value and performance of your art collection in real-time"
+      },
+      "market": {
+        "title": "Market Intelligence",
+        "description": "AI-powered insights and analytics on art market trends"
+      },
+      "security": {
+        "title": "Secure & Transparent",
+        "description": "Blockchain-based provenance and secure transactions"
+      }
+    }
+  },
+  "auth": {
+    "createAccount": "Create Account",
+    "signIn": "Sign In",
+    "collector": "Collector",
+    "gallery": "Gallery",
+    "email": "Email",
+    "phone": "Phone Number",
+    "countryCode": "Country Code",
+    "fullName": "Full Name",
+    "password": "Password",
+    "galleryName": "Gallery Name",
+    "submit": "Submit",
+    "alreadyHaveAccount": "Already have an account?",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign Up"
+  },
+  "dashboard": {
+    "overview": "Overview",
+    "yourInfo": "Your Info",
+    "status": "Status",
+    "timeline": "Timeline",
+    "portfolio": {
+      "title": "Portfolio Value",
+      "totalValue": "Total Value",
+      "growth": "Growth"
+    },
+    "recentActivity": "Recent Activity",
+    "marketTrends": "Market Trends"
+  }
+}

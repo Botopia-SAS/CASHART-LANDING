@@ -1,0 +1,52 @@
+{
+  "landing": {
+    "title": "Transforma el Arte en Oportunidades de Inversión",
+    "subtitle": "Conecta coleccionistas y galerías en una plataforma fintech revolucionaria para el mundo del arte",
+    "cta": "Comenzar",
+    "login": "Iniciar Sesión",
+    "features": {
+      "title": "Por Qué Elegirnos",
+      "portfolio": {
+        "title": "Gestión de Portafolio",
+        "description": "Rastrea el valor y rendimiento de tu colección de arte en tiempo real"
+      },
+      "market": {
+        "title": "Inteligencia de Mercado",
+        "description": "Análisis e insights impulsados por IA sobre tendencias del mercado del arte"
+      },
+      "security": {
+        "title": "Seguro y Transparente",
+        "description": "Procedencia basada en blockchain y transacciones seguras"
+      }
+    }
+  },
+  "auth": {
+    "createAccount": "Crear Cuenta",
+    "signIn": "Iniciar Sesión",
+    "collector": "Coleccionista",
+    "gallery": "Galería",
+    "email": "Correo Electrónico",
+    "phone": "Número de Teléfono",
+    "countryCode": "Código de País",
+    "fullName": "Nombre Completo",
+    "password": "Contraseña",
+    "galleryName": "Nombre de la Galería",
+    "submit": "Enviar",
+    "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+    "noAccount": "¿No tienes una cuenta?",
+    "signUp": "Registrarse"
+  },
+  "dashboard": {
+    "overview": "Resumen",
+    "yourInfo": "Tu Información",
+    "status": "Estado",
+    "timeline": "Línea de Tiempo",
+    "portfolio": {
+      "title": "Valor del Portafolio",
+      "totalValue": "Valor Total",
+      "growth": "Crecimiento"
+    },
+    "recentActivity": "Actividad Reciente",
+    "marketTrends": "Tendencias del Mercado"
+  }
+}
