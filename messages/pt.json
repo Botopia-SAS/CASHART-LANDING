@@ -1,4 +1,80 @@
 {
+  "hero": {
+    "earlyAccessBadge": "Junte-se ao Programa de Acesso Antecipado para galerias de todo o mundo",
+    "title": "Financiamento de Arte.",
+    "titleHighlight": "Reinventado.",
+    "descriptionPart1": "Candidate-se em 10 minutos para financiamento de arte",
+    "descriptionPart2": " que transforma como você opera.",
+    "descriptionSup": "1",
+    "emailPlaceholder": "Digite seu e-mail",
+    "registerButton": "Registre sua Galeria",
+    "collectorSurveyButton": "Pesquisa para Colecionadores",
+    "dashboardAlt": "Painel CashArt",
+    "features": {
+      "title1": "Pagamentos Instantâneos para Galerias",
+      "description1": "Receba o pagamento imediato pelas suas obras de arte enquanto os colecionadores desfrutam de opções de pagamento flexíveis",
+      "title2": "Risco Zero, Carga Zero",
+      "description2": "CashArt assume todos os riscos do colecionador e gerencia todo o processamento de pagamentos",
+      "title3": "Opções Flexíveis para Colecionadores",
+      "description3": "Planos de pagamento acessíveis que tornam a coleção de arte mais fácil do que nunca"
+    }
+  },
+  "header": {
+    "home": "Início",
+    "howItWorks": "Como Funciona",
+    "about": "Sobre",
+    "pricing": "Preços",
+    "logIn": "Entrar",
+    "registerGallery": "Registre sua Galeria"
+  },
+  "videoCircle": {
+    "title": "Como o CashArt Funciona Para Você",
+    "subtitle": "Nosso ecossistema inovador conecta galerias, colecionadores e financiamento perfeitamente.",
+    "circle01": "Financiamento de Arte",
+    "circle02Title": "Pagamento",
+    "circle02Subtitle": "Instantâneo",
+    "circle03Title": "Zero",
+    "circle03Subtitle": "Risco",
+    "circle04Title": "Termos",
+    "circle04Subtitle": "Flexíveis",
+    "circle05Title": "Pré-",
+    "circle05Subtitle": "Aprovação",
+    "circle06Title": "Acesso",
+    "circle06Subtitle": "Global",
+    "circle07Title": "Crescimento",
+    "circle07Subtitle": "da Galeria",
+    "imageAlt": "Plataforma CashArt"
+  },
+  "howItWorks": {
+    "title": "Uma Experiência Perfeita",
+    "subtitle": "Do registro ao pagamento, cada etapa é projetada para simplicidade e velocidade.",
+    "step1": {
+      "title": "Registre sua Galeria",
+      "description": "Crie sua conta em minutos para começar a jornada de acesso antecipado."
+    },
+    "step2": {
+      "title": "Pré-Aprovação do Colecionador",
+      "description": "Convide seus colecionadores para um processo de aprovação sem fricção e confidencial alimentado pelo CashArt."
+    },
+    "step3": {
+      "title": "Pagamento Imediato à Galeria",
+      "description": "Uma vez aprovado, sua galeria recebe o pagamento integral da obra de arte instantaneamente."
+    },
+    "step4": {
+      "title": "Colecionador Paga ao Longo do Tempo",
+      "description": "O colecionador desfruta de sua nova aquisição enquanto paga ao CashArt em um cronograma flexível."
+    }
+  },
+  "valueProposition": {
+    "title": "Feche Mais Vendas. Construa Relacionamentos Mais Fortes.",
+    "description": "CashArt é mais do que uma ferramenta financeira; é uma parceria projetada para elevar o relacionamento galeria-colecionador. Ao remover o atrito financeiro, capacitamos você a se concentrar na curadoria e na paixão, promovendo uma nova geração de patrocínio artístico.",
+    "stat1Value": "100%",
+    "stat1Label": "Pagamento Instantâneo à Galeria",
+    "stat2Value": "0%",
+    "stat2Label": "Risco para sua Galeria",
+    "stat3Value": "10min",
+    "stat3Label": "Processo de Inscrição"
+  },
   "landing": {
     "title": "Transforme Arte em Oportunidades de Investimento",
     "subtitle": "Conecte colecionadores e galerias em uma plataforma fintech revolucionária para o mundo da arte",
@@ -50,6 +126,8 @@
     "recentActivity": "Atividade Recente",
     "marketTrends": "Tendências de Mercado"
   },
+<<<<<<< HEAD
+<<<<<<< HEAD
   "survey": {
     "title": "CashArt - Pesquisa de Colecionadores",
     "subtitle": "Leva menos de 1 minuto",
@@ -116,5 +194,46 @@
       "phoneNumber": "Número de Telefone"
     },
     "submit": "Enviar"
+=======
+=======
+>>>>>>> 9fe6b76 (header)
+  "dashboardPreview": {
+    "title": "Gerencie Tudo em Um Só Lugar",
+    "description": "Acesse seu painel para acompanhar negócios, gerenciar clientes e monitorar o desempenho da sua galeria",
+    "imageAlt": "Painel CashArt"
+  },
+  "footer": {
+    "description": "Revolucionando o financiamento de arte conectando galerias, colecionadores e oportunidades perfeitamente.",
+    "product": {
+      "title": "Produto",
+      "features": "Recursos",
+      "pricing": "Preços",
+      "security": "Segurança",
+      "api": "API"
+    },
+    "company": {
+      "title": "Empresa",
+      "about": "Sobre Nós",
+      "careers": "Carreiras",
+      "blog": "Blog",
+      "press": "Imprensa"
+    },
+    "support": {
+      "title": "Suporte",
+      "help": "Central de Ajuda",
+      "contact": "Fale Conosco",
+      "terms": "Termos de Serviço",
+      "privacy": "Política de Privacidade"
+    },
+    "copyright": "© {year} CashArt. Todos os direitos reservados.",
+    "legal": {
+      "terms": "Termos",
+      "privacy": "Privacidade",
+      "cookies": "Cookies"
+    }
+<<<<<<< HEAD
+>>>>>>> 9fe6b76 (header)
+=======
+>>>>>>> 9fe6b76 (header)
   }
 }

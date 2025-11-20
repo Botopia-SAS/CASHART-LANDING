@@ -1,7 +1,8 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
+<<<<<<< HEAD
+<<<<<<< HEAD
 import { ArrowRight, TrendingUp, Shield, BarChart3, Palette, Building2, Users, FileText } from 'lucide-react';
 import { useState } from 'react';
 import { AuthDialog } from './AuthDialog';
@@ -17,46 +18,73 @@ const artworks = [
   { name: "Color Symphony", artist: "Sophie Laurent", price: "$52,000" },
   { name: "Modern Sculpture", artist: "David Kim", price: "$95,000" },
 ];
+=======
+import { Shield, DollarSign, Clock } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { AuthDialog } from './AuthDialog';
+import { useTranslations } from 'next-intl';
+>>>>>>> 9fe6b76 (header)
+=======
+import { Shield, DollarSign, Clock } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { AuthDialog } from './AuthDialog';
+import { useTranslations } from 'next-intl';
+>>>>>>> 9fe6b76 (header)
 
 export function Hero() {
-  const t = useTranslations('landing');
+  const t = useTranslations('hero');
   const [showAuth, setShowAuth] = useState(false);
   const params = useParams();
   const locale = params.locale || 'en';
 
   return (
     <>
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        {/* PatternCraft Background - Dots Pattern */}
-        <div className="absolute inset-0 -z-10 h-full w-full bg-background bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-500/5 via-background to-background">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_500px_at_50%_200px,rgba(147,51,234,0.1),transparent)]"></div>
+      <section className="relative pt-36 pb-0 overflow-hidden bg-white">
+        {/* Radial gradient background system */}
+        <div className="absolute inset-0 -z-10 h-full w-full">
+          {/* Subtle background pattern */}
           <div
-            className="absolute inset-0 opacity-20"
+            className="absolute inset-0 opacity-[0.025]"
             style={{
-              backgroundImage: `radial-gradient(circle, rgba(147, 51, 234, 0.3) 1px, transparent 1px)`,
-              backgroundSize: '32px 32px'
+              backgroundImage: `radial-gradient(circle, rgba(12, 95, 76, 0.4) 1px, transparent 1px)`,
+              backgroundSize: '24px 24px'
+            }}
+          />
+          
+          {/* Left side radial gradient - much larger and more visible */}
+          <div 
+            className="absolute -left-[200px] top-1/2 -translate-y-1/2 w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] lg:w-[1000px] lg:h-[1000px]"
+            style={{
+              background: 'radial-gradient(circle, rgba(12, 95, 76, 0.25) 0%, rgba(12, 95, 76, 0.15) 30%, rgba(12, 95, 76, 0.08) 50%, transparent 70%)'
+            }}
+          />
+          
+          {/* Right side radial gradient - much larger and more visible */}
+          <div 
+            className="absolute -right-[200px] top-1/2 -translate-y-1/2 w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] lg:w-[1000px] lg:h-[1000px]"
+            style={{
+              background: 'radial-gradient(circle, rgba(12, 95, 76, 0.25) 0%, rgba(12, 95, 76, 0.15) 30%, rgba(12, 95, 76, 0.08) 50%, transparent 70%)'
             }}
           />
         </div>
 
-        {/* Particles Effect */}
-        <Particles className="absolute inset-0" quantity={50} />
-
-        <div className="container max-w-6xl mx-auto relative z-10">
-          <div className="text-center space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border bg-card/50 backdrop-blur-sm mb-4">
-              <Palette className="h-4 w-4 text-purple-600" />
-              <span className="text-sm font-medium">Trusted by 10,000+ collectors worldwide</span>
+        <div className="container max-w-5xl mx-auto relative z-10 px-6">
+          <div className="text-center space-y-7">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-[#0C5F4C]/10 text-[#0C5F4C] border border-[#0C5F4C]/20">
+              {t('earlyAccessBadge')}
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-              <span className="bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent animate-gradient">
-                {t('title')}
-              </span>
+            <h1 className="text-5xl md:text-[64px] font-bold tracking-tight leading-[1.1] text-gray-900">
+              {t('title')}{' '}
+              <br className="hidden md:block" />
+              <span className="text-[#0C5F4C]">{t('titleHighlight')}</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-              {t('subtitle')}
+
+            <p className="text-[19px] md:text-[21px] text-gray-600 max-w-2xl mx-auto font-normal leading-relaxed">
+              {t('descriptionPart1')}<sup>{t('descriptionSup')}</sup>{t('descriptionPart2')}
             </p>
+<<<<<<< HEAD
+<<<<<<< HEAD
             <div className="flex gap-4 justify-center">
               <Button
                 size="lg"
@@ -78,52 +106,82 @@ export function Hero() {
               </Link>
             </div>
           </div>
+=======
+>>>>>>> 9fe6b76 (header)
 
-          {/* Marquee - Trending Artworks */}
-          <div className="mt-16 relative">
-            <div className="text-center mb-6">
-              <p className="text-sm font-medium text-muted-foreground">Trending on ArtFintech</p>
-            </div>
-            <Marquee pauseOnHover className="[--duration:20s]">
-              {artworks.map((artwork, i) => (
-                <div
-                  key={i}
-                  className="flex flex-col items-center justify-center w-64 h-32 rounded-xl border bg-card/50 backdrop-blur-sm p-4 mx-2"
+            {/* Email Input & Buttons with Glow Effect */}
+            <div className="relative max-w-xl mx-auto pt-6 group">
+              {/* Glow effect background - increases on input focus */}
+              <div 
+                className="absolute inset-0 -z-10 blur-3xl opacity-30 transition-opacity duration-300 group-focus-within:opacity-40"
+                style={{
+                  background: 'radial-gradient(ellipse at center, rgba(12, 95, 76, 0.4) 0%, transparent 70%)'
+                }}
+              />
+              
+              {/* CTA content */}
+              <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+                <input
+                  type="email"
+                  placeholder={t('emailPlaceholder')}
+                  className="w-full sm:flex-1 h-12 px-4 rounded-lg border border-gray-300 text-[15px] focus:outline-none focus:ring-2 focus:ring-[#0C5F4C] focus:border-transparent bg-white transition-shadow duration-200"
+                />
+                <Button
+                  onClick={() => setShowAuth(true)}
+                  className="w-full sm:w-auto bg-[#0C5F4C] hover:bg-[#0A4F3E] text-white text-[15px] font-medium px-6 h-12 rounded-lg shadow-sm whitespace-nowrap"
                 >
-                  <div className="w-full h-12 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-lg mb-2" />
-                  <p className="font-semibold text-sm">{artwork.name}</p>
-                  <p className="text-xs text-muted-foreground">{artwork.artist}</p>
-                  <p className="text-sm font-bold text-purple-600 mt-1">{artwork.price}</p>
-                </div>
-              ))}
-            </Marquee>
+=======
+
+            {/* Email Input & Buttons with Glow Effect */}
+            <div className="relative max-w-xl mx-auto pt-6 group">
+              {/* Glow effect background - increases on input focus */}
+              <div 
+                className="absolute inset-0 -z-10 blur-3xl opacity-30 transition-opacity duration-300 group-focus-within:opacity-40"
+                style={{
+                  background: 'radial-gradient(ellipse at center, rgba(12, 95, 76, 0.4) 0%, transparent 70%)'
+                }}
+              />
+              
+              {/* CTA content */}
+              <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+                <input
+                  type="email"
+                  placeholder={t('emailPlaceholder')}
+                  className="w-full sm:flex-1 h-12 px-4 rounded-lg border border-gray-300 text-[15px] focus:outline-none focus:ring-2 focus:ring-[#0C5F4C] focus:border-transparent bg-white transition-shadow duration-200"
+                />
+                <Button
+                  onClick={() => setShowAuth(true)}
+                  className="w-full sm:w-auto bg-[#0C5F4C] hover:bg-[#0A4F3E] text-white text-[15px] font-medium px-6 h-12 rounded-lg shadow-sm whitespace-nowrap"
+                >
+>>>>>>> 9fe6b76 (header)
+                  {t('registerButton')}
+                </Button>
+                <Button
+                  variant="outline"
+                  className="w-full sm:w-auto border-gray-300 hover:bg-gray-50 text-gray-900 text-[15px] font-medium px-6 h-12 rounded-lg whitespace-nowrap"
+                >
+                  {t('collectorSurveyButton')}
+                </Button>
+              </div>
+            </div>
           </div>
 
-          {/* Features Grid */}
-          <div className="grid md:grid-cols-3 gap-8 mt-24">
-            <FeatureCard
-              icon={<BarChart3 className="h-10 w-10 text-purple-600" />}
-              title={t('features.portfolio.title')}
-              description={t('features.portfolio.description')}
-            />
-            <FeatureCard
-              icon={<TrendingUp className="h-10 w-10 text-blue-600" />}
-              title={t('features.market.title')}
-              description={t('features.market.description')}
-            />
-            <FeatureCard
-              icon={<Shield className="h-10 w-10 text-cyan-600" />}
-              title={t('features.security.title')}
-              description={t('features.security.description')}
-            />
-          </div>
-
-          {/* Stats Section */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 text-center">
-            <StatItem value="$2.5B+" label="Total Value" />
-            <StatItem value="10K+" label="Collectors" />
-            <StatItem value="500+" label="Galleries" />
-            <StatItem value="50K+" label="Artworks" />
+          {/* Dashboard Preview Image */}
+          <div className="mt-16 pb-0 relative">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
+              <img
+                src="https://res.cloudinary.com/dcljjtnxr/image/upload/v1763618102/WhatsApp_Image_2025-11-19_at_22.11.09_t1zhxl.jpg"
+                alt={t('dashboardAlt')}
+                className="w-full h-auto"
+              />
+              {/* Subtle edge-based gradient overlay */}
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background: 'radial-gradient(ellipse at center, transparent 50%, rgba(12, 95, 76, 0.06) 100%)'
+                }}
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -133,6 +191,55 @@ export function Hero() {
         defaultMode="signup"
       />
     </>
+  );
+}
+
+export function HeroFeatureGrid() {
+  const t = useTranslations('hero.features');
+  const [opacity, setOpacity] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const contentFadeStart = 200;
+      const contentFadeEnd = 600;
+      const newOpacity = Math.min(1, Math.max(0, (scrollY - contentFadeStart) / (contentFadeEnd - contentFadeStart)));
+      setOpacity(newOpacity);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <section
+      className="relative pt-24 pb-40 bg-white"
+      style={{
+        opacity,
+        transition: 'opacity 0.3s ease-out'
+      }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0C5F4C]/12 via-transparent to-[#0C5F4C]/12"></div>
+      <div className="container max-w-5xl mx-auto px-6 relative z-10">
+        <div className="grid md:grid-cols-3 gap-6">
+          <FeatureCard
+            icon={<DollarSign className="h-8 w-8 text-[#0C5F4C]" />}
+            title={t('title1')}
+            description={t('description1')}
+          />
+          <FeatureCard
+            icon={<Shield className="h-8 w-8 text-[#0C5F4C]" />}
+            title={t('title2')}
+            description={t('description2')}
+          />
+          <FeatureCard
+            icon={<Clock className="h-8 w-8 text-[#0C5F4C]" />}
+            title={t('title3')}
+            description={t('description3')}
+          />
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -146,26 +253,14 @@ function FeatureCard({
   description: string;
 }) {
   return (
-    <div className="group relative overflow-hidden rounded-2xl border bg-card/50 backdrop-blur-sm p-8 transition-all hover:shadow-xl hover:border-purple-500/50 hover:scale-105">
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 transition-opacity group-hover:opacity-100" />
-      <div className="relative space-y-4">
-        <div className="inline-block p-3 rounded-xl bg-gradient-to-br from-purple-500/10 to-blue-500/10 group-hover:scale-110 transition-transform">
+    <div className="relative rounded-xl bg-white border border-gray-200 p-8 transition-all hover:shadow-md">
+      <div className="space-y-4">
+        <div className="inline-flex p-3 rounded-lg bg-[#0C5F4C]/10">
           {icon}
         </div>
-        <h3 className="text-xl font-semibold">{title}</h3>
-        <p className="text-muted-foreground">{description}</p>
+        <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
+        <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
       </div>
-    </div>
-  );
-}
-
-function StatItem({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="space-y-2">
-      <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-        {value}
-      </p>
-      <p className="text-sm text-muted-foreground">{label}</p>
     </div>
   );
 }

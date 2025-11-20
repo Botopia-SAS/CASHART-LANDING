@@ -1,13 +1,14 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { AuthDialog } from './AuthDialog';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 
 export function Header() {
-  const t = useTranslations('landing');
+  const t = useTranslations('header');
   const [showAuth, setShowAuth] = useState(false);
   const [authMode, setAuthMode] = useState<'signin' | 'signup'>('signin');
 
@@ -18,27 +19,64 @@ export function Header() {
 
   return (
     <>
-      <header className="fixed top-0 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50">
-        <div className="container flex h-16 items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-              ArtFintech
-            </div>
+      <header className="fixed top-0 w-full border-b border-gray-200/60 bg-white/80 backdrop-blur-xl z-50">
+        <div className="flex h-20 items-center justify-between px-8 relative">
+          {/* Logo - Left */}
+          <div className="flex items-center flex-shrink-0">
+            <Link href="/" className="flex items-center">
+              <img
+                src="https://res.cloudinary.com/dcljjtnxr/image/upload/v1763617566/WhatsApp_Image_2025-11-19_at_21.28.10_clizpn.jpg"
+                alt="CashArt"
+                className="h-10 w-auto"
+              />
+            </Link>
           </div>
-          <nav className="flex items-center gap-4">
+
+          {/* Center Navigation */}
+          <nav className="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+            <Link
+              href="/"
+              className="text-base font-medium text-gray-900 hover:text-[#0C5F4C] transition-colors"
+            >
+              {t('home')}
+            </Link>
+            <Link
+              href="#how-it-works"
+              className="text-base font-medium text-gray-600 hover:text-[#0C5F4C] transition-colors"
+            >
+              {t('howItWorks')}
+            </Link>
+            <Link
+              href="#about"
+              className="text-base font-medium text-gray-600 hover:text-[#0C5F4C] transition-colors"
+            >
+              {t('about')}
+            </Link>
+            <Link
+              href="#pricing"
+              className="text-base font-medium text-gray-600 hover:text-[#0C5F4C] transition-colors"
+            >
+              {t('pricing')}
+            </Link>
+          </nav>
+
+          {/* Right Actions */}
+          <div className="flex items-center gap-3">
             <LanguageSwitcher />
             <Button
               variant="ghost"
               onClick={() => handleAuthClick('signin')}
+              className="text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100/50 px-4 h-10 rounded-md"
             >
-              {t('login')}
+              {t('logIn')}
             </Button>
             <Button
               onClick={() => handleAuthClick('signup')}
+              className="bg-[#0C5F4C] hover:bg-[#0A4F3E] text-white text-base font-medium px-5 h-10 rounded-md shadow-sm"
             >
-              {t('cta')}
+              {t('registerGallery')}
             </Button>
-          </nav>
+          </div>
         </div>
       </header>
       <AuthDialog

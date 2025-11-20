@@ -1,4 +1,80 @@
 {
+  "hero": {
+    "earlyAccessBadge": "Join the Early Access Program for galleries worldwide",
+    "title": "Art Financing.",
+    "titleHighlight": "Reinvented.",
+    "descriptionPart1": "Apply in 10 minutes for art financing",
+    "descriptionPart2": " that transforms how you operate.",
+    "descriptionSup": "1",
+    "emailPlaceholder": "Enter your email",
+    "registerButton": "Register Your Gallery",
+    "collectorSurveyButton": "Collector Survey",
+    "dashboardAlt": "CashArt Dashboard",
+    "features": {
+      "title1": "Instant Payouts for Galleries",
+      "description1": "Get immediate payment for your artworks while collectors enjoy flexible payment options",
+      "title2": "Zero Risk, Zero Burden",
+      "description2": "CashArt assumes all collector risk and handles all payment processing",
+      "title3": "Flexible Options for Collectors",
+      "description3": "Accessible payment plans that make art collecting easier than ever"
+    }
+  },
+  "header": {
+    "home": "Home",
+    "howItWorks": "How it Works",
+    "about": "About",
+    "pricing": "Pricing",
+    "logIn": "Log In",
+    "registerGallery": "Register Your Gallery"
+  },
+  "videoCircle": {
+    "title": "How CashArt Works For You",
+    "subtitle": "Our innovative ecosystem connects galleries, collectors, and financing seamlessly.",
+    "circle01": "Art Financing",
+    "circle02Title": "Instant",
+    "circle02Subtitle": "Payment",
+    "circle03Title": "Zero",
+    "circle03Subtitle": "Risk",
+    "circle04Title": "Flexible",
+    "circle04Subtitle": "Terms",
+    "circle05Title": "Pre-",
+    "circle05Subtitle": "Approval",
+    "circle06Title": "Global",
+    "circle06Subtitle": "Access",
+    "circle07Title": "Gallery",
+    "circle07Subtitle": "Growth",
+    "imageAlt": "CashArt Platform"
+  },
+  "howItWorks": {
+    "title": "A Seamless Experience",
+    "subtitle": "From registration to payment, every step is designed for simplicity and speed.",
+    "step1": {
+      "title": "Register Your Gallery",
+      "description": "Create your account in minutes to begin the early access journey."
+    },
+    "step2": {
+      "title": "Collector Pre-Approval",
+      "description": "Invite your collectors to a frictionless, confidential approval process powered by CashArt."
+    },
+    "step3": {
+      "title": "Upfront Gallery Payment",
+      "description": "Once approved, your gallery receives the full payment for the artwork instantly."
+    },
+    "step4": {
+      "title": "Collector Pays Over Time",
+      "description": "The collector enjoys their new acquisition while paying CashArt on a flexible schedule."
+    }
+  },
+  "valueProposition": {
+    "title": "Close More Sales. Build Stronger Relationships.",
+    "description": "CashArt is more than a financial tool; it is a partnership designed to elevate the gallery-collector relationship. By removing financial friction, we empower you to focus on curation and passion, fostering a new generation of art patronage.",
+    "stat1Value": "100%",
+    "stat1Label": "Instant Gallery Payout",
+    "stat2Value": "0%",
+    "stat2Label": "Risk to Your Gallery",
+    "stat3Value": "10min",
+    "stat3Label": "Application Process"
+  },
   "landing": {
     "title": "Transform Art into Investment Opportunities",
     "subtitle": "Connect collectors and galleries in a revolutionary fintech platform for the art world",
@@ -50,6 +126,8 @@
     "recentActivity": "Recent Activity",
     "marketTrends": "Market Trends"
   },
+<<<<<<< HEAD
+<<<<<<< HEAD
   "survey": {
     "title": "CashArt - Collector Survey",
     "subtitle": "Takes under 1 minute",
@@ -116,5 +194,46 @@
       "phoneNumber": "Phone Number"
     },
     "submit": "Submit"
+=======
+=======
+>>>>>>> 9fe6b76 (header)
+  "dashboardPreview": {
+    "title": "Manage Everything in One Place",
+    "description": "Access your dashboard to track deals, manage clients, and monitor your gallery's performance",
+    "imageAlt": "CashArt Dashboard"
+  },
+  "footer": {
+    "description": "Revolutionizing art financing by connecting galleries, collectors, and opportunities seamlessly.",
+    "product": {
+      "title": "Product",
+      "features": "Features",
+      "pricing": "Pricing",
+      "security": "Security",
+      "api": "API"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About Us",
+      "careers": "Careers",
+      "blog": "Blog",
+      "press": "Press"
+    },
+    "support": {
+      "title": "Support",
+      "help": "Help Center",
+      "contact": "Contact Us",
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy"
+    },
+    "copyright": "© {year} CashArt. All rights reserved.",
+    "legal": {
+      "terms": "Terms",
+      "privacy": "Privacy",
+      "cookies": "Cookies"
+    }
+<<<<<<< HEAD
+>>>>>>> 9fe6b76 (header)
+=======
+>>>>>>> 9fe6b76 (header)
   }
 }
