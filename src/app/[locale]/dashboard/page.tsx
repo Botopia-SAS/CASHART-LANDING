@@ -1,26 +1,21 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useTranslations } from 'next-intl';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Calendar, Play, FileText, Download } from 'lucide-react';
-import { useAuthStore } from '@/lib/store/auth-store';
 import { Button } from '@/components/ui/button';
 
 export default function OverviewPage() {
-  const t = useTranslations('dashboard');
-  const user = useAuthStore((state) => state.user);
-  const [showIntro, setShowIntro] = useState(true);
+  const [showIntro, setShowIntro] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return !sessionStorage.getItem('hasSeenDashboardIntro');
+    }
+    return true;
+  });
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    // Check if user has seen the intro before
-    const hasSeenIntro = sessionStorage.getItem('hasSeenDashboardIntro');
-    
-    if (hasSeenIntro) {
-      setShowIntro(false);
-      return;
-    }
+    if (!showIntro) return;
 
     // Auto hide after video duration (adjust timing as needed)
     const timer = setTimeout(() => {
@@ -32,7 +27,7 @@ export default function OverviewPage() {
     }, 2300); // Adjusted for 1.5x speed
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [showIntro]);
 
   const handleSkip = () => {
     setFadeOut(true);
@@ -72,13 +67,13 @@ export default function OverviewPage() {
   }
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 lg:space-y-8 pt-16 lg:pt-0">
       {/* Header with Badge */}
-      <div className="flex items-start justify-between">
+      <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold mb-2">Early Access Dashboard</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold mb-2">Early Access Dashboard</h1>
         </div>
-        <div className="px-4 py-1.5 rounded-full bg-[#0C5F4C]/10 dark:bg-[#10B981]/10 text-[#0C5F4C] dark:text-[#10B981] text-sm font-medium border border-[#0C5F4C]/20 dark:border-[#10B981]/20">
+        <div className="px-4 py-1.5 rounded-full bg-[#0C5F4C]/10 dark:bg-[#10B981]/10 text-[#0C5F4C] dark:text-[#10B981] text-sm font-medium border border-[#0C5F4C]/20 dark:border-[#10B981]/20 whitespace-nowrap">
           Waitlist Member
         </div>
       </div>
@@ -86,12 +81,12 @@ export default function OverviewPage() {
       {/* Welcome Card with Calendar Icon */}
       <Card className="border-[#0C5F4C]/20 dark:border-[#10B981]/20 bg-gradient-to-br from-[#0C5F4C]/5 to-transparent dark:from-[#10B981]/5 hover:shadow-lg transition-all duration-300 group">
         <CardContent className="pt-6">
-          <div className="flex items-start gap-6">
-            <div className="p-4 rounded-2xl bg-[#0C5F4C]/10 dark:bg-[#10B981]/10 group-hover:scale-110 transition-transform duration-300">
-              <Calendar className="h-8 w-8 text-[#0C5F4C] dark:text-[#10B981]" />
+          <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+            <div className="p-3 sm:p-4 rounded-2xl bg-[#0C5F4C]/10 dark:bg-[#10B981]/10 group-hover:scale-110 transition-transform duration-300">
+              <Calendar className="h-6 w-6 sm:h-8 sm:w-8 text-[#0C5F4C] dark:text-[#10B981]" />
             </div>
             <div className="flex-1">
-              <h2 className="text-2xl font-bold mb-3">Welcome to CashArt Early Access</h2>
+              <h2 className="text-xl sm:text-2xl font-bold mb-3">Welcome to CashArt Early Access</h2>
               <p className="text-muted-foreground mb-4">
                 You are officially on the waitlist. We are preparing for our official launch in{' '}
                 <span className="font-semibold text-[#0C5F4C] dark:text-[#10B981]">April 2026</span>. 
@@ -108,10 +103,10 @@ export default function OverviewPage() {
       {/* Product Roadmap */}
       <Card className="hover:shadow-lg transition-shadow duration-300">
         <CardHeader>
-          <CardTitle className="text-2xl">Product Roadmap</CardTitle>
+          <CardTitle className="text-xl sm:text-2xl">Product Roadmap</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
             <RoadmapPhase
               quarter="Q4"
               year="2025"
@@ -140,7 +135,7 @@ export default function OverviewPage() {
       </Card>
 
       {/* Bottom Grid */}
-      <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
         {/* The Vision of CashArt */}
         <Card className="group hover:shadow-xl hover:scale-[1.02] transition-all duration-300 cursor-pointer border-[#0C5F4C]/20 dark:border-[#10B981]/20">
           <CardContent className="pt-6">

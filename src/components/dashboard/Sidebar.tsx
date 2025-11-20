@@ -1,12 +1,14 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
-import { LayoutDashboard, User, Activity, Clock, LogOut } from 'lucide-react';
+import { LayoutDashboard, User, Activity, Clock, LogOut, Menu, X } from 'lucide-react';
 import { useAuthStore } from '@/lib/store/auth-store';
 import { Button } from '@/components/ui/button';
+import { useState } from 'react';
 
 const menuItems = [
   {
@@ -39,6 +41,7 @@ export function Sidebar() {
   const pathname = usePathname();
   const t = useTranslations('dashboard');
   const logout = useAuthStore((state) => state.logout);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleLogout = () => {
     logout();
@@ -46,18 +49,52 @@ export function Sidebar() {
   };
 
   return (
-    <aside className="w-64 border-r bg-card h-screen sticky top-0 flex flex-col">
-      <div className="p-6 border-b">
-        <img
-          src="https://res.cloudinary.com/dzi2p0pqa/image/upload/v1763663304/daewusmce0jbacjvqxxk.png"
-          alt="CashArt"
-          className="h-10 w-auto dark:hidden"
+    <>
+      {/* Mobile Menu Button */}
+      <button
+        onClick={() => setMobileMenuOpen(true)}
+        className="fixed top-4 left-4 z-40 lg:hidden p-2 rounded-lg bg-card border hover:bg-muted transition-colors"
+      >
+        <Menu className="h-6 w-6" />
+      </button>
+
+      {/* Overlay */}
+      {mobileMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          onClick={() => setMobileMenuOpen(false)}
         />
-        <img
-          src="https://res.cloudinary.com/dzi2p0pqa/image/upload/v1763664313/y2mjn6ltzclwzo2zw0xv.png"
-          alt="CashArt"
-          className="h-10 w-auto hidden dark:block"
-        />
+      )}
+
+      {/* Sidebar */}
+      <aside className={cn(
+        "w-64 border-r bg-card h-screen flex flex-col transition-transform duration-300 lg:sticky lg:top-0",
+        "fixed top-0 left-0 z-50",
+        mobileMenuOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
+      )}>
+      <div className="p-6 border-b flex items-center justify-between">
+        <div className="relative h-10 w-32">
+          <Image
+            src="https://res.cloudinary.com/dzi2p0pqa/image/upload/v1763663304/daewusmce0jbacjvqxxk.png"
+            alt="CashArt"
+            fill
+            className="object-contain object-left dark:hidden"
+            unoptimized
+          />
+          <Image
+            src="https://res.cloudinary.com/dzi2p0pqa/image/upload/v1763664313/y2mjn6ltzclwzo2zw0xv.png"
+            alt="CashArt"
+            fill
+            className="object-contain object-left hidden dark:block"
+            unoptimized
+          />
+        </div>
+        <button
+          onClick={() => setMobileMenuOpen(false)}
+          className="lg:hidden p-1 hover:bg-muted rounded"
+        >
+          <X className="h-5 w-5" />
+        </button>
       </div>
       <nav className="flex-1 p-4 space-y-2">
         {menuItems.map((item) => {
@@ -91,6 +128,7 @@ export function Sidebar() {
             <Link
               key={item.key}
               href={item.href}
+              onClick={() => setMobileMenuOpen(false)}
               className={cn(
                 'flex items-center gap-3 px-4 py-3 rounded-lg transition-colors',
                 isActive
@@ -115,5 +153,6 @@ export function Sidebar() {
         </Button>
       </div>
     </aside>
+    </>
   );
 }
