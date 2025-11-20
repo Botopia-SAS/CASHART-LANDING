@@ -79,7 +79,6 @@
     "title": "Transforme Arte em Oportunidades de Investimento",
     "subtitle": "Conecte colecionadores e galerias em uma plataforma fintech revolucionária para o mundo da arte",
     "cta": "Começar",
-    "survey": "Fazer Pesquisa",
     "login": "Entrar",
     "features": {
       "title": "Por Que Nos Escolher",
@@ -126,77 +125,6 @@
     "recentActivity": "Atividade Recente",
     "marketTrends": "Tendências de Mercado"
   },
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "survey": {
-    "title": "CashArt - Pesquisa de Colecionadores",
-    "subtitle": "Leva menos de 1 minuto",
-    "description": "Estamos explorando como colecionadores gerenciam liquidez e financiamento no mundo da arte. Seu feedback ajudará a moldar soluções financeiras mais inteligentes para colecionadores como você.",
-    "q1": {
-      "question": "Com que frequência você adquire novas obras de arte?",
-      "options": {
-        "monthly": "Mensalmente",
-        "fewMonths": "A cada poucos meses",
-        "yearOrLess": "Uma vez por ano ou menos"
-      }
-    },
-    "q2": {
-      "question": "Qual é a faixa de preço típica das obras de arte que você coleciona?",
-      "options": {
-        "under10k": "Menos de $10,000",
-        "10kTo50k": "$10,000-$50,000",
-        "50kTo250k": "$50,000-$250,000",
-        "over250k": "Mais de $250,000"
-      }
-    },
-    "q3": {
-      "question": "Você já quis acessar liquidez sem vender suas obras de arte?",
-      "options": {
-        "yesOften": "Sim, frequentemente",
-        "yesSometimes": "Sim, às vezes",
-        "never": "Nunca"
-      }
-    },
-    "q4": {
-      "question": "O que impediu você de usar sua arte como garantia no passado?",
-      "options": {
-        "tooComplex": "Processo muito complexo ou lento",
-        "highRates": "Taxas de juros altas",
-        "didntKnow": "Não sabia que era possível",
-        "possession": "Não queria abrir mão da posse"
-      }
-    },
-    "q5": {
-      "question": "Se você pudesse obter até 70% do valor de uma obra de arte em dinheiro em poucos dias (sem vendê-la), quão atraente seria isso?",
-      "scale": {
-        "notAppealing": "Não atraente",
-        "appealing": "Atraente"
-      }
-    },
-    "q6": {
-      "question": "Quão importante é para você manter a posse física de suas obras de arte enquanto acessa liquidez?",
-      "scale": {
-        "notImportant": "Não importante",
-        "essential": "Absolutamente essencial"
-      }
-    },
-    "q7": {
-      "question": "Você gostaria de se juntar à nossa lista de espera privada para estar entre os primeiros colecionadores a acessar este serviço de financiamento de arte sem custódia?",
-      "options": {
-        "yesDefinitely": "Sim, definitivamente",
-        "notRightNow": "Não agora"
-      }
-    },
-    "fields": {
-      "companyName": "Nome da empresa",
-      "fullName": "Nome Completo",
-      "email": "E-mail",
-      "phoneNumber": "Número de Telefone"
-    },
-    "submit": "Enviar"
-=======
-=======
->>>>>>> 9fe6b76 (header)
   "dashboardPreview": {
     "title": "Gerencie Tudo em Um Só Lugar",
     "description": "Acesse seu painel para acompanhar negócios, gerenciar clientes e monitorar o desempenho da sua galeria",
@@ -231,9 +159,5 @@
       "privacy": "Privacidade",
       "cookies": "Cookies"
     }
-<<<<<<< HEAD
->>>>>>> 9fe6b76 (header)
-=======
->>>>>>> 9fe6b76 (header)
   }
 }

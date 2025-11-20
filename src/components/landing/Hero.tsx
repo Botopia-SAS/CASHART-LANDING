@@ -1,41 +1,16 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-<<<<<<< HEAD
-<<<<<<< HEAD
-import { ArrowRight, TrendingUp, Shield, BarChart3, Palette, Building2, Users, FileText } from 'lucide-react';
-import { useState } from 'react';
-import { AuthDialog } from './AuthDialog';
-import Particles from '@/components/magicui/particles';
-import Marquee from '@/components/magicui/marquee';
-import Link from 'next/link';
-import { useParams } from 'next/navigation';
-
-const artworks = [
-  { name: "Abstract Dreams", artist: "Maria Santos", price: "$45,000" },
-  { name: "Urban Landscape", artist: "John Park", price: "$32,000" },
-  { name: "Digital Genesis", artist: "Alex Chen", price: "$78,000" },
-  { name: "Color Symphony", artist: "Sophie Laurent", price: "$52,000" },
-  { name: "Modern Sculpture", artist: "David Kim", price: "$95,000" },
-];
-=======
 import { Shield, DollarSign, Clock } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { AuthDialog } from './AuthDialog';
 import { useTranslations } from 'next-intl';
->>>>>>> 9fe6b76 (header)
-=======
-import { Shield, DollarSign, Clock } from 'lucide-react';
-import { useState, useEffect } from 'react';
-import { AuthDialog } from './AuthDialog';
-import { useTranslations } from 'next-intl';
->>>>>>> 9fe6b76 (header)
 
 export function Hero() {
   const t = useTranslations('hero');
   const [showAuth, setShowAuth] = useState(false);
-  const params = useParams();
-  const locale = params.locale || 'en';
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
 
   return (
     <>
@@ -51,66 +26,55 @@ export function Hero() {
             }}
           />
           
-          {/* Left side radial gradient - much larger and more visible */}
+          {/* Left side radial gradient - more visible like Mercury */}
           <div 
-            className="absolute -left-[200px] top-1/2 -translate-y-1/2 w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] lg:w-[1000px] lg:h-[1000px]"
+            className="absolute -left-[300px] top-1/2 -translate-y-1/2 w-[800px] h-[800px] sm:w-[1000px] sm:h-[1000px] lg:w-[1200px] lg:h-[1200px]"
             style={{
-              background: 'radial-gradient(circle, rgba(12, 95, 76, 0.25) 0%, rgba(12, 95, 76, 0.15) 30%, rgba(12, 95, 76, 0.08) 50%, transparent 70%)'
+              background: 'radial-gradient(circle, rgba(12, 95, 76, 0.35) 0%, rgba(12, 95, 76, 0.2) 25%, rgba(12, 95, 76, 0.1) 45%, transparent 65%)'
             }}
           />
           
-          {/* Right side radial gradient - much larger and more visible */}
+          {/* Right side radial gradient - more visible like Mercury */}
           <div 
-            className="absolute -right-[200px] top-1/2 -translate-y-1/2 w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] lg:w-[1000px] lg:h-[1000px]"
+            className="absolute -right-[300px] top-1/2 -translate-y-1/2 w-[800px] h-[800px] sm:w-[1000px] sm:h-[1000px] lg:w-[1200px] lg:h-[1200px]"
             style={{
-              background: 'radial-gradient(circle, rgba(12, 95, 76, 0.25) 0%, rgba(12, 95, 76, 0.15) 30%, rgba(12, 95, 76, 0.08) 50%, transparent 70%)'
+              background: 'radial-gradient(circle, rgba(12, 95, 76, 0.35) 0%, rgba(12, 95, 76, 0.2) 25%, rgba(12, 95, 76, 0.1) 45%, transparent 65%)'
+            }}
+          />
+          
+          {/* Side gradient like Mercury - vertical gradient on the sides */}
+          <div 
+            className="absolute left-0 top-0 bottom-0 w-[400px] pointer-events-none"
+            style={{
+              background: 'linear-gradient(to right, rgba(12, 95, 76, 0.15) 0%, transparent 100%)'
+            }}
+          />
+          <div 
+            className="absolute right-0 top-0 bottom-0 w-[400px] pointer-events-none"
+            style={{
+              background: 'linear-gradient(to left, rgba(12, 95, 76, 0.15) 0%, transparent 100%)'
             }}
           />
         </div>
 
-        <div className="container max-w-5xl mx-auto relative z-10 px-6">
-          <div className="text-center space-y-7">
+        <div className="container max-w-7xl mx-auto relative z-10 px-6">
+          <div className="text-center space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-[#0C5F4C]/10 text-[#0C5F4C] border border-[#0C5F4C]/20">
               {t('earlyAccessBadge')}
             </div>
 
-            <h1 className="text-5xl md:text-[64px] font-bold tracking-tight leading-[1.1] text-gray-900">
+            <h1 className="text-6xl md:text-[80px] font-bold tracking-tight leading-[1.1] text-gray-900">
               {t('title')}{' '}
               <br className="hidden md:block" />
               <span className="text-[#0C5F4C]">{t('titleHighlight')}</span>
             </h1>
 
-            <p className="text-[19px] md:text-[21px] text-gray-600 max-w-2xl mx-auto font-normal leading-relaxed">
-              {t('descriptionPart1')}<sup>{t('descriptionSup')}</sup>{t('descriptionPart2')}
+            <p className="text-[22px] md:text-[24px] text-gray-600 max-w-3xl mx-auto font-normal leading-relaxed tracking-tight">
+              {t('descriptionPart1')}{t('descriptionPart2')}
             </p>
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <div className="flex gap-4 justify-center">
-              <Button
-                size="lg"
-                className="group bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
-                onClick={() => setShowAuth(true)}
-              >
-                {t('cta')}
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-              <Link href={`/${locale}/survey`}>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="group border-2 border-purple-600 text-purple-600 hover:bg-purple-50"
-                >
-                  {t('survey')}
-                  <FileText className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-=======
->>>>>>> 9fe6b76 (header)
 
             {/* Email Input & Buttons with Glow Effect */}
-            <div className="relative max-w-xl mx-auto pt-6 group">
+            <div className="relative max-w-2xl mx-auto pt-4 group">
               {/* Glow effect background - increases on input focus */}
               <div 
                 className="absolute inset-0 -z-10 blur-3xl opacity-30 transition-opacity duration-300 group-focus-within:opacity-40"
@@ -121,44 +85,46 @@ export function Hero() {
               
               {/* CTA content */}
               <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-                <input
-                  type="email"
-                  placeholder={t('emailPlaceholder')}
-                  className="w-full sm:flex-1 h-12 px-4 rounded-lg border border-gray-300 text-[15px] focus:outline-none focus:ring-2 focus:ring-[#0C5F4C] focus:border-transparent bg-white transition-shadow duration-200"
-                />
-                <Button
-                  onClick={() => setShowAuth(true)}
-                  className="w-full sm:w-auto bg-[#0C5F4C] hover:bg-[#0A4F3E] text-white text-[15px] font-medium px-6 h-12 rounded-lg shadow-sm whitespace-nowrap"
-                >
-=======
-
-            {/* Email Input & Buttons with Glow Effect */}
-            <div className="relative max-w-xl mx-auto pt-6 group">
-              {/* Glow effect background - increases on input focus */}
-              <div 
-                className="absolute inset-0 -z-10 blur-3xl opacity-30 transition-opacity duration-300 group-focus-within:opacity-40"
-                style={{
-                  background: 'radial-gradient(ellipse at center, rgba(12, 95, 76, 0.4) 0%, transparent 70%)'
-                }}
-              />
-              
-              {/* CTA content */}
-              <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-                <input
-                  type="email"
-                  placeholder={t('emailPlaceholder')}
-                  className="w-full sm:flex-1 h-12 px-4 rounded-lg border border-gray-300 text-[15px] focus:outline-none focus:ring-2 focus:ring-[#0C5F4C] focus:border-transparent bg-white transition-shadow duration-200"
-                />
-                <Button
-                  onClick={() => setShowAuth(true)}
-                  className="w-full sm:w-auto bg-[#0C5F4C] hover:bg-[#0A4F3E] text-white text-[15px] font-medium px-6 h-12 rounded-lg shadow-sm whitespace-nowrap"
-                >
->>>>>>> 9fe6b76 (header)
-                  {t('registerButton')}
-                </Button>
+                {/* Input encapsulado con botón verde */}
+                <div className="relative w-full sm:flex-1 flex items-center rounded-full border-2 border-[#0C5F4C]/40 overflow-hidden bg-white/80 backdrop-blur-sm shadow-sm">
+                  <input
+                    type="email"
+                    placeholder={t('emailPlaceholder')}
+                    className="w-full h-14 pl-4 pr-36 text-[15px] focus:outline-none bg-transparent border-none"
+                  />
+                  <Button
+                    onClick={() => setShowAuth(true)}
+                    onMouseEnter={() => setIsHovering(true)}
+                    onMouseLeave={() => setIsHovering(false)}
+                    onMouseMove={(e) => {
+                      const rect = e.currentTarget.getBoundingClientRect();
+                      setMousePosition({
+                        x: e.clientX - rect.left,
+                        y: e.clientY - rect.top,
+                      });
+                    }}
+                    className="absolute right-0 h-14 bg-[#0C5F4C] hover:bg-[#0A4F3E] text-white text-[15px] font-medium px-6 rounded-full whitespace-nowrap pointer-events-auto relative overflow-hidden transition-all duration-300"
+                  >
+                    <span
+                      className="absolute pointer-events-none rounded-full"
+                      style={{
+                        left: `${mousePosition.x}px`,
+                        top: `${mousePosition.y}px`,
+                        transform: 'translate(-50%, -50%)',
+                        width: isHovering ? '150px' : '0px',
+                        height: isHovering ? '150px' : '0px',
+                        background: 'radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%)',
+                        opacity: isHovering ? 1 : 0,
+                        transition: 'width 0.3s ease, height 0.3s ease, opacity 0.3s ease',
+                        filter: 'blur(20px)',
+                      }}
+                    />
+                    <span className="relative z-10">{t('registerButton')}</span>
+                  </Button>
+                </div>
                 <Button
                   variant="outline"
-                  className="w-full sm:w-auto border-gray-300 hover:bg-gray-50 text-gray-900 text-[15px] font-medium px-6 h-12 rounded-lg whitespace-nowrap"
+                  className="w-full sm:w-auto border-2 border-[#0C5F4C]/40 text-[#0C5F4C] hover:border-[#0C5F4C] hover:bg-[#0C5F4C]/10 text-[15px] font-medium px-6 h-14 rounded-full whitespace-nowrap transition-colors"
                 >
                   {t('collectorSurveyButton')}
                 </Button>
@@ -173,13 +139,6 @@ export function Hero() {
                 src="https://res.cloudinary.com/dcljjtnxr/image/upload/v1763618102/WhatsApp_Image_2025-11-19_at_22.11.09_t1zhxl.jpg"
                 alt={t('dashboardAlt')}
                 className="w-full h-auto"
-              />
-              {/* Subtle edge-based gradient overlay */}
-              <div
-                className="absolute inset-0 pointer-events-none"
-                style={{
-                  background: 'radial-gradient(ellipse at center, transparent 50%, rgba(12, 95, 76, 0.06) 100%)'
-                }}
               />
             </div>
           </div>
