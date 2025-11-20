@@ -22,7 +22,7 @@ export function Hero() {
 
   return (
     <>
-      <section className="relative pt-32 pb-20 px-4 overflow-hidden">
+      <section className="relative pt-32 pb-20 overflow-hidden">
         {/* PatternCraft Background - Dots Pattern */}
         <div className="absolute inset-0 -z-10 h-full w-full bg-background bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-500/5 via-background to-background">
           <div className="absolute inset-0 bg-[radial-gradient(circle_500px_at_50%_200px,rgba(147,51,234,0.1),transparent)]"></div>

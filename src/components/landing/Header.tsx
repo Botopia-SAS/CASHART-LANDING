@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { AuthDialog } from './AuthDialog';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 export function Header() {
   const t = useTranslations('landing');
@@ -25,6 +26,7 @@ export function Header() {
             </div>
           </div>
           <nav className="flex items-center gap-4">
+            <LanguageSwitcher />
             <Button
               variant="ghost"
               onClick={() => handleAuthClick('signin')}
