@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { AuthDialog } from './AuthDialog';
+import { CollectorSurveyDialog } from './CollectorSurveyDialog';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
@@ -11,6 +12,7 @@ export function Header() {
   const t = useTranslations('header');
   const [showAuth, setShowAuth] = useState(false);
   const [authMode, setAuthMode] = useState<'signin' | 'signup'>('signin');
+  const [showSurvey, setShowSurvey] = useState(false);
 
   const handleAuthClick = (mode: 'signin' | 'signup') => {
     setAuthMode(mode);
@@ -64,11 +66,11 @@ export function Header() {
           <div className="flex items-center gap-3">
             <LanguageSwitcher />
             <Button
-              variant="ghost"
-              onClick={() => handleAuthClick('signin')}
-              className="text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-100/50 px-4 h-10 rounded-md"
+              variant="outline"
+              onClick={() => setShowSurvey(true)}
+              className="hidden sm:flex text-base font-medium border-[#0C5F4C]/30 text-[#0C5F4C] hover:bg-[#0C5F4C]/10 px-4 h-10 rounded-full"
             >
-              {t('logIn')}
+              {t('collectorSurveyButton')}
             </Button>
             <Button
               onClick={() => handleAuthClick('signup')}
@@ -84,6 +86,7 @@ export function Header() {
         onOpenChange={setShowAuth}
         defaultMode={authMode}
       />
+      <CollectorSurveyDialog open={showSurvey} onOpenChange={setShowSurvey} />
     </>
   );
 }

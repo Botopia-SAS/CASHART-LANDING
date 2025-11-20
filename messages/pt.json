@@ -10,13 +10,30 @@
     "registerButton": "Registre sua Galeria",
     "collectorSurveyButton": "Pesquisa para Colecionadores",
     "dashboardAlt": "Painel CashArt",
+    "featuresIntro": {
+      "overline": "Para galerias e colecionadores",
+      "title": "Projetado para confiança, velocidade e flexibilidade",
+      "subtitle": "O CashArt remove o atrito operacional para que as galerias recebam na hora enquanto os colecionadores acessam planos sob medida."
+    },
     "features": {
       "title1": "Pagamentos Instantâneos para Galerias",
       "description1": "Receba o pagamento imediato pelas suas obras de arte enquanto os colecionadores desfrutam de opções de pagamento flexíveis",
       "title2": "Risco Zero, Carga Zero",
       "description2": "CashArt assume todos os riscos do colecionador e gerencia todo o processamento de pagamentos",
       "title3": "Opções Flexíveis para Colecionadores",
-      "description3": "Planos de pagamento acessíveis que tornam a coleção de arte mais fácil do que nunca"
+      "description3": "Planos de pagamento acessíveis que tornam a coleção de arte mais fácil do que nunca",
+      "card1StatValue": "24h",
+      "card1StatLabel": "Prazo de repasse",
+      "card1Point1": "Liquidação no mesmo dia direto para a sua galeria",
+      "card1Point2": "Colecionadores escolhem calendários de pagamento flexíveis",
+      "card2StatValue": "0%",
+      "card2StatLabel": "Exposição ao risco",
+      "card2Point1": "CashArt assume o risco e o compliance regulatório",
+      "card2Point2": "Monitoramento automático mantém cada parcela em dia",
+      "card3StatValue": "6-24m",
+      "card3StatLabel": "Prazos para colecionadores",
+      "card3Point1": "Ofereça prazos longos sem travar o seu caixa",
+      "card3Point2": "Pré-aprovações que encurtam cada negociação"
     }
   },
   "header": {
@@ -25,27 +42,30 @@
     "about": "Sobre",
     "pricing": "Preços",
     "logIn": "Entrar",
-    "registerGallery": "Registre sua Galeria"
+    "registerGallery": "Registre sua Galeria",
+    "collectorSurveyButton": "Pesquisa para Colecionadores"
   },
   "videoCircle": {
-    "title": "Como o CashArt Funciona Para Você",
+    "title": "Como Funciona o CashArt",
     "subtitle": "Nosso ecossistema inovador conecta galerias, colecionadores e financiamento perfeitamente.",
-    "circle01": "Financiamento de Arte",
-    "circle02Title": "Pagamento",
-    "circle02Subtitle": "Instantâneo",
-    "circle03Title": "Zero",
-    "circle03Subtitle": "Risco",
-    "circle04Title": "Termos",
-    "circle04Subtitle": "Flexíveis",
-    "circle05Title": "Pré-",
-    "circle05Subtitle": "Aprovação",
-    "circle06Title": "Acesso",
-    "circle06Subtitle": "Global",
-    "circle07Title": "Crescimento",
-    "circle07Subtitle": "da Galeria",
+    "circle01Title": "Pagamento",
+    "circle01Subtitle": "Instantâneo",
+    "circle02Title": "Zero",
+    "circle02Subtitle": "Risco",
+    "circle03Title": "Termos",
+    "circle03Subtitle": "Flexíveis",
+    "circle04Title": "Pré-",
+    "circle04Subtitle": "Aprovação",
+    "circle05Title": "Acesso",
+    "circle05Subtitle": "Global",
+    "circle06Title": "Crescimento",
+    "circle06Subtitle": "da Galeria",
+    "circle07Title": "Seguro",
+    "circle07Subtitle": "e Transparente",
     "imageAlt": "Plataforma CashArt"
   },
   "howItWorks": {
+    "badge": "Onboarding guiado",
     "title": "Uma Experiência Perfeita",
     "subtitle": "Do registro ao pagamento, cada etapa é projetada para simplicidade e velocidade.",
     "step1": {
@@ -129,6 +149,82 @@
     "title": "Gerencie Tudo em Um Só Lugar",
     "description": "Acesse seu painel para acompanhar negócios, gerenciar clientes e monitorar o desempenho da sua galeria",
     "imageAlt": "Painel CashArt"
+  },
+  "survey": {
+    "title": "Molde o futuro do colecionismo de arte",
+    "subtitle": "Leva só 1 minuto",
+    "description": "Suas respostas nos ajudam a ajustar o financiamento da CashArt para colecionadores exigentes como você.",
+    "q1": {
+      "question": "Que tipo de arte você coleciona principalmente?",
+      "placeholder": "Ex.: Contemporânea, Moderna, Mestres Antigos, Digital"
+    },
+    "q2": {
+      "question": "Qual é a faixa de preço típica de uma nova aquisição?",
+      "options": {
+        "under10k": "Menos de US$10K",
+        "10kTo50k": "US$10K – US$50K",
+        "50kTo250k": "US$50K – US$250K",
+        "over250k": "Acima de US$250K"
+      }
+    },
+    "q3": {
+      "question": "Você já utilizou planos de pagamento ou financiamento para comprar arte?",
+      "options": {
+        "yes": "Sim",
+        "no": "Não"
+      }
+    },
+    "q4": {
+      "question": "Qual é o maior ponto de atrito ao adquirir uma nova obra?",
+      "placeholder": "Compartilhe suas ideias..."
+    },
+    "q5": {
+      "question": "O acesso a um financiamento simples incentivaria você a adquirir mais obras?",
+      "options": {
+        "definitely": "Com certeza",
+        "probably": "Provavelmente",
+        "maybe": "Talvez",
+        "unlikely": "Pouco provável"
+      }
+    },
+    "q6": {
+      "question": "Quão importante é a velocidade de aprovação quando você está pronto para comprar?",
+      "options": {
+        "critical": "Crítica — Mesmo dia",
+        "important": "Importante — Em até 48 horas",
+        "moderate": "Moderada — Em até uma semana",
+        "flexible": "Flexível — Sem pressa"
+      }
+    },
+    "q7": {
+      "question": "Você gostaria de participar do nosso beta exclusivo para colecionadores?",
+      "options": {
+        "yesDefinitely": "Sim, quero ser informado",
+        "notRightNow": "Agora não"
+      }
+    },
+    "fields": {
+      "companyName": "Nome da galeria ou empresa",
+      "fullName": "Nome completo",
+      "email": "E-mail",
+      "phoneNumber": "Telefone"
+    },
+    "submit": "Enviar pesquisa",
+    "submitting": "Enviando...",
+    "messages": {
+      "success": "Obrigado! Sua pesquisa foi enviada com sucesso.",
+      "error": "Ocorreu um erro. Tente novamente."
+    }
+  },
+  "collectorSurveyModal": {
+    "title": "Molde o futuro do colecionismo",
+    "description": "Compartilhe seus insights em uma pesquisa de 1 minuto para ajustarmos o financiamento CashArt a colecionadores exigentes como você.",
+    "whatToExpect": "O que você verá",
+    "question1": "Os estilos e faixas de preço que você costuma adquirir",
+    "question2": "Se já utilizou planos de pagamento ou financiamento",
+    "question3": "Quão rápido precisa da aprovação e se entraria no beta",
+    "cta": "Abrir pesquisa para colecionadores",
+    "ctaSecondary": "Talvez depois"
   },
   "footer": {
     "description": "Revolucionando o financiamento de arte conectando galerias, colecionadores e oportunidades perfeitamente.",

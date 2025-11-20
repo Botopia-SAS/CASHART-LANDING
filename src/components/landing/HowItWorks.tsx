@@ -50,60 +50,42 @@ export function HowItWorks() {
 
   return (
     <section
-      className="pt-0 pb-32 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden"
+      className="relative py-10 md:py-14 bg-white"
       id="how-it-works"
       style={{
         opacity,
         transition: 'opacity 0.3s ease-out'
       }}
     >
-      {/* Multiple green gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0C5F4C]/12 via-transparent to-[#0C5F4C]/12"></div>
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse at top, rgba(12, 95, 76, 0.08) 0%, transparent 60%)',
-        }}
-      />
-      <div
-        className="absolute bottom-0 left-0 right-0 h-64 pointer-events-none"
-        style={{
-          background: 'linear-gradient(to bottom, transparent, rgba(12, 95, 76, 0.05))',
-        }}
-      />
-
-      <div className="container max-w-6xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-[40px] md:text-[48px] font-bold mb-3 text-gray-900">
+      <div className="container max-w-6xl mx-auto px-6">
+        <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
+          <span className="inline-flex items-center gap-2 px-4 py-1 rounded-full text-xs font-semibold uppercase tracking-[0.25em] text-[#0C5F4C] bg-white shadow-sm border border-[#0C5F4C]/20">
+            {t('badge')}
+          </span>
+          <h2 className="text-[38px] md:text-[46px] font-bold mt-6 mb-4 text-gray-900">
             {t('title')}
           </h2>
-          <p className="text-[19px] md:text-[21px] text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-[18px] md:text-[20px] text-gray-600 leading-relaxed">
             {t('subtitle')}
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((step) => {
             const Icon = step.icon;
             return (
-              <div key={step.number} className="relative">
-                <div className="relative bg-white rounded-xl border border-gray-200 p-6 h-full hover:shadow-md transition-shadow">
-                  {/* Step Number Badge */}
-                  <div className="w-10 h-10 rounded-full bg-[#0C5F4C] flex items-center justify-center text-white font-bold text-sm mb-6">
-                    {step.number}
+              <div
+                key={step.number}
+                className="flex flex-col gap-4 rounded-3xl border border-gray-100 bg-white shadow-[0_15px_30px_rgba(12,95,76,0.08)] p-6 transition-transform hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(12,95,76,0.12)]"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="h-12 w-12 rounded-full bg-[#0C5F4C]/10 flex items-center justify-center">
+                    <Icon className="h-5 w-5 text-[#0C5F4C]" />
                   </div>
-
-                  {/* Icon */}
-                  <div className="mb-4 inline-block p-3 rounded-lg bg-[#0C5F4C]/10">
-                    <Icon className="w-8 h-8 text-[#0C5F4C]" />
-                  </div>
-
-                  {/* Content */}
-                  <h3 className="text-base font-semibold mb-2 text-gray-900">{step.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {step.description}
-                  </p>
+                  <span className="text-sm font-semibold text-[#0C5F4C]">0{step.number}</span>
                 </div>
+                <h3 className="text-lg font-semibold text-gray-900">{step.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{step.description}</p>
               </div>
             );
           })}

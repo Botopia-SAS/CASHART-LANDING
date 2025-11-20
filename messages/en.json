@@ -10,13 +10,30 @@
     "registerButton": "Register Your Gallery",
     "collectorSurveyButton": "Collector Survey",
     "dashboardAlt": "CashArt Dashboard",
+    "featuresIntro": {
+      "overline": "For Galleries & Collectors",
+      "title": "Designed for trust, speed, and flexibility",
+      "subtitle": "CashArt removes operational friction so galleries get paid instantly while collectors enjoy tailored financing plans."
+    },
     "features": {
       "title1": "Instant Payouts for Galleries",
       "description1": "Get immediate payment for your artworks while collectors enjoy flexible payment options",
       "title2": "Zero Risk, Zero Burden",
       "description2": "CashArt assumes all collector risk and handles all payment processing",
       "title3": "Flexible Options for Collectors",
-      "description3": "Accessible payment plans that make art collecting easier than ever"
+      "description3": "Accessible payment plans that make art collecting easier than ever",
+      "card1StatValue": "24h",
+      "card1StatLabel": "Funding turnaround",
+      "card1Point1": "Same-day settlement deposited to your gallery account",
+      "card1Point2": "Collectors choose flexible payment cadences",
+      "card2StatValue": "0%",
+      "card2StatLabel": "Risk exposure",
+      "card2Point1": "CashArt absorbs default and compliance management",
+      "card2Point2": "Automated monitoring keeps every payment on track",
+      "card3StatValue": "6-24m",
+      "card3StatLabel": "Collector schedules",
+      "card3Point1": "Offer longer terms without blocking your cash flow",
+      "card3Point2": "Pre-approvals keep negotiations short and confident"
     }
   },
   "header": {
@@ -25,27 +42,30 @@
     "about": "About",
     "pricing": "Pricing",
     "logIn": "Log In",
-    "registerGallery": "Register Your Gallery"
+    "registerGallery": "Register Your Gallery",
+    "collectorSurveyButton": "Collector Survey"
   },
   "videoCircle": {
-    "title": "How CashArt Works For You",
+    "title": "How CashArt Works",
     "subtitle": "Our innovative ecosystem connects galleries, collectors, and financing seamlessly.",
-    "circle01": "Art Financing",
-    "circle02Title": "Instant",
-    "circle02Subtitle": "Payment",
-    "circle03Title": "Zero",
-    "circle03Subtitle": "Risk",
-    "circle04Title": "Flexible",
-    "circle04Subtitle": "Terms",
-    "circle05Title": "Pre-",
-    "circle05Subtitle": "Approval",
-    "circle06Title": "Global",
-    "circle06Subtitle": "Access",
-    "circle07Title": "Gallery",
-    "circle07Subtitle": "Growth",
+    "circle01Title": "Instant",
+    "circle01Subtitle": "Payment",
+    "circle02Title": "Zero",
+    "circle02Subtitle": "Risk",
+    "circle03Title": "Flexible",
+    "circle03Subtitle": "Terms",
+    "circle04Title": "Pre-",
+    "circle04Subtitle": "Approval",
+    "circle05Title": "Global",
+    "circle05Subtitle": "Access",
+    "circle06Title": "Gallery",
+    "circle06Subtitle": "Growth",
+    "circle07Title": "Secure",
+    "circle07Subtitle": "& Transparent",
     "imageAlt": "CashArt Platform"
   },
   "howItWorks": {
+    "badge": "Guided onboarding",
     "title": "A Seamless Experience",
     "subtitle": "From registration to payment, every step is designed for simplicity and speed.",
     "step1": {
@@ -129,6 +149,82 @@
     "title": "Manage Everything in One Place",
     "description": "Access your dashboard to track deals, manage clients, and monitor your gallery's performance",
     "imageAlt": "CashArt Dashboard"
+  },
+  "survey": {
+    "title": "Shape the Future of Art Collecting",
+    "subtitle": "Takes just 1 minute",
+    "description": "Your answers help us tailor CashArt financing for serious collectors like you.",
+    "q1": {
+      "question": "What type of art do you primarily collect?",
+      "placeholder": "e.g., Contemporary, Modern, Old Masters, Digital"
+    },
+    "q2": {
+      "question": "What is your typical price range for a new acquisition?",
+      "options": {
+        "under10k": "Under $10K",
+        "10kTo50k": "$10K – $50K",
+        "50kTo250k": "$50K – $250K",
+        "over250k": "Over $250K"
+      }
+    },
+    "q3": {
+      "question": "Have you used payment plans or financing to acquire art before?",
+      "options": {
+        "yes": "Yes",
+        "no": "No"
+      }
+    },
+    "q4": {
+      "question": "What is the single biggest point of friction for you when acquiring a new piece of art?",
+      "placeholder": "Share your thoughts..."
+    },
+    "q5": {
+      "question": "Would access to seamless, elegant financing encourage you to acquire more works?",
+      "options": {
+        "definitely": "Definitely",
+        "probably": "Probably",
+        "maybe": "Maybe",
+        "unlikely": "Unlikely"
+      }
+    },
+    "q6": {
+      "question": "How important is the speed of approval when you are ready to purchase?",
+      "options": {
+        "critical": "Critical — Same day",
+        "important": "Important — Within 48 hours",
+        "moderate": "Moderate — Within a week",
+        "flexible": "Flexible — No rush"
+      }
+    },
+    "q7": {
+      "question": "Would you like to join our private beta for collectors?",
+      "options": {
+        "yesDefinitely": "Yes, keep me in the loop",
+        "notRightNow": "Not right now"
+      }
+    },
+    "fields": {
+      "companyName": "Gallery or company name",
+      "fullName": "Full name",
+      "email": "Email",
+      "phoneNumber": "Phone number"
+    },
+    "submit": "Submit survey",
+    "submitting": "Submitting...",
+    "messages": {
+      "success": "Thank you! Your survey has been submitted successfully.",
+      "error": "An error occurred. Please try again."
+    }
+  },
+  "collectorSurveyModal": {
+    "title": "Shape the Future of Art Collecting",
+    "description": "Share your insights in a 1-minute survey so we can tailor CashArt financing to serious collectors like you.",
+    "whatToExpect": "Inside the survey",
+    "question1": "The art styles and price ranges you typically acquire",
+    "question2": "If you have used payment plans or financing in the past",
+    "question3": "How fast you need approvals and whether you'd join the beta",
+    "cta": "Open collector survey",
+    "ctaSecondary": "Maybe later"
   },
   "footer": {
     "description": "Revolutionizing art financing by connecting galleries, collectors, and opportunities seamlessly.",
