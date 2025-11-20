@@ -38,7 +38,7 @@ export function Header() {
             <div className="flex items-center flex-shrink-0 min-w-0">
               <Link href="/" className="flex items-center">
                 <img
-                  src="https://res.cloudinary.com/dcljjtnxr/image/upload/v1763617566/WhatsApp_Image_2025-11-19_at_21.28.10_clizpn.jpg"
+                  src="https://res.cloudinary.com/dzi2p0pqa/image/upload/v1763663304/daewusmce0jbacjvqxxk.png"
                   alt="CashArt"
                   className="h-8 sm:h-10 w-auto"
                 />
