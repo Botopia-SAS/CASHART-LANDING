@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { addSurveyToSheet } from '@/lib/api/sheets';
+import emailService from '@/lib/services/email.service';
 
 export async function POST(request: NextRequest) {
   try {
@@ -27,6 +28,25 @@ export async function POST(request: NextRequest) {
       email: body.email,
       phoneNumber: body.phoneNumber,
     });
+
+    // Send welcome email to collector
+    try {
+      await emailService.sendCollectorWelcomeEmail({
+        fullName: body.fullName,
+        email: body.email,
+        phoneNumber: body.phoneNumber,
+        artType: body.q1,
+        priceRange: body.q2,
+        usedFinancing: body.q3,
+        painPoint: body.q4,
+        wouldUseFinancing: body.q5,
+        approvalSpeed: body.q6,
+        joinBeta: body.q7,
+      });
+    } catch (emailError) {
+      console.error('Email sending failed (non-critical):', emailError);
+      // Don't fail the request if email fails
+    }
 
     return NextResponse.json(
       { message: 'Survey submitted successfully' },

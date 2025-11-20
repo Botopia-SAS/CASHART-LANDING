@@ -201,7 +201,7 @@ export function SignUpFormFormity({ onSuccess }: SignUpFormFormityProps) {
       {/* Submit Button */}
       <Button
         type="submit"
-        className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+        className="w-full bg-black hover:bg-gray-900"
         disabled={isLoading}
       >
         {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
