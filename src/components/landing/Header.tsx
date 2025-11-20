@@ -72,7 +72,7 @@ export function Header() {
             </Button>
             <Button
               onClick={() => handleAuthClick('signup')}
-              className="bg-[#0C5F4C] hover:bg-[#0A4F3E] text-white text-base font-medium px-5 h-10 rounded-md shadow-sm"
+              className="bg-[#0C5F4C] hover:bg-[#0A4F3E] text-white text-base font-medium px-6 h-10 rounded-full shadow-sm"
             >
               {t('registerGallery')}
             </Button>
