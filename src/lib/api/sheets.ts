@@ -84,3 +84,48 @@ export async function getUserByEmail(email: string) {
     password: userRow[7],
   };
 }
+
+export async function addSurveyToSheet(surveyData: {
+  q1: string;
+  q2: string;
+  q3: string;
+  q4: string;
+  q5: string;
+  q6: string;
+  q7: string;
+  companyName: string;
+  fullName: string;
+  email: string;
+  phoneNumber: string;
+}) {
+  const sheets = await getGoogleSheetsClient();
+  const spreadsheetId = process.env.GOOGLE_SHEET_ID;
+
+  const values = [
+    [
+      new Date().toISOString(),
+      surveyData.q1,
+      surveyData.q2,
+      surveyData.q3,
+      surveyData.q4,
+      surveyData.q5,
+      surveyData.q6,
+      surveyData.q7,
+      surveyData.companyName,
+      surveyData.fullName,
+      surveyData.email,
+      surveyData.phoneNumber,
+    ],
+  ];
+
+  const response = await sheets.spreadsheets.values.append({
+    spreadsheetId,
+    range: 'A:L', // Using Sheet1 by default (no sheet name prefix)
+    valueInputOption: 'USER_ENTERED',
+    requestBody: {
+      values,
+    },
+  });
+
+  return response.data;
+}

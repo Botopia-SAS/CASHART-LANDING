@@ -3,6 +3,7 @@
     "title": "Transform Art into Investment Opportunities",
     "subtitle": "Connect collectors and galleries in a revolutionary fintech platform for the art world",
     "cta": "Get Started",
+    "survey": "Take Survey",
     "login": "Sign In",
     "features": {
       "title": "Why Choose Us",
@@ -48,5 +49,72 @@
     },
     "recentActivity": "Recent Activity",
     "marketTrends": "Market Trends"
+  },
+  "survey": {
+    "title": "CashArt - Collector Survey",
+    "subtitle": "Takes under 1 minute",
+    "description": "We're exploring how collectors manage liquidity and financing in the art world. Your feedback will help shape smarter financial solutions for collectors like you.",
+    "q1": {
+      "question": "How often do you acquire new artworks?",
+      "options": {
+        "monthly": "Monthly",
+        "fewMonths": "Every few months",
+        "yearOrLess": "Once a year or less"
+      }
+    },
+    "q2": {
+      "question": "What's the typical price range of the artworks you collect?",
+      "options": {
+        "under10k": "Under $10,000",
+        "10kTo50k": "$10,000-$50,000",
+        "50kTo250k": "$50,000-$250,000",
+        "over250k": "Over $250,000"
+      }
+    },
+    "q3": {
+      "question": "Have you ever wanted to access liquidity without selling your artworks?",
+      "options": {
+        "yesOften": "Yes, often",
+        "yesSometimes": "Yes, sometimes",
+        "never": "Never"
+      }
+    },
+    "q4": {
+      "question": "What has stopped you from using your art as collateral in the past?",
+      "options": {
+        "tooComplex": "Process too complex or slow",
+        "highRates": "High interest rates",
+        "didntKnow": "Didn't know it was possible",
+        "possession": "Didn't want to give up possession"
+      }
+    },
+    "q5": {
+      "question": "If you could get up to 70% of an artwork's value in cash within a few days (without selling it), how appealing would that be?",
+      "scale": {
+        "notAppealing": "Not appealing",
+        "appealing": "Appealing"
+      }
+    },
+    "q6": {
+      "question": "How important is it for you to keep physical possession of your artworks while accessing liquidity?",
+      "scale": {
+        "notImportant": "Not important",
+        "essential": "Absolutely essential"
+      }
+    },
+    "q7": {
+      "question": "Would you like to join our private waitlist to be among the first collectors to access this non-custodial art financing service?",
+      "options": {
+        "yesDefinitely": "Yes, definitely",
+        "notRightNow": "Not right now"
+      }
+    },
+    "fields": {
+      "companyName": "Company name",
+      "fullName": "Full Name",
+      "email": "Email",
+      "phoneNumber": "Phone Number"
+    },
+    "submit": "Submit"
   }
 }

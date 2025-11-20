@@ -2,11 +2,13 @@
 
 import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, TrendingUp, Shield, BarChart3, Palette, Building2, Users } from 'lucide-react';
+import { ArrowRight, TrendingUp, Shield, BarChart3, Palette, Building2, Users, FileText } from 'lucide-react';
 import { useState } from 'react';
 import { AuthDialog } from './AuthDialog';
 import Particles from '@/components/magicui/particles';
 import Marquee from '@/components/magicui/marquee';
+import Link from 'next/link';
+import { useParams } from 'next/navigation';
 
 const artworks = [
   { name: "Abstract Dreams", artist: "Maria Santos", price: "$45,000" },
@@ -19,6 +21,8 @@ const artworks = [
 export function Hero() {
   const t = useTranslations('landing');
   const [showAuth, setShowAuth] = useState(false);
+  const params = useParams();
+  const locale = params.locale || 'en';
 
   return (
     <>
@@ -62,6 +66,16 @@ export function Hero() {
                 {t('cta')}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
+              <Link href={`/${locale}/survey`}>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="group border-2 border-purple-600 text-purple-600 hover:bg-purple-50"
+                >
+                  {t('survey')}
+                  <FileText className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
             </div>
           </div>
 

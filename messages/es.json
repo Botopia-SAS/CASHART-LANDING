@@ -3,6 +3,7 @@
     "title": "Transforma el Arte en Oportunidades de Inversión",
     "subtitle": "Conecta coleccionistas y galerías en una plataforma fintech revolucionaria para el mundo del arte",
     "cta": "Comenzar",
+    "survey": "Tomar Encuesta",
     "login": "Iniciar Sesión",
     "features": {
       "title": "Por Qué Elegirnos",
@@ -48,5 +49,72 @@
     },
     "recentActivity": "Actividad Reciente",
     "marketTrends": "Tendencias del Mercado"
+  },
+  "survey": {
+    "title": "CashArt - Encuesta de Coleccionistas",
+    "subtitle": "Toma menos de 1 minuto",
+    "description": "Estamos explorando cómo los coleccionistas gestionan la liquidez y el financiamiento en el mundo del arte. Tus comentarios ayudarán a dar forma a soluciones financieras más inteligentes para coleccionistas como tú.",
+    "q1": {
+      "question": "¿Con qué frecuencia adquieres nuevas obras de arte?",
+      "options": {
+        "monthly": "Mensualmente",
+        "fewMonths": "Cada pocos meses",
+        "yearOrLess": "Una vez al año o menos"
+      }
+    },
+    "q2": {
+      "question": "¿Cuál es el rango de precio típico de las obras de arte que coleccionas?",
+      "options": {
+        "under10k": "Menos de $10,000",
+        "10kTo50k": "$10,000-$50,000",
+        "50kTo250k": "$50,000-$250,000",
+        "over250k": "Más de $250,000"
+      }
+    },
+    "q3": {
+      "question": "¿Alguna vez has querido acceder a liquidez sin vender tus obras de arte?",
+      "options": {
+        "yesOften": "Sí, a menudo",
+        "yesSometimes": "Sí, a veces",
+        "never": "Nunca"
+      }
+    },
+    "q4": {
+      "question": "¿Qué te ha impedido usar tu arte como colateral en el pasado?",
+      "options": {
+        "tooComplex": "Proceso demasiado complejo o lento",
+        "highRates": "Tasas de interés altas",
+        "didntKnow": "No sabía que era posible",
+        "possession": "No quería renunciar a la posesión"
+      }
+    },
+    "q5": {
+      "question": "Si pudieras obtener hasta el 70% del valor de una obra de arte en efectivo en unos días (sin venderla), ¿qué tan atractivo sería eso?",
+      "scale": {
+        "notAppealing": "No atractivo",
+        "appealing": "Atractivo"
+      }
+    },
+    "q6": {
+      "question": "¿Qué tan importante es para ti mantener la posesión física de tus obras de arte mientras accedes a liquidez?",
+      "scale": {
+        "notImportant": "No importante",
+        "essential": "Absolutamente esencial"
+      }
+    },
+    "q7": {
+      "question": "¿Te gustaría unirte a nuestra lista de espera privada para estar entre los primeros coleccionistas en acceder a este servicio de financiamiento de arte sin custodia?",
+      "options": {
+        "yesDefinitely": "Sí, definitivamente",
+        "notRightNow": "No en este momento"
+      }
+    },
+    "fields": {
+      "companyName": "Nombre de la empresa",
+      "fullName": "Nombre Completo",
+      "email": "Correo Electrónico",
+      "phoneNumber": "Número de Teléfono"
+    },
+    "submit": "Enviar"
   }
 }
