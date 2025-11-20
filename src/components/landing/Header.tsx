@@ -40,7 +40,12 @@ export function Header() {
                 <img
                   src="https://res.cloudinary.com/dzi2p0pqa/image/upload/v1763663304/daewusmce0jbacjvqxxk.png"
                   alt="CashArt"
-                  className="h-8 sm:h-10 w-auto"
+                  className="h-8 sm:h-10 w-auto dark:hidden"
+                />
+                <img
+                  src="https://res.cloudinary.com/dzi2p0pqa/image/upload/v1763664313/y2mjn6ltzclwzo2zw0xv.png"
+                  alt="CashArt"
+                  className="h-8 sm:h-10 w-auto hidden dark:block"
                 />
               </Link>
             </div>
