@@ -160,7 +160,7 @@ export function HeroFeatureGrid() {
 
   return (
     <section
-      className="relative py-14 md:py-18 bg-gradient-to-b from-white via-[#f6fbf9] to-white dark:from-gray-900 dark:via-gray-850 dark:to-gray-900 overflow-hidden"
+      className="relative py-14 md:py-18 bg-gradient-to-b from-emerald-100/60 via-white to-white dark:from-gray-900 dark:via-gray-850 dark:to-gray-900 overflow-hidden"
       style={{ opacity, transition: 'opacity 0.3s ease-out' }}
     >
       <div className="absolute inset-0 pointer-events-none">

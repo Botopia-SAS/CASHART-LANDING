@@ -1,6 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { GridSpotlight } from "./hero/GridSpotlight";
+import { SmoothGradientOverlay } from "./hero/SmoothGradientOverlay";
 
 // ==========================================
 // DATA STRUCTURE - Fully configurable flows
@@ -248,11 +250,11 @@ function FlowToggle({
 
   return (
     <div className="max-w-4xl mx-auto px-4 mb-12 sm:mb-16">
-      {/* Container bar with full rounded edges */}
-      <div className="relative bg-gray-800/40 backdrop-blur-sm rounded-full p-1.5 sm:p-2 border border-gray-700/50">
-        {/* Animated background slider */}
+      {/* Container bar with full rounded edges - Matching Hero light mode */}
+      <div className="relative bg-white/80 backdrop-blur-sm rounded-full p-1.5 sm:p-2 border border-[#0C5F4C]/30 shadow-lg shadow-[#0C5F4C]/10">
+        {/* Animated background slider - Verde oscuro fijo */}
         <div
-          className="absolute top-1.5 bottom-1.5 sm:top-2 sm:bottom-2 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 transition-all duration-500 ease-out shadow-lg shadow-emerald-500/30"
+          className="absolute top-1.5 bottom-1.5 sm:top-2 sm:bottom-2 rounded-full bg-[#0C5F4C] transition-all duration-500 ease-out shadow-lg shadow-[#0C5F4C]/30"
           style={{
             left: `calc(${(activeIndex / totalFlows) * 100}% + 0.375rem)`,
             width: `calc(${100 / totalFlows}% - 0.75rem)`,
@@ -274,7 +276,7 @@ function FlowToggle({
                 }}
                 className={`
                   relative z-10 px-3 py-3 sm:px-6 sm:py-4 rounded-full font-semibold text-xs sm:text-sm md:text-base transition-all duration-300
-                  ${isActive ? 'text-white' : 'text-gray-400 hover:text-gray-200'}
+                  ${isActive ? 'text-white' : 'text-gray-700 hover:text-gray-900'}
                 `}
               >
                 {flow.label}
@@ -292,11 +294,13 @@ function StoryProgress({
   activeStepIndex,
   onStepClick,
   stepDuration,
+  isVisible,
 }: {
   steps: FlowStep[];
   activeStepIndex: number;
   onStepClick: (index: number) => void;
   stepDuration: number; // en milisegundos
+  isVisible: boolean;
 }) {
   return (
     <div className="flex gap-1 sm:gap-1.5 mb-6 sm:mb-8 px-4">
@@ -312,18 +316,18 @@ function StoryProgress({
               // Example: analytics.track('step_clicked', { step: step.id, index })
               onStepClick(index);
             }}
-            className="flex-1 h-0.5 sm:h-1 rounded-full bg-gray-700/40 overflow-hidden relative hover:bg-gray-600/50 transition-colors"
+            className="flex-1 h-1 sm:h-1.5 rounded-full bg-[#0C5F4C]/20 overflow-hidden relative hover:bg-[#0C5F4C]/30 transition-colors border border-[#0C5F4C]/20"
             aria-label={`Go to step ${index + 1}: ${step.title}`}
           >
             {/* Barra de progreso completada */}
             {isCompleted && (
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-teal-500" />
+              <div className="absolute inset-0 bg-[#0C5F4C]" />
             )}
 
             {/* Barra de progreso activa con animación tipo Instagram Stories */}
-            {isActive && (
+            {isActive && isVisible && (
               <div
-                className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-teal-500 shadow-lg shadow-emerald-500/40 origin-left"
+                className="absolute inset-0 bg-[#0C5F4C] shadow-lg shadow-[#0C5F4C]/30 origin-left"
                 style={{
                   animation: `storyProgress ${stepDuration / 1000}s linear forwards`,
                 }}
@@ -352,7 +356,7 @@ function FlowStepCard({ step, stepIndex }: { step: FlowStep; stepIndex: number }
           animation: `${isVideoLeft ? 'flipSlideToRight' : 'flipSlideToLeft'} 0.6s ease-out`,
         }}
       >
-        <div className="relative aspect-video rounded-3xl overflow-hidden bg-gradient-to-br from-gray-800 via-gray-900 to-black border-2 border-gray-700/50 shadow-2xl">
+        <div className="relative aspect-video rounded-3xl overflow-hidden bg-white/90 backdrop-blur-sm border-2 border-[#0C5F4C]/20 shadow-2xl shadow-[#0C5F4C]/15">
           {/* 🎬 VIDEO INTEGRATION POINT: Replace this div with your video component */}
           {/* Example with video tag:
             <video
@@ -373,9 +377,9 @@ function FlowStepCard({ step, stepIndex }: { step: FlowStep; stepIndex: number }
           */}
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center px-6">
-              <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-emerald-500/20 to-teal-600/20 flex items-center justify-center border-2 border-emerald-500/30">
+              <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#0C5F4C]/15 via-[#10B981]/10 to-[#0C5F4C]/15 flex items-center justify-center border-2 border-[#0C5F4C]/25">
                 <svg
-                  className="w-12 h-12 text-emerald-400"
+                  className="w-12 h-12 text-[#0C5F4C]"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -394,14 +398,14 @@ function FlowStepCard({ step, stepIndex }: { step: FlowStep; stepIndex: number }
                   />
                 </svg>
               </div>
-              <p className="text-sm text-gray-500 font-mono">
+              <p className="text-sm text-gray-700 font-mono">
                 Video: {step.videoPlaceholder}
               </p>
             </div>
           </div>
 
           {/* Subtle animated glow effect */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/5 via-transparent to-teal-500/5 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#0C5F4C]/5 via-transparent to-[#10B981]/5 pointer-events-none" />
         </div>
       </div>
 
@@ -413,33 +417,33 @@ function FlowStepCard({ step, stepIndex }: { step: FlowStep; stepIndex: number }
           animation: `${isVideoLeft ? 'fadeInFromRight' : 'fadeInFromLeft'} 0.5s ease-out 0.2s both`,
         }}
       >
-        {/* Step number badge */}
-        <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-3 rounded-full bg-gradient-to-r from-emerald-500/10 to-teal-600/10 border border-emerald-500/20">
-          <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white text-[10px] sm:text-xs font-bold">
+        {/* Step number badge - Matching Hero style */}
+        <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-3 rounded-full bg-[#0C5F4C]/10 border border-[#0C5F4C]/20">
+          <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-gradient-to-br from-[#0C5F4C] to-[#10B981] flex items-center justify-center text-white text-[10px] sm:text-xs font-bold">
             {step.id.split("-")[1]}
           </div>
-          <span className="text-[11px] sm:text-xs font-semibold text-emerald-400">
+          <span className="text-[11px] sm:text-xs font-semibold text-[#0C5F4C]">
             {step.subtitle}
           </span>
         </div>
 
-        {/* Title - Más pequeño */}
-        <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white leading-tight">
+        {/* Title - Matching Hero text style */}
+        <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 leading-tight">
           {step.title}
         </h3>
 
-        {/* Description - Más pequeño */}
-        <p className="text-xs sm:text-sm lg:text-base text-gray-300 leading-relaxed">
+        {/* Description - Matching Hero text style */}
+        <p className="text-xs sm:text-sm lg:text-base text-gray-700 leading-relaxed">
           {step.description}
         </p>
 
-        {/* Bullet points - Más pequeños y siempre alineados a la izquierda */}
+        {/* Bullet points - Matching Hero style */}
         {step.bullets.length > 0 && (
           <ul className="space-y-1.5 sm:space-y-2">
             {step.bullets.map((bullet, index) => (
               <li key={index} className="flex items-start gap-1.5 sm:gap-2">
-                <div className="mt-1 sm:mt-1.5 w-1 h-1 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex-shrink-0" />
-                <span className="text-gray-400 text-[11px] sm:text-xs lg:text-sm">
+                <div className="mt-1 sm:mt-1.5 w-1 h-1 rounded-full bg-gradient-to-br from-[#0C5F4C] to-[#10B981] flex-shrink-0" />
+                <span className="text-gray-700 text-[11px] sm:text-xs lg:text-sm">
                   {bullet}
                 </span>
               </li>
@@ -458,6 +462,9 @@ function FlowStepCard({ step, stepIndex }: { step: FlowStep; stepIndex: number }
 export function CashArtFlowSection() {
   const [activeFlowId, setActiveFlowId] = useState<string>(FLOWS[0].id);
   const [activeStepIndex, setActiveStepIndex] = useState<number>(0);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [globalMousePosition, setGlobalMousePosition] = useState({ x: 0, y: 0 });
+  const sectionRef = useRef<HTMLElement>(null);
 
   const activeFlow = FLOWS.find((f) => f.id === activeFlowId) || FLOWS[0];
   const activeStep = activeFlow.steps[activeStepIndex];
@@ -474,8 +481,45 @@ export function CashArtFlowSection() {
     setActiveStepIndex(index);
   };
 
-  // Auto-advance to next step when current step completes
+  // Mouse tracking para GridSpotlight
   useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => setGlobalMousePosition({ x: e.clientX, y: e.clientY });
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  // Intersection Observer - Detectar cuando la sección es visible
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // Activar solo cuando la sección es al menos 30% visible
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
+            setIsVisible(true);
+          }
+        });
+      },
+      {
+        threshold: [0.3], // Trigger cuando el 30% de la sección es visible
+        rootMargin: "0px",
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  // Auto-advance to next step when current step completes - SOLO si la sección es visible
+  useEffect(() => {
+    if (!isVisible) return; // No iniciar el timer si no es visible
+
     const timer = setTimeout(() => {
       // Si no es el último step, avanzar al siguiente
       if (activeStepIndex < activeFlow.steps.length - 1) {
@@ -488,54 +532,28 @@ export function CashArtFlowSection() {
     }, STEP_DURATION);
 
     return () => clearTimeout(timer);
-  }, [activeStepIndex, activeFlow.steps.length, STEP_DURATION]);
+  }, [activeStepIndex, activeFlow.steps.length, STEP_DURATION, isVisible]);
 
   return (
-    <section className="relative py-16 sm:py-24 lg:py-32 bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 overflow-hidden">
-      {/* Background elements - Railway-inspired */}
-      <div className="absolute inset-0 -z-10">
-        {/* Subtle grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `linear-gradient(rgba(16, 185, 129, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(16, 185, 129, 0.3) 1px, transparent 1px)`,
-            backgroundSize: "64px 64px",
-          }}
-        />
+    <section ref={sectionRef} className="relative py-16 sm:py-24 lg:py-32 overflow-hidden bg-gradient-to-br from-cyan-100 via-teal-100 to-emerald-100 animate-gradient-shift [color-scheme:light]">
+      {/* GridSpotlight - Grilla que sigue el mouse */}
+      <GridSpotlight mousePos={globalMousePosition} />
 
-        {/* Radial gradients for depth */}
-        <div
-          className="absolute top-0 left-1/4 w-[600px] h-[600px] opacity-20"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%)",
-            filter: "blur(60px)",
-          }}
-        />
-        <div
-          className="absolute bottom-0 right-1/4 w-[600px] h-[600px] opacity-20"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(20, 184, 166, 0.15) 0%, transparent 70%)",
-            filter: "blur(60px)",
-          }}
-        />
-      </div>
+      {/* SmoothGradientOverlay - Overlays animados como en Hero */}
+      <SmoothGradientOverlay />
 
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-10 sm:mb-12 lg:mb-16 space-y-4 sm:space-y-6">
 
 
-          {/* Main heading */}
-          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight px-4">
+          {/* Main heading - Matching Hero style */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight px-4">
             See how CashArt works in{" "}
-            <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#0C5F4C] via-[#10B981] to-[#0C5F4C] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift">
               a few simple flows
             </span>
           </h2>
-
-
         </div>
 
         {/* Flow Toggle */}
@@ -552,6 +570,7 @@ export function CashArtFlowSection() {
             activeStepIndex={activeStepIndex}
             onStepClick={handleStepClick}
             stepDuration={STEP_DURATION}
+            isVisible={isVisible}
           />
         </div>
 
