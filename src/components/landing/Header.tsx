@@ -32,9 +32,9 @@ export function Header() {
   return (
     <>
       <header className="fixed top-0 left-0 w-full z-50">
-        <div className="bg-gradient-to-b from-[#03172c]/95 via-[#032035]/80 to-transparent pt-4 pb-5">
+        <div className="pt-4 pb-5">
           <div className="mx-auto max-w-[1380px] px-4 sm:px-10">
-            <div className="flex h-16 sm:h-[78px] items-center justify-between gap-5 rounded-full bg-white/60 border border-white/80 shadow-[0_18px_45px_rgba(4,35,58,0.20)] backdrop-blur-2xl px-6 sm:px-10">
+            <div className="flex h-16 sm:h-[78px] items-center justify-between gap-5 rounded-full bg-white/70 border border-white/90 shadow-[0_8px_32px_rgba(0,0,0,0.08)] backdrop-blur-xl px-6 sm:px-10">
             {/* Logo - Left */}
               <div className="flex items-center flex-shrink-0 min-w-0">
                 <Link href="/" className="flex items-center">
@@ -46,31 +46,37 @@ export function Header() {
                 </Link>
               </div>
 
-            {/* Desktop Navigation - Center */}
+            {/* Desktop Navigation - Center (fixed order, same for all locales) */}
               <nav className="hidden xl:flex items-center gap-6 2xl:gap-8 text-[#0b2842]">
                 <Link
-                  href="/"
+                  href="#home"
                   className="text-sm 2xl:text-base font-semibold tracking-wide hover:text-[#048088] transition-colors whitespace-nowrap"
                 >
-                  {t('home')}
+                  Home
                 </Link>
                 <Link
                   href="#how-it-works"
                   className="text-sm 2xl:text-base font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors whitespace-nowrap"
                 >
-                  {t('howItWorks')}
+                  How It Works
                 </Link>
                 <Link
-                  href="#about"
+                  href="#benefits"
                   className="text-sm 2xl:text-base font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors whitespace-nowrap"
                 >
-                  {t('about')}
+                  Benefits
                 </Link>
                 <Link
-                  href="#pricing"
+                  href="#why-cashart"
                   className="text-sm 2xl:text-base font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors whitespace-nowrap"
                 >
-                  {t('pricing')}
+                  Why CashArt
+                </Link>
+                <Link
+                  href="#early-access"
+                  className="text-sm 2xl:text-base font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors whitespace-nowrap"
+                >
+                  Early Access
                 </Link>
               </nav>
 
@@ -108,32 +114,39 @@ export function Header() {
                     </SheetHeader>
                     <nav className="flex flex-col gap-4 mt-8 px-2">
                       <Link
-                        href="/"
+                        href="#home"
                         onClick={() => setMobileMenuOpen(false)}
                         className="text-lg font-semibold hover:text-[#048088] transition-colors py-2 break-words"
                       >
-                        {t('home')}
+                        Home
                       </Link>
                       <Link
                         href="#how-it-works"
                         onClick={() => setMobileMenuOpen(false)}
                         className="text-lg font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors py-2 break-words"
                       >
-                        {t('howItWorks')}
+                        How It Works
                       </Link>
                       <Link
-                        href="#about"
+                        href="#benefits"
                         onClick={() => setMobileMenuOpen(false)}
                         className="text-lg font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors py-2 break-words"
                       >
-                        {t('about')}
+                        Benefits
                       </Link>
                       <Link
-                        href="#pricing"
+                        href="#why-cashart"
                         onClick={() => setMobileMenuOpen(false)}
                         className="text-lg font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors py-2 break-words"
                       >
-                        {t('pricing')}
+                        Why CashArt
+                      </Link>
+                      <Link
+                        href="#early-access"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="text-lg font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors py-2 break-words"
+                      >
+                        Early Access
                       </Link>
                       <div className="border-t border-[#e1e6ef] pt-4 mt-4 space-y-3">
                         <Button
