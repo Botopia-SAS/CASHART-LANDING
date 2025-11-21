@@ -46,31 +46,37 @@ export function Header() {
                 </Link>
               </div>
 
-            {/* Desktop Navigation - Center */}
+            {/* Desktop Navigation - Center (fixed order, same for all locales) */}
               <nav className="hidden xl:flex items-center gap-6 2xl:gap-8 text-[#0b2842]">
                 <Link
-                  href="/"
+                  href="#home"
                   className="text-sm 2xl:text-base font-semibold tracking-wide hover:text-[#048088] transition-colors whitespace-nowrap"
                 >
-                  {t('home')}
+                  Home
                 </Link>
                 <Link
                   href="#how-it-works"
                   className="text-sm 2xl:text-base font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors whitespace-nowrap"
                 >
-                  {t('howItWorks')}
+                  How It Works
                 </Link>
                 <Link
-                  href="#about"
+                  href="#benefits"
                   className="text-sm 2xl:text-base font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors whitespace-nowrap"
                 >
-                  {t('about')}
+                  Benefits
                 </Link>
                 <Link
-                  href="#pricing"
+                  href="#why-cashart"
                   className="text-sm 2xl:text-base font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors whitespace-nowrap"
                 >
-                  {t('pricing')}
+                  Why CashArt
+                </Link>
+                <Link
+                  href="#early-access"
+                  className="text-sm 2xl:text-base font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors whitespace-nowrap"
+                >
+                  Early Access
                 </Link>
               </nav>
 
@@ -108,32 +114,39 @@ export function Header() {
                     </SheetHeader>
                     <nav className="flex flex-col gap-4 mt-8 px-2">
                       <Link
-                        href="/"
+                        href="#home"
                         onClick={() => setMobileMenuOpen(false)}
                         className="text-lg font-semibold hover:text-[#048088] transition-colors py-2 break-words"
                       >
-                        {t('home')}
+                        Home
                       </Link>
                       <Link
                         href="#how-it-works"
                         onClick={() => setMobileMenuOpen(false)}
                         className="text-lg font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors py-2 break-words"
                       >
-                        {t('howItWorks')}
+                        How It Works
                       </Link>
                       <Link
-                        href="#about"
+                        href="#benefits"
                         onClick={() => setMobileMenuOpen(false)}
                         className="text-lg font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors py-2 break-words"
                       >
-                        {t('about')}
+                        Benefits
                       </Link>
                       <Link
-                        href="#pricing"
+                        href="#why-cashart"
                         onClick={() => setMobileMenuOpen(false)}
                         className="text-lg font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors py-2 break-words"
                       >
-                        {t('pricing')}
+                        Why CashArt
+                      </Link>
+                      <Link
+                        href="#early-access"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="text-lg font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors py-2 break-words"
+                      >
+                        Early Access
                       </Link>
                       <div className="border-t border-[#e1e6ef] pt-4 mt-4 space-y-3">
                         <Button
