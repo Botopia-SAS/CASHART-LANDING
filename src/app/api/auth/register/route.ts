@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { authSchema } from '@/lib/validations/auth';
 import { addUserToSheet, getUserByEmail } from '@/lib/api/sheets';
 import * as bcrypt from 'bcryptjs';
+import emailService from '@/lib/services/email.service';
 
 export async function POST(request: NextRequest) {
   try {
@@ -27,6 +28,19 @@ export async function POST(request: NextRequest) {
       ...validatedData,
       password: hashedPassword,
     });
+
+    // Send welcome email to gallery
+    try {
+      await emailService.sendGalleryWelcomeEmail({
+        galleryName: validatedData.galleryName || validatedData.fullName,
+        fullName: validatedData.fullName,
+        email: validatedData.email,
+        phoneNumber: validatedData.phone,
+      });
+    } catch (emailError) {
+      console.error('Email sending failed (non-critical):', emailError);
+      // Don't fail the request if email fails
+    }
 
     return NextResponse.json(
       { message: 'User registered successfully' },
