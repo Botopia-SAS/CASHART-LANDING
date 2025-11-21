@@ -36,31 +36,32 @@ export function LanguageSwitcher() {
     router.push(newPath);
   };
 
+  const renderTrigger = (flag: string) => (
+    <Button
+      variant="ghost"
+      size="sm"
+      className="gap-1 text-sm font-semibold h-10 px-2 rounded-full bg-transparent text-[#0b2842] hover:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
+    >
+      <Globe className="h-4 w-4 text-[#0b2842]" />
+      <span>{flag}</span>
+    </Button>
+  );
+
   if (!mounted) {
-    return (
-      <Button variant="ghost" size="sm" className="gap-2 text-base h-10 px-3 text-gray-900 dark:text-gray-100">
-        <Globe className="h-4 w-4" />
-        <span className="hidden sm:inline">🇺🇸 English</span>
-        <span className="sm:hidden">🇺🇸</span>
-      </Button>
-    );
+    return renderTrigger('🇺🇸');
   }
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="sm" className="gap-2 text-base h-10 px-3 text-gray-900 dark:text-gray-100">
-          <Globe className="h-4 w-4" />
-          <span className="hidden sm:inline">{currentLanguage.flag} {currentLanguage.name}</span>
-          <span className="sm:hidden">{currentLanguage.flag}</span>
-        </Button>
+        {renderTrigger(currentLanguage.flag)}
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+      <DropdownMenuContent align="end" className="bg-white border border-[#e1e6ef] text-[#0b2842]">
         {languages.map((language) => (
           <DropdownMenuItem
             key={language.code}
             onClick={() => handleLanguageChange(language.code)}
-            className={`cursor-pointer text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700 ${currentLocale === language.code ? 'bg-gray-100 dark:bg-gray-700' : ''}`}
+            className={`cursor-pointer hover:bg-[#f0f4fb] ${currentLocale === language.code ? 'bg-[#f0f4fb]' : ''}`}
           >
             <span className="mr-2">{language.flag}</span>
             {language.name}
