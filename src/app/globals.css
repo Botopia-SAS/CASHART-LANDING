@@ -412,6 +412,91 @@
     }
   }
 
+  /* Flow step animations - Video flip on Y-axis and slide */
+  @keyframes flipSlideToRight {
+    0% {
+      transform: translateX(-50%) rotateY(0deg);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(25%) rotateY(90deg);
+      opacity: 0.3;
+    }
+    100% {
+      transform: translateX(0%) rotateY(0deg);
+      opacity: 1;
+    }
+  }
+
+  @keyframes flipSlideToLeft {
+    0% {
+      transform: translateX(50%) rotateY(0deg);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(-25%) rotateY(-90deg);
+      opacity: 0.3;
+    }
+    100% {
+      transform: translateX(0%) rotateY(0deg);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeOutLeft {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(-60px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes fadeOutRight {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(60px);
+      opacity: 0;
+    }
+  }
+
+  @keyframes fadeInFromLeft {
+    from {
+      transform: translateX(-60px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInFromRight {
+    from {
+      transform: translateX(60px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  /* Story progress animation - Instagram Stories style */
+  @keyframes storyProgress {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
   .animate-timeline-progress {
     animation: timeline-progress 6s ease-in-out forwards;
   }
