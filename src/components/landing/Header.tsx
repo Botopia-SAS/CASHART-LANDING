@@ -32,9 +32,9 @@ export function Header() {
   return (
     <>
       <header className="fixed top-0 left-0 w-full z-50">
-        <div className="bg-gradient-to-b from-[#03172c]/95 via-[#032035]/80 to-transparent pt-4 pb-5">
+        <div className="pt-4 pb-5">
           <div className="mx-auto max-w-[1380px] px-4 sm:px-10">
-            <div className="flex h-16 sm:h-[78px] items-center justify-between gap-5 rounded-full bg-white/60 border border-white/80 shadow-[0_18px_45px_rgba(4,35,58,0.20)] backdrop-blur-2xl px-6 sm:px-10">
+            <div className="flex h-16 sm:h-[78px] items-center justify-between gap-5 rounded-full bg-white/70 border border-white/90 shadow-[0_8px_32px_rgba(0,0,0,0.08)] backdrop-blur-xl px-6 sm:px-10">
             {/* Logo - Left */}
               <div className="flex items-center flex-shrink-0 min-w-0">
                 <Link href="/" className="flex items-center">
