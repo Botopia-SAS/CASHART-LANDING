@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { GridSpotlight } from "./hero/GridSpotlight";
 import { SmoothGradientOverlay } from "./hero/SmoothGradientOverlay";
 
@@ -15,8 +16,8 @@ type FlowStep = {
   subtitle: string;
   description: string;
   bullets: string[];
-  // 🎬 VIDEO PLACEHOLDER: Replace this with your actual video URL or Lottie animation
-  videoPlaceholder: string;
+  // 🖼️ IMAGE URL: Cloudinary image URL
+  imageUrl: string;
 };
 
 type Flow = {
@@ -26,19 +27,22 @@ type Flow = {
   steps: FlowStep[];
 };
 
-// Static flow IDs and video placeholders (translations will be loaded in component)
+// Static flow IDs and image URLs from Cloudinary
 const FLOW_CONFIG = [
   {
     id: "galleries",
-    videoPlaceholder: "gallery-overview",
+    imageUrl:
+      "https://res.cloudinary.com/ddb24jg29/image/upload/v1764053955/1_rxel3o.png",
   },
   {
     id: "collectors",
-    videoPlaceholder: "collector-overview",
+    imageUrl:
+      "https://res.cloudinary.com/ddb24jg29/image/upload/v1764053980/2_t8hvfh.png",
   },
   {
     id: "technology",
-    videoPlaceholder: "technology-overview",
+    imageUrl:
+      "https://res.cloudinary.com/ddb24jg29/image/upload/v1764056132/Dise%C3%B1o_sin_t%C3%ADtulo_-_2025-11-25T023511.941_yaoqxn.png",
   },
 ];
 
@@ -86,7 +90,7 @@ function FlowToggle({
                 }}
                 className={`
                   relative z-10 px-3 py-3 sm:px-6 sm:py-4 rounded-full font-semibold text-xs sm:text-sm md:text-base transition-all duration-300
-                  ${isActive ? 'text-white' : 'text-gray-700 hover:text-gray-900'}
+                  ${isActive ? "text-white" : "text-gray-700 hover:text-gray-900"}
                 `}
               >
                 {flow.label}
@@ -99,73 +103,49 @@ function FlowToggle({
   );
 }
 
+function FlowStepCard({
+  step,
+  stepIndex,
+}: {
+  step: FlowStep;
+  stepIndex: number;
+}) {
+  // Determinar si la imagen va a la izquierda o derecha según el índice del step
+  const isImageLeft = stepIndex % 2 === 0;
 
-function FlowStepCard({ step, stepIndex }: { step: FlowStep; stepIndex: number }) {
-  // Determinar si el video va a la izquierda o derecha según el índice del step
-  const isVideoLeft = stepIndex % 2 === 0;
+  // Estilo de máscara para degradado con transparencia en la parte superior
+  const imageStyle = {
+    maskImage:
+      "linear-gradient(to bottom, transparent 0%, black 15%, black 50%, transparent 100%), linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+    WebkitMaskImage:
+      "linear-gradient(to bottom, transparent 0%, black 15%, black 50%, transparent 100%), linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+    maskComposite: "intersect",
+    WebkitMaskComposite: "source-in",
+  };
 
   return (
-    <div className={`relative flex flex-col lg:flex-row items-center gap-4 sm:gap-6 lg:gap-12 px-4 max-w-7xl mx-auto ${isVideoLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
-      {/* VIDEO - Más grande y protagonista con animación de flip en eje Y y traslación */}
+    <div
+      className={`relative flex flex-col lg:flex-row items-center gap-4 sm:gap-6 lg:gap-12 px-4 max-w-7xl mx-auto ${isImageLeft ? "lg:flex-row" : "lg:flex-row-reverse"}`}
+    >
+      {/* IMAGE - Estilo Hero Mona Lisa con animación */}
       <div
-        key={`video-${step.id}`}
-        className="w-full lg:w-2/3 flex-shrink-0"
+        key={`image-${step.id}`}
+        className="relative w-full lg:w-2/3 flex justify-center lg:justify-end"
         style={{
-          transformStyle: 'preserve-3d',
-          perspective: '1000px',
-          animation: `${isVideoLeft ? 'flipSlideToRight' : 'flipSlideToLeft'} 0.6s ease-out`,
+          animation: `${isImageLeft ? "flipSlideToRight" : "flipSlideToLeft"} 0.6s ease-out`,
         }}
       >
-        <div className="relative aspect-video rounded-3xl overflow-hidden bg-white/90 backdrop-blur-sm border-2 border-[#0C5F4C]/20 shadow-2xl shadow-[#0C5F4C]/15">
-          {/* 🎬 VIDEO INTEGRATION POINT: Replace this div with your video component */}
-          {/* Example with video tag:
-            <video
-              src={`/videos/${step.videoPlaceholder}.mp4`}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover"
-            />
-          */}
-          {/* Example with Lottie:
-            <Lottie
-              animationData={require(`@/animations/${step.videoPlaceholder}.json`)}
-              loop
-              className="w-full h-full"
-            />
-          */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center px-6">
-              <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#0C5F4C]/15 via-[#10B981]/10 to-[#0C5F4C]/15 flex items-center justify-center border-2 border-[#0C5F4C]/25">
-                <svg
-                  className="w-12 h-12 text-[#0C5F4C]"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <p className="text-sm text-gray-700 font-mono">
-                Video: {step.videoPlaceholder}
-              </p>
-            </div>
-          </div>
-
-          {/* Subtle animated glow effect */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#0C5F4C]/5 via-transparent to-[#10B981]/5 pointer-events-none" />
+        <div className="relative w-full max-w-3xl h-[500px] sm:h-[600px] lg:h-[700px]">
+          {/* 🖼️ Cloudinary Image con estilo Hero */}
+          <Image
+            src={step.imageUrl}
+            alt={step.title}
+            fill
+            className="object-contain opacity-40 transition-all duration-300"
+            style={imageStyle}
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 66vw, 66vw"
+            priority
+          />
         </div>
       </div>
 
@@ -174,7 +154,7 @@ function FlowStepCard({ step, stepIndex }: { step: FlowStep; stepIndex: number }
         key={`text-${step.id}`}
         className="w-full lg:w-1/3 space-y-3 sm:space-y-4 text-left"
         style={{
-          animation: `${isVideoLeft ? 'fadeInFromRight' : 'fadeInFromLeft'} 0.5s ease-out 0.2s both`,
+          animation: `${isImageLeft ? "fadeInFromRight" : "fadeInFromLeft"} 0.5s ease-out 0.2s both`,
         }}
       >
         {/* Step number badge - Matching Hero style */}
@@ -220,24 +200,37 @@ function FlowStepCard({ step, stepIndex }: { step: FlowStep; stepIndex: number }
 // ==========================================
 
 export function CashArtFlowSection() {
-  const t = useTranslations('flowSection');
+  const t = useTranslations("flowSection");
   const [activeFlowId, setActiveFlowId] = useState<string>(FLOW_CONFIG[0].id);
-  const [globalMousePosition, setGlobalMousePosition] = useState({ x: 0, y: 0 });
+  const [globalMousePosition, setGlobalMousePosition] = useState({
+    x: 0,
+    y: 0,
+  });
   const sectionRef = useRef<HTMLElement>(null);
 
   // Build flows dynamically with translations
   const flows: Flow[] = FLOW_CONFIG.map((config) => ({
     id: config.id,
-    label: config.id === "galleries" ? "For Galleries" : config.id === "collectors" ? "Collectors" : "Technology",
+    label:
+      config.id === "galleries"
+        ? "For Galleries"
+        : config.id === "collectors"
+          ? "Collectors"
+          : "Technology",
     description: t(`${config.id}.title`),
     steps: [
       {
         id: `${config.id}-1`,
         title: t(`${config.id}.title`),
-        subtitle: config.id === "galleries" ? "For Galleries" : config.id === "collectors" ? "For Collectors" : "Technology",
+        subtitle:
+          config.id === "galleries"
+            ? "For Galleries"
+            : config.id === "collectors"
+              ? "For Collectors"
+              : "Technology",
         description: t(`${config.id}.description`),
         bullets: [],
-        videoPlaceholder: config.videoPlaceholder,
+        imageUrl: config.imageUrl,
       },
     ],
   }));
@@ -251,13 +244,17 @@ export function CashArtFlowSection() {
 
   // Mouse tracking para GridSpotlight
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => setGlobalMousePosition({ x: e.clientX, y: e.clientY });
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    const handleMouseMove = (e: MouseEvent) =>
+      setGlobalMousePosition({ x: e.clientX, y: e.clientY });
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative py-16 sm:py-24 lg:py-32 overflow-hidden bg-gradient-to-br from-cyan-100 via-teal-100 to-emerald-100 animate-gradient-shift [color-scheme:light]">
+    <section
+      ref={sectionRef}
+      className="relative py-16 sm:py-24 lg:py-32 overflow-hidden bg-gradient-to-br from-cyan-100 via-teal-100 to-emerald-100 animate-gradient-shift [color-scheme:light]"
+    >
       {/* GridSpotlight - Grilla que sigue el mouse */}
       <GridSpotlight mousePos={globalMousePosition} />
 
@@ -267,13 +264,11 @@ export function CashArtFlowSection() {
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-10 sm:mb-12 lg:mb-16 space-y-4 sm:space-y-6">
-
-
           {/* Main heading - Matching Hero style */}
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight px-4">
-            {t('title')}{" "}
+            {t("title")}{" "}
             <span className="bg-gradient-to-r from-[#0C5F4C] via-[#10B981] to-[#0C5F4C] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift">
-              {t('titleHighlight')}
+              {t("titleHighlight")}
             </span>
           </h2>
         </div>
@@ -289,8 +284,6 @@ export function CashArtFlowSection() {
         <div key={activeFlowId} className="mb-8 sm:mb-10 lg:mb-12">
           <FlowStepCard step={activeStep} stepIndex={0} />
         </div>
-
-        
       </div>
     </section>
   );
