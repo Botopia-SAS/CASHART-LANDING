@@ -9,6 +9,7 @@ import { useTranslations } from "next-intl";
 import { DashboardImage } from "./hero/DashboardImage";
 import { CTAButton } from "./hero/CTAButton";
 import { FeatureCard } from "./hero/FeatureCard";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -88,13 +89,14 @@ export function Hero() {
                       {t("registerButton")}
                     </Button>
 
-                    <Button
-                      variant="outline"
+                    <HoverBorderGradient
+                      containerClassName="w-full rounded-full"
+                      as="button"
                       onClick={() => setShowSurveyModal(true)}
-                      className="w-full border-2 border-[#0C5F4C]/40 text-[#0C5F4C] hover:border-[#0C5F4C] hover:bg-[#0C5F4C]/10 text-[15px] font-medium px-6 h-14 rounded-full whitespace-nowrap transition-colors"
+                      className="bg-transparent text-[15px] font-medium px-6 h-14 rounded-full whitespace-nowrap flex items-center justify-center"
                     >
-                      {t("collectorSurveyButton")}
-                    </Button>
+                      <span className="text-[#0C5F4C]">{t("collectorSurveyButton")}</span>
+                    </HoverBorderGradient>
                   </div>
                 </div>
               </div>

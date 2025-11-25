@@ -254,6 +254,11 @@
     "cta": "Open collector survey",
     "ctaSecondary": "Maybe later"
   },
+  "heroScrollDemo": {
+    "title": "Manage your business with",
+    "titleHighlight": "Total Control",
+    "imageAlt": "CashArt Dashboard for clients"
+  },
   "footer": {
     "tagline": "Revolutionizing art financing. Launching Q1 2026 in the USA.",
     "contact": "hello@cashart.com",

@@ -254,6 +254,11 @@
     "cta": "Abrir pesquisa para colecionadores",
     "ctaSecondary": "Talvez depois"
   },
+  "heroScrollDemo": {
+    "title": "Gerencie seu negócio com",
+    "titleHighlight": "Controle Total",
+    "imageAlt": "Painel CashArt para clientes"
+  },
   "footer": {
     "tagline": "Revolucionando o financiamento de arte. Lançamento Q1 2026 nos EUA.",
     "contact": "hello@cashart.com",

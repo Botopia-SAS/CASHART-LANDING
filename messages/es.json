@@ -254,6 +254,11 @@
     "cta": "Abrir encuesta para coleccionistas",
     "ctaSecondary": "Después"
   },
+  "heroScrollDemo": {
+    "title": "Gestiona tu negocio con",
+    "titleHighlight": "Control Total",
+    "imageAlt": "Dashboard de CashArt para clientes"
+  },
   "footer": {
     "tagline": "Revolucionando el financiamiento de arte. Lanzamiento Q1 2026 en EE.UU.",
     "contact": "hello@cashart.com",
