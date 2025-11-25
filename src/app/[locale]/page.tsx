@@ -1,5 +1,5 @@
 import { Header } from "@/components/landing/Header";
-import { Hero, HeroFeatureGrid } from "@/components/landing/Hero";
+import { Hero } from "@/components/landing/Hero";
 import { CashArtFlowSection } from "@/components/landing/CashArtFlowSection";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { Footer } from "@/components/landing/Footer";
@@ -13,11 +13,8 @@ export default function Home() {
       <div className="animate-fade-in">
         <Hero />
       </div>
-      <div className="animate-fade-in-up animate-delay-200 animate-fill-both">
-        <CashArtFlowSection />
-      </div>
       <div className="animate-fade-in-up animate-delay-300 animate-fill-both">
-        <HeroFeatureGrid />
+        <CashArtFlowSection />
       </div>
       <div className="animate-fade-in-up animate-delay-400 animate-fill-both">
         <HowItWorks />
