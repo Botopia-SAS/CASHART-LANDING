@@ -8,8 +8,8 @@ export function DashboardImage({ isHovering, alt }: { isHovering: boolean; alt: 
 
   // Optimized Cloudinary URLs with transformations
   const imageSrc = isHovering
-    ? "https://res.cloudinary.com/dzi2p0pqa/image/upload/f_auto,q_auto,w_1200/v1763696019/ofu7wiqsbleydwkrkaiu.png"
-    : "https://res.cloudinary.com/dzi2p0pqa/image/upload/f_auto,q_auto,w_1200/v1763693868/6fafd5bf-8cbe-4dc0-972e-f646922fa310.png";
+    ? "https://res.cloudinary.com/dzi2p0pqa/image/upload/v1764018241/uoukffnlpqf0lfdshwmp.png"
+    : "https://res.cloudinary.com/dzi2p0pqa/image/upload/v1764018274/mh1hkaddzwcranjmupbe.png";
 
   return (
     <div className="relative flex justify-center lg:justify-end lg:order-2">
