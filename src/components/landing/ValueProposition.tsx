@@ -22,7 +22,7 @@ export function ValueProposition() {
 
   return (
     <section
-      className="pt-48 pb-48 bg-gradient-to-b from-white via-gray-100 via-gray-300 via-gray-600 to-gray-900 text-white relative overflow-hidden"
+      className="pt-12 pb-32 bg-gradient-to-b from-white via-emerald-50 to-white relative overflow-hidden"
       style={{
         opacity,
         transition: 'opacity 0.3s ease-out'
@@ -45,26 +45,26 @@ export function ValueProposition() {
 
       <div className="container max-w-6xl mx-auto px-6 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
-          <h2 className="text-[40px] md:text-[52px] font-bold mb-8 text-white">
+          <h2 className="text-[32px] md:text-[40px] font-bold mb-8 text-gray-900">
             {t('title')}
           </h2>
-          <p className="text-[19px] md:text-[22px] text-gray-200 leading-relaxed mb-12">
+          <p className="text-[19px] md:text-[22px] text-gray-700 leading-relaxed mb-12">
             {t('description')}
           </p>
 
           {/* Stats grid with green accents */}
           <div className="grid md:grid-cols-3 gap-8 mt-16">
-            <div className="relative bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+            <div className="relative bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-emerald-200">
               <div className="text-4xl font-bold text-[#0C5F4C] mb-2">{t('stat1Value')}</div>
-              <div className="text-sm text-gray-300">{t('stat1Label')}</div>
+              <div className="text-sm text-gray-600">{t('stat1Label')}</div>
             </div>
-            <div className="relative bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+            <div className="relative bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-emerald-200">
               <div className="text-4xl font-bold text-[#0C5F4C] mb-2">{t('stat2Value')}</div>
-              <div className="text-sm text-gray-300">{t('stat2Label')}</div>
+              <div className="text-sm text-gray-600">{t('stat2Label')}</div>
             </div>
-            <div className="relative bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+            <div className="relative bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-emerald-200">
               <div className="text-4xl font-bold text-[#0C5F4C] mb-2">{t('stat3Value')}</div>
-              <div className="text-sm text-gray-300">{t('stat3Label')}</div>
+              <div className="text-sm text-gray-600">{t('stat3Label')}</div>
             </div>
           </div>
         </div>

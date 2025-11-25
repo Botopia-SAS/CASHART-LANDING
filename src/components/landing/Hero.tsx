@@ -6,8 +6,6 @@ import { useState, useEffect } from "react";
 import { AuthDialog } from "./AuthDialog";
 import { CollectorSurveyDialog } from "./CollectorSurveyDialog";
 import { useTranslations } from "next-intl";
-import { GridSpotlight } from "./hero/GridSpotlight";
-import { SmoothGradientOverlay } from "./hero/SmoothGradientOverlay";
 import { DashboardImage } from "./hero/DashboardImage";
 import { CTAButton } from "./hero/CTAButton";
 import { FeatureCard } from "./hero/FeatureCard";
@@ -18,17 +16,8 @@ export function Hero() {
   const [showSurveyModal, setShowSurveyModal] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
-  const [globalMousePosition, setGlobalMousePosition] = useState({
-    x: 0,
-    y: 0,
-  });
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) =>
-      setGlobalMousePosition({ x: e.clientX, y: e.clientY });
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+
 
   const handleButtonMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -37,11 +26,9 @@ export function Hero() {
 
   return (
     <>
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-cyan-100 via-teal-100 to-emerald-100 animate-gradient-shift [color-scheme:light]">
-        <GridSpotlight mousePos={globalMousePosition} />
-        <SmoothGradientOverlay />
+  <section className="relative flex items-center overflow-hidden pt-20 pb-0">{/* Background is now global */}
 
-        <div className="container max-w-7xl mx-auto relative z-10 px-4 sm:px-6 py-8 sm:py-20">
+  <div className="container max-w-7xl mx-auto relative z-10 px-4 sm:px-6"> 
           <div className="grid lg:grid-cols-2 gap-0 sm:gap-4 lg:gap-8 items-center">
             <DashboardImage isHovering={isHovering} alt={t("dashboardAlt")} />
 

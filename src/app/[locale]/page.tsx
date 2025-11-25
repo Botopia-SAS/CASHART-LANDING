@@ -3,12 +3,12 @@ import { Hero } from "@/components/landing/Hero";
 import { CashArtFlowSection } from "@/components/landing/CashArtFlowSection";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { Footer } from "@/components/landing/Footer";
-import { AnimatedBackground } from "@/components/landing/AnimatedBackground";
+import { GlobalSpotlightBackground } from "@/components/landing/GlobalSpotlightBackground";
 
 export default function Home() {
   return (
     <div className="min-h-screen relative">
-      <AnimatedBackground />
+      <GlobalSpotlightBackground />
       <Header />
       <div className="animate-fade-in">
         <Hero />

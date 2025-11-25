@@ -1,10 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { GridSpotlight } from "./hero/GridSpotlight";
-import { SmoothGradientOverlay } from "./hero/SmoothGradientOverlay";
 
 // ==========================================
 // DATA STRUCTURE - Fully configurable flows
@@ -202,10 +200,6 @@ function FlowStepCard({
 export function CashArtFlowSection() {
   const t = useTranslations("flowSection");
   const [activeFlowId, setActiveFlowId] = useState<string>(FLOW_CONFIG[0].id);
-  const [globalMousePosition, setGlobalMousePosition] = useState({
-    x: 0,
-    y: 0,
-  });
   const sectionRef = useRef<HTMLElement>(null);
 
   // Build flows dynamically with translations
@@ -242,24 +236,14 @@ export function CashArtFlowSection() {
     setActiveFlowId(newFlowId);
   };
 
-  // Mouse tracking para GridSpotlight
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) =>
-      setGlobalMousePosition({ x: e.clientX, y: e.clientY });
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+
 
   return (
     <section
       ref={sectionRef}
-      className="relative py-16 sm:py-24 lg:py-32 overflow-hidden bg-gradient-to-br from-cyan-100 via-teal-100 to-emerald-100 animate-gradient-shift [color-scheme:light]"
+      className="relative pt-4 sm:pt-6 lg:pt-8 pb-0 overflow-hidden"
     >
-      {/* GridSpotlight - Grilla que sigue el mouse */}
-      <GridSpotlight mousePos={globalMousePosition} />
-
-      {/* SmoothGradientOverlay - Overlays animados como en Hero */}
-      <SmoothGradientOverlay />
+      {/* Background is now global */}
 
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}

@@ -111,7 +111,7 @@ export function HowItWorks() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-16 sm:py-24 lg:py-32 overflow-hidden bg-gradient-to-br from-cyan-100 via-teal-100 to-emerald-100 animate-gradient-shift [color-scheme:light]"
+      className="relative py-8 sm:py-12 lg:py-16 overflow-hidden"
       id="how-it-works"
       style={{ opacity, transition: "opacity 0.3s ease-out" }}
     >
