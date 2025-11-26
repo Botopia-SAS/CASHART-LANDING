@@ -123,12 +123,12 @@ function FlowStepCard({
 
   return (
     <div
-      className={`relative flex flex-col lg:flex-row items-center gap-4 sm:gap-6 lg:gap-12 px-4 max-w-7xl mx-auto ${isImageLeft ? "lg:flex-row" : "lg:flex-row-reverse"}`}
+      className={`relative flex flex-col-reverse lg:flex-row items-center gap-4 sm:gap-6 lg:gap-12 px-4 max-w-7xl mx-auto ${isImageLeft ? "lg:flex-row" : "lg:flex-row-reverse"}`}
     >
       {/* IMAGE - Estilo Hero Mona Lisa con animación */}
       <div
         key={`image-${step.id}`}
-        className="relative w-full lg:w-2/3 flex justify-center lg:justify-end"
+        className="relative w-full lg:w-2/3 flex justify-center lg:justify-end -mt-12 lg:mt-0"
         style={{
           animation: `${isImageLeft ? "flipSlideToRight" : "flipSlideToLeft"} 0.6s ease-out`,
         }}
