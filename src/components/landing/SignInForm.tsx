@@ -39,8 +39,10 @@ export function SignInForm({ onSuccess }: SignInFormProps) {
       const mockUser = {
         id: '1',
         email: data.email,
-        name: data.email.split('@')[0],
-        role: 'collector' as const,
+        fullName: data.email.split('@')[0],
+        phone: '',
+        countryCode: '',
+        userType: 'collector' as const,
       };
 
       setUser(mockUser);

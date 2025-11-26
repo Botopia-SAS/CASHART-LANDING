@@ -66,8 +66,13 @@ export function SignUpForm({ onSuccess }: SignUpFormProps) {
       const mockUser = {
         id: '1',
         email: data.email,
-        name: data.fullName,
-        role: data.userType,
+        fullName: data.fullName,
+        phone: data.phone,
+        countryCode: data.countryCode,
+        userType: data.userType,
+        ...(data.userType === 'gallery' && data.galleryName
+          ? { galleryName: data.galleryName }
+          : {}),
       };
 
       setUser(mockUser);
