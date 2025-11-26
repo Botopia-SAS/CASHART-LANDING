@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
@@ -57,7 +57,7 @@ export function HoverBorderGradient({
   }, [hovered]);
   return (
     <Tag
-      onMouseEnter={(event: React.MouseEvent<HTMLDivElement>) => {
+      onMouseEnter={() => {
         setHovered(true);
       }}
       onMouseLeave={() => setHovered(false)}
@@ -77,11 +77,13 @@ export function HoverBorderGradient({
       >
         {React.Children.map(children, (child) => {
           if (React.isValidElement(child)) {
-            return React.cloneElement(child as React.ReactElement<any>, {
-              style: hovered ? { color: 'white', ...(child.props?.style || {}) } : child.props?.style,
-              className: hovered 
-                ? cn(child.props?.className, '!text-white') 
-                : child.props?.className
+            const childElement = child as React.ReactElement<any>;
+            const childProps = childElement.props as { style?: React.CSSProperties; className?: string };
+            return React.cloneElement(childElement, {
+              style: hovered ? { color: 'white', ...(childProps.style || {}) } : childProps.style,
+              className: hovered
+                ? cn(childProps.className, '!text-white')
+                : childProps.className
             });
           }
           return child;
