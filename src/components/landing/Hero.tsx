@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Shield, DollarSign, Clock } from "lucide-react";
+import { Shield, DollarSign, Clock, Calendar } from "lucide-react";
 import { useState, useEffect } from "react";
 import { AuthDialog } from "./AuthDialog";
 import { CollectorSurveyDialog } from "./CollectorSurveyDialog";
@@ -49,10 +49,17 @@ export function Hero() {
                 </span>
               </h1>
 
-              <p className="text-lg sm:text-xl md:text-[22px] text-gray-700 font-medium leading-relaxed tracking-tight animate-fade-in-up animate-delay-200 animate-fill-both drop-shadow-sm">
-                {t("descriptionPart1")}
-                {t("descriptionPart2")}
-              </p>
+              <div className="space-y-2">
+                <p className="text-lg sm:text-xl md:text-[22px] text-gray-700 font-medium leading-relaxed tracking-tight animate-fade-in-up animate-delay-200 animate-fill-both drop-shadow-sm">
+                  {t("descriptionPart1")}
+                  {t("descriptionPart2")}
+                </p>
+                {/* Launch Text - Small Badge Style */}
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs sm:text-sm font-medium bg-[#0C5F4C]/10 text-[#0C5F4C] border border-[#0C5F4C]/20 animate-fade-in-up animate-delay-250 animate-fill-both">
+                  <Calendar className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+                  <span>{t("launchText")}</span>
+                </div>
+              </div>
 
               <div className="relative pt-4 group animate-scale-in animate-delay-300 animate-fill-both">
                 <div
