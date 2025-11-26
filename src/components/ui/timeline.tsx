@@ -48,7 +48,7 @@ export const Timeline = ({
   const heightTransform = useTransform(
     scrollYProgress,
     [0, 0.3, 0.6, 0.9, 1],
-    [height * 0.3, height * 0.8, height * 1.2, height * 1.6, height * 2.5]
+    [height * 0.3, height * 0.8, height * 1.2, height * 1.7, height * 3]
   );
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0.8, 1]);
 
@@ -57,7 +57,7 @@ export const Timeline = ({
       className="w-full bg-transparent font-sans md:px-10"
       ref={containerRef}
     >
-      <div className="max-w-7xl mx-auto py-10 md:py-16 px-4 md:px-8 lg:px-10 text-center">
+      <div className="max-w-7xl mx-auto py-6 md:py-10 px-4 md:px-8 lg:px-10 text-center">
         {title && (
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4 max-w-5xl mx-auto">
             {title}
@@ -74,11 +74,11 @@ export const Timeline = ({
         {data.map((item, index) => (
           <div
             key={index}
-            className="flex justify-start pt-10 md:pt-40 md:gap-10"
+            className="flex justify-start pt-6 md:pt-20 md:gap-10"
           >
             <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
-              <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-transparent flex items-center justify-center">
-                <div className="h-4 w-4 rounded-full bg-white border-2 border-white" />
+              <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white flex items-center justify-center shadow-md">
+                <div className="h-2 w-2 rounded-full bg-[#0C5F4C]" />
               </div>
               <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-gray-900">
                 {item.title}
@@ -95,7 +95,7 @@ export const Timeline = ({
         ))}
         <div
           style={{
-            height: height * 1.5 + "px",
+            height: height * 1.8 + "px",
           }}
           className="absolute md:left-8 left-8 top-0 overflow-visible w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200 via-[10%] to-transparent to-[100%] dark:via-neutral-800 [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
         >
