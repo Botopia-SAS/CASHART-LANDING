@@ -33,26 +33,21 @@ export function SignInForm({ onSuccess }: SignInFormProps) {
 
   const onSubmit = async (data: LoginFormData) => {
     setIsLoading(true);
-    try {
-      const response = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
 
-      if (!response.ok) {
-        throw new Error('Login failed');
-      }
+    // Simulate login - auto redirect to dashboard
+    setTimeout(() => {
+      const mockUser = {
+        id: '1',
+        email: data.email,
+        name: data.email.split('@')[0],
+        role: 'collector' as const,
+      };
 
-      const userData = await response.json();
-      setUser(userData.user);
+      setUser(mockUser);
       onSuccess();
       router.push(`/${locale}/dashboard`);
-    } catch (error) {
-      console.error('Login error:', error);
-    } finally {
       setIsLoading(false);
-    }
+    }, 500);
   };
 
   return (

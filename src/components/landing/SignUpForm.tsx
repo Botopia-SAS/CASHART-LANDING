@@ -3,11 +3,13 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
+import { useRouter } from 'next/navigation';
 import { authSchema, type AuthFormData } from '@/lib/validations/auth';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { useAuthStore } from '@/lib/store/auth-store';
 import {
   Select,
   SelectContent,
@@ -37,6 +39,9 @@ interface SignUpFormProps {
 
 export function SignUpForm({ onSuccess }: SignUpFormProps) {
   const t = useTranslations('auth');
+  const locale = useLocale();
+  const router = useRouter();
+  const setUser = useAuthStore((state) => state.setUser);
   const [userType, setUserType] = useState<'collector' | 'gallery'>('collector');
   const [isLoading, setIsLoading] = useState(false);
 
@@ -55,23 +60,21 @@ export function SignUpForm({ onSuccess }: SignUpFormProps) {
 
   const onSubmit = async (data: AuthFormData) => {
     setIsLoading(true);
-    try {
-      const response = await fetch('/api/auth/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
 
-      if (!response.ok) {
-        throw new Error('Registration failed');
-      }
+    // Simulate registration - auto redirect to dashboard
+    setTimeout(() => {
+      const mockUser = {
+        id: '1',
+        email: data.email,
+        name: data.fullName,
+        role: data.userType,
+      };
 
+      setUser(mockUser);
       onSuccess();
-    } catch (error) {
-      console.error('Registration error:', error);
-    } finally {
+      router.push(`/${locale}/dashboard`);
       setIsLoading(false);
-    }
+    }, 500);
   };
 
   return (
