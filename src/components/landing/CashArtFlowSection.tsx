@@ -123,12 +123,12 @@ function FlowStepCard({
 
   return (
     <div
-      className={`relative flex flex-col-reverse lg:flex-row items-center gap-4 sm:gap-6 lg:gap-12 px-4 max-w-7xl mx-auto ${isImageLeft ? "lg:flex-row" : "lg:flex-row-reverse"}`}
+      className={`relative flex flex-col lg:flex-row items-center gap-4 sm:gap-6 lg:gap-12 px-4 max-w-7xl mx-auto ${isImageLeft ? "lg:flex-row" : "lg:flex-row-reverse"}`}
     >
-      {/* IMAGE - Estilo Hero Mona Lisa con animación */}
+      {/* IMAGE - Mobile Background / Desktop Side Image */}
       <div
         key={`image-${step.id}`}
-        className="relative w-full lg:w-2/3 flex justify-center lg:justify-end -mt-12 lg:mt-0"
+        className="absolute inset-0 lg:relative w-full lg:w-2/3 flex justify-center lg:justify-end -mt-12 lg:mt-0 z-0 lg:z-auto opacity-20 lg:opacity-100 pointer-events-none lg:pointer-events-auto"
         style={{
           animation: `${isImageLeft ? "flipSlideToRight" : "flipSlideToLeft"} 0.6s ease-out`,
         }}
@@ -139,7 +139,7 @@ function FlowStepCard({
             src={step.imageUrl}
             alt={step.title}
             fill
-            className="object-contain opacity-40 transition-all duration-300"
+            className="object-contain lg:opacity-40 transition-all duration-300"
             style={imageStyle}
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 66vw, 66vw"
             priority
@@ -147,16 +147,16 @@ function FlowStepCard({
         </div>
       </div>
 
-      {/* TEXTO - Más pequeño y siempre alineado a la izquierda con fade */}
+      {/* TEXTO - Centered on Mobile / Left aligned on Desktop */}
       <div
         key={`text-${step.id}`}
-        className="w-full lg:w-1/3 space-y-3 sm:space-y-4 text-left"
+        className="relative z-10 w-full lg:w-1/3 space-y-3 sm:space-y-4 text-center lg:text-left flex flex-col items-center lg:items-start pt-32 lg:pt-0"
         style={{
           animation: `${isImageLeft ? "fadeInFromRight" : "fadeInFromLeft"} 0.5s ease-out 0.2s both`,
         }}
       >
         {/* Step number badge - Matching Hero style */}
-        <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-3 rounded-full bg-[#0C5F4C]/10 border border-[#0C5F4C]/20">
+        <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-3 rounded-full bg-[#0C5F4C]/10 border border-[#0C5F4C]/20 backdrop-blur-sm">
           <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-gradient-to-br from-[#0C5F4C] to-[#10B981] flex items-center justify-center text-white text-[10px] sm:text-xs font-bold">
             {step.id.split("-")[1]}
           </div>
@@ -171,13 +171,13 @@ function FlowStepCard({
         </h3>
 
         {/* Description - Matching Hero text style */}
-        <p className="text-xs sm:text-sm lg:text-base text-gray-700 leading-relaxed">
+        <p className="text-xs sm:text-sm lg:text-base text-gray-700 leading-relaxed max-w-md lg:max-w-none mx-auto lg:mx-0">
           {step.description}
         </p>
 
         {/* Bullet points - Matching Hero style */}
         {step.bullets.length > 0 && (
-          <ul className="space-y-1.5 sm:space-y-2">
+          <ul className="space-y-1.5 sm:space-y-2 text-left w-full max-w-md lg:max-w-none mx-auto lg:mx-0">
             {step.bullets.map((bullet, index) => (
               <li key={index} className="flex items-start gap-1.5 sm:gap-2">
                 <div className="mt-1 sm:mt-1.5 w-1 h-1 rounded-full bg-gradient-to-br from-[#0C5F4C] to-[#10B981] flex-shrink-0" />
