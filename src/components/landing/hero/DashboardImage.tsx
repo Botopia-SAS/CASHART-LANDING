@@ -27,7 +27,7 @@ export function DashboardImage({
     : "https://res.cloudinary.com/dzi2p0pqa/image/upload/v1764018274/mh1hkaddzwcranjmupbe.png";
 
   return (
-    <div className="relative flex justify-center lg:justify-end lg:order-2 -mx-4 sm:mx-0 -mt-8 sm:mt-0 -mb-12 sm:mb-0">
+    <div className="absolute inset-0 flex justify-center lg:relative lg:justify-end lg:order-2 -mx-4 sm:mx-0 -mt-34 sm:mt-0 -mb-12 sm:mb-0 z-10 lg:z-auto">
       {/* Mobile version con degradado inferior */}
       <div className="relative w-full max-w-3xl h-[800px] sm:hidden">
         <Image

@@ -241,7 +241,7 @@ export function CashArtFlowSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-4 sm:py-6 lg:py-8 overflow-hidden"
+      className="relative py-8 sm:py-6 lg:py-8 overflow-hidden mt-12 sm:mt-0"
     >
       {/* Background is now global */}
 

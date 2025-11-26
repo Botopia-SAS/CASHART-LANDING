@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Shield, DollarSign, Clock } from "lucide-react";
+import { Shield, DollarSign, Clock, Calendar } from "lucide-react";
 import { useState, useEffect } from "react";
 import { AuthDialog } from "./AuthDialog";
 import { CollectorSurveyDialog } from "./CollectorSurveyDialog";
@@ -27,32 +27,42 @@ export function Hero() {
 
   return (
     <>
-  <section className="relative flex items-center overflow-hidden pt-20 pb-0">{/* Background is now global */}
+      <section className="relative flex items-center overflow-hidden pt-20 pb-0">{/* Background is now global */}
 
-  <div className="container max-w-7xl mx-auto relative z-10 px-4 sm:px-6"> 
-          <div className="grid lg:grid-cols-2 gap-0 sm:gap-4 lg:gap-8 items-center">
+        <div className="container max-w-7xl mx-auto relative z-10 px-4 sm:px-6">
+          <div className="relative grid lg:grid-cols-2 gap-0 sm:gap-2 lg:gap-8 items-center">
             <DashboardImage isHovering={isHovering} alt={t("dashboardAlt")} />
 
-            <div className="space-y-6 lg:pr-8 lg:order-1">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-[#0C5F4C]/10 text-[#0C5F4C] border border-[#0C5F4C]/20 animate-fade-in-down">
+            <div className="relative z-20 space-y-2 sm:space-y-3 lg:space-y-6 lg:pr-8 lg:order-1 sm:-mt-4 lg:mt-0 pt-90 sm:pt-0 text-center lg:text-left flex flex-col items-center lg:items-start lg:block">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-[#0C5F4C]/10 backdrop-blur-sm text-[#0C5F4C] border border-[#0C5F4C]/20 animate-fade-in-down">
                 {t("earlyAccessBadge")}
               </div>
 
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1] animate-fade-in-up animate-delay-100 animate-fill-both break-words hyphens-auto">
-                <span className="text-gray-900">{t("title")} </span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1] animate-fade-in-up animate-delay-100 animate-fill-both break-words hyphens-auto drop-shadow-lg">
+                <span className="text-gray-900 drop-shadow-md">{t("title")} </span>
                 <br />
                 <span
-                  className="bg-gradient-to-r from-[#0C5F4C] via-[#10B981] to-[#0C5F4C] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift"
+                  className="bg-gradient-to-r from-[#0C5F4C] via-[#10B981] to-[#0C5F4C] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift drop-shadow-md"
                   style={{ textShadow: "0 0 40px rgba(16, 185, 129, 0.3)" }}
                 >
                   {t("titleHighlight")}
                 </span>
               </h1>
 
-              <p className="text-lg sm:text-xl md:text-[22px] text-gray-700 font-medium leading-relaxed tracking-tight animate-fade-in-up animate-delay-200 animate-fill-both drop-shadow-sm">
+              <p className="text-lg sm:text-xl md:text-[22px] text-gray-700 font-medium leading-relaxed tracking-tight animate-fade-in-up animate-delay-200 animate-fill-both drop-shadow-md">
                 {t("descriptionPart1")}
                 {t("descriptionPart2")}
               </p>
+
+              <div className="inline-flex sm:hidden items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-[#0C5F4C]/15 backdrop-blur-sm text-[#0C5F4C] border border-[#0C5F4C]/30 animate-fade-in-up animate-delay-200 animate-fill-both mt-2">
+                <Calendar className="h-3 w-3" />
+                {t("launchBadge")}
+              </div>
+
+              <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-[#0C5F4C]/15 text-[#0C5F4C] border border-[#0C5F4C]/30 animate-fade-in-up animate-delay-200 animate-fill-both -mt-1 sm:mt-0">
+                <Calendar className="h-3 w-3" />
+                {t("launchBadge")}
+              </div>
 
               <div className="relative pt-4 group animate-scale-in animate-delay-300 animate-fill-both">
                 <div
@@ -81,19 +91,28 @@ export function Hero() {
                     />
                   </div>
 
-                  <div className="flex flex-col sm:flex-row gap-3">
+                  <HoverBorderGradient
+                    containerClassName="hidden lg:flex w-full rounded-full"
+                    as="button"
+                    onClick={() => setShowSurveyModal(true)}
+                    className="bg-transparent text-[15px] font-medium px-6 h-14 rounded-full whitespace-nowrap flex items-center justify-center w-full"
+                  >
+                    <span className="text-[#0C5F4C]">{t("collectorSurveyButton")}</span>
+                  </HoverBorderGradient>
+
+                  <div className="flex flex-row gap-3 lg:hidden">
                     <Button
                       onClick={() => setShowAuth(true)}
-                      className="md:hidden w-full bg-[#0C5F4C] hover:bg-[#0A4F3E] text-white text-[15px] font-medium px-6 h-14 rounded-full whitespace-nowrap transition-all"
+                      className="w-1/2 bg-[#0C5F4C] hover:bg-[#0A4F3E] text-white text-[15px] font-medium px-4 sm:px-6 h-14 rounded-full whitespace-nowrap transition-all"
                     >
                       {t("registerButton")}
                     </Button>
 
                     <HoverBorderGradient
-                      containerClassName="w-full rounded-full"
+                      containerClassName="w-1/2 rounded-full"
                       as="button"
                       onClick={() => setShowSurveyModal(true)}
-                      className="bg-transparent text-[15px] font-medium px-6 h-14 rounded-full whitespace-nowrap flex items-center justify-center"
+                      className="bg-transparent text-[15px] font-medium px-4 sm:px-6 h-14 rounded-full whitespace-nowrap flex items-center justify-center"
                     >
                       <span className="text-[#0C5F4C]">{t("collectorSurveyButton")}</span>
                     </HoverBorderGradient>
