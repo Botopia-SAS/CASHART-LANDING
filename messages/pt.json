@@ -178,6 +178,21 @@
       "description": "Uma plataforma construída por especialistas em arte e finanças."
     }
   },
+  "timeline": {
+    "subtitle": "Nossa jornada em direção à revolução do financiamento de arte.",
+    "jan_2026": {
+      "title": "Janeiro 2026",
+      "description": "Lançamento oficial do CashArt nos Estados Unidos. Plataforma completa com painel para galerias e colecionadores, processamento de pagamentos instantâneos e gestão de risco de crédito."
+    },
+    "oct_2025": {
+      "title": "Outubro 2025",
+      "description": "Desenvolvimento das funcionalidades principais: sistema de pagamentos, painel de gestão e processo de onboarding para galerias e colecionadores."
+    },
+    "jul_2025": {
+      "title": "Julho 2025",
+      "description": "Desenvolvimento de componentes-chave da plataforma: sistema de financiamento flexível, painel de gestão para galerias, processo de aprovação automatizado e integração com processadores de pagamento."
+    }
+  },
   "survey": {
     "title": "Molde o futuro do colecionismo de arte",
     "subtitle": "Leva só 1 minuto",
