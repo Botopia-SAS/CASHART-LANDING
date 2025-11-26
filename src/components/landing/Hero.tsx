@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Shield, DollarSign, Clock, Calendar } from "lucide-react";
 import { useState, useEffect } from "react";
 import { AuthDialog } from "./AuthDialog";
-import { CollectorSurveyDialog } from "./CollectorSurveyDialog";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { DashboardImage } from "./hero/DashboardImage";
 import { CTAButton } from "./hero/CTAButton";
 import { FeatureCard } from "./hero/FeatureCard";
@@ -13,8 +14,9 @@ import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 
 export function Hero() {
   const t = useTranslations("hero");
+  const pathname = usePathname();
+  const locale = pathname.split('/')[1] || 'en';
   const [showAuth, setShowAuth] = useState(false);
-  const [showSurveyModal, setShowSurveyModal] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
 
@@ -91,14 +93,15 @@ export function Hero() {
                     />
                   </div>
 
-                  <HoverBorderGradient
-                    containerClassName="hidden lg:flex w-full rounded-full"
-                    as="button"
-                    onClick={() => setShowSurveyModal(true)}
-                    className="bg-transparent text-[15px] font-medium px-6 h-14 rounded-full whitespace-nowrap flex items-center justify-center w-full"
-                  >
-                    <span className="text-[#0C5F4C]">{t("collectorSurveyButton")}</span>
-                  </HoverBorderGradient>
+                  <Link href={`/${locale}/survey`}>
+                    <HoverBorderGradient
+                      containerClassName="hidden lg:flex w-full rounded-full"
+                      as="button"
+                      className="bg-transparent text-[15px] font-medium px-6 h-14 rounded-full whitespace-nowrap flex items-center justify-center w-full"
+                    >
+                      <span className="text-[#0C5F4C]">{t("collectorSurveyButton")}</span>
+                    </HoverBorderGradient>
+                  </Link>
 
                   <div className="flex flex-row gap-3 lg:hidden">
                     <Button
@@ -108,14 +111,15 @@ export function Hero() {
                       {t("registerButton")}
                     </Button>
 
-                    <HoverBorderGradient
-                      containerClassName="w-1/2 rounded-full"
-                      as="button"
-                      onClick={() => setShowSurveyModal(true)}
-                      className="bg-transparent text-[15px] font-medium px-4 sm:px-6 h-14 rounded-full whitespace-nowrap flex items-center justify-center"
-                    >
-                      <span className="text-[#0C5F4C]">{t("collectorSurveyButton")}</span>
-                    </HoverBorderGradient>
+                    <Link href={`/${locale}/survey`} className="w-1/2">
+                      <HoverBorderGradient
+                        containerClassName="w-full rounded-full"
+                        as="button"
+                        className="bg-transparent text-[15px] font-medium px-4 sm:px-6 h-14 rounded-full whitespace-nowrap flex items-center justify-center w-full"
+                      >
+                        <span className="text-[#0C5F4C]">{t("collectorSurveyButton")}</span>
+                      </HoverBorderGradient>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -127,10 +131,6 @@ export function Hero() {
         open={showAuth}
         onOpenChange={setShowAuth}
         defaultMode="signup"
-      />
-      <CollectorSurveyDialog
-        open={showSurveyModal}
-        onOpenChange={setShowSurveyModal}
       />
     </>
   );

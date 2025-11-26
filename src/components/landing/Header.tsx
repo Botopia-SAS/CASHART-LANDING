@@ -3,10 +3,10 @@
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { AuthDialog } from './AuthDialog';
-import { CollectorSurveyDialog } from './CollectorSurveyDialog';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu } from 'lucide-react';
 import {
   Sheet,
@@ -18,9 +18,10 @@ import {
 
 export function Header() {
   const t = useTranslations('header');
+  const pathname = usePathname();
+  const locale = pathname.split('/')[1] || 'en';
   const [showAuth, setShowAuth] = useState(false);
   const [authMode, setAuthMode] = useState<'signin' | 'signup'>('signin');
-  const [showSurvey, setShowSurvey] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleAuthClick = (mode: 'signin' | 'signup') => {
@@ -83,13 +84,14 @@ export function Header() {
             {/* Right Actions - Desktop */}
               <div className="hidden lg:flex items-center gap-3 xl:gap-4 flex-shrink-0">
                 <LanguageSwitcher />
-                <Button
-                  variant="secondary"
-                  onClick={() => setShowSurvey(true)}
-                  className="hidden xl:flex text-sm 2xl:text-base font-semibold bg-[#0f8b8c]/95 text-white hover:bg-[#0c7071] px-5 2xl:px-6 h-10 2xl:h-11 rounded-full whitespace-nowrap border border-white/80 shadow-[0_4px_18px_rgba(0,0,0,0.08)]"
-                >
-                  {t('collectorSurveyButton')}
-                </Button>
+                <Link href={`/${locale}/survey`}>
+                  <Button
+                    variant="secondary"
+                    className="hidden xl:flex text-sm 2xl:text-base font-semibold bg-[#0f8b8c]/95 text-white hover:bg-[#0c7071] px-5 2xl:px-6 h-10 2xl:h-11 rounded-full whitespace-nowrap border border-white/80 shadow-[0_4px_18px_rgba(0,0,0,0.08)]"
+                  >
+                    {t('collectorSurveyButton')}
+                  </Button>
+                </Link>
                 <Button
                   onClick={() => handleAuthClick('signup')}
                   className="bg-white border border-[#11a987] text-[#0b2842] text-sm 2xl:text-base font-semibold px-5 2xl:px-6 h-10 2xl:h-11 rounded-full whitespace-nowrap hover:bg-[#11a987]/10 transition"
@@ -149,16 +151,14 @@ export function Header() {
                         Early Access
                       </Link>
                       <div className="border-t border-[#e1e6ef] pt-4 mt-4 space-y-3">
-                        <Button
-                          variant="secondary"
-                          onClick={() => {
-                            setShowSurvey(true);
-                            setMobileMenuOpen(false);
-                          }}
-                        className="w-full text-base font-semibold bg-[#0f8b8c]/95 text-white hover:bg-[#0c7071] h-11 rounded-full break-words border border-white/80"
-                        >
-                          {t('collectorSurveyButton')}
-                        </Button>
+                        <Link href={`/${locale}/survey`} onClick={() => setMobileMenuOpen(false)}>
+                          <Button
+                            variant="secondary"
+                            className="w-full text-base font-semibold bg-[#0f8b8c]/95 text-white hover:bg-[#0c7071] h-11 rounded-full break-words border border-white/80"
+                          >
+                            {t('collectorSurveyButton')}
+                          </Button>
+                        </Link>
                       <Button
                         onClick={() => handleAuthClick('signup')}
                         className="w-full text-base font-semibold h-11 rounded-full break-words bg-white border border-[#11a987] text-[#0b2842] hover:bg-[#11a987]/10"
@@ -179,7 +179,6 @@ export function Header() {
         onOpenChange={setShowAuth}
         defaultMode={authMode}
       />
-      <CollectorSurveyDialog open={showSurvey} onOpenChange={setShowSurvey} />
     </>
   );
 }
