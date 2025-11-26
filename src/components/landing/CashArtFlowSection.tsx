@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
@@ -155,23 +155,13 @@ function FlowStepCard({
           animation: `${isImageLeft ? "fadeInFromRight" : "fadeInFromLeft"} 0.5s ease-out 0.2s both`,
         }}
       >
-        {/* Step number badge - Matching Hero style */}
-        <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-3 rounded-full bg-[#0C5F4C]/10 border border-[#0C5F4C]/20 backdrop-blur-sm">
-          <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-gradient-to-br from-[#0C5F4C] to-[#10B981] flex items-center justify-center text-white text-[10px] sm:text-xs font-bold">
-            {step.id.split("-")[1]}
-          </div>
-          <span className="text-[11px] sm:text-xs font-semibold text-[#0C5F4C]">
-            {step.subtitle}
-          </span>
-        </div>
-
         {/* Title - Matching Hero text style */}
-        <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 leading-tight">
+        <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
           {step.title}
         </h3>
 
         {/* Description - Matching Hero text style */}
-        <p className="text-xs sm:text-sm lg:text-base text-gray-700 leading-relaxed max-w-md lg:max-w-none mx-auto lg:mx-0">
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed max-w-md lg:max-w-none mx-auto lg:mx-0">
           {step.description}
         </p>
 
@@ -201,6 +191,31 @@ export function CashArtFlowSection() {
   const t = useTranslations("flowSection");
   const [activeFlowId, setActiveFlowId] = useState<string>(FLOW_CONFIG[0].id);
   const sectionRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const currentRef = sectionRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
 
   // Build flows dynamically with translations
   const flows: Flow[] = FLOW_CONFIG.map((config) => ({
@@ -241,7 +256,7 @@ export function CashArtFlowSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-8 sm:py-6 lg:py-8 overflow-hidden mt-12 sm:mt-0"
+      className={`relative py-8 sm:py-6 lg:py-8 overflow-hidden mt-12 sm:mt-0 ${isVisible ? 'animate-slide-in-left-responsive' : 'opacity-0'}`}
     >
       {/* Background is now global */}
 
@@ -249,7 +264,7 @@ export function CashArtFlowSection() {
         {/* Section Header */}
         <div className="text-center mb-10 sm:mb-12 lg:mb-16 space-y-4 sm:space-y-6">
           {/* Main heading - Matching Hero style */}
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight px-4">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight px-4">
             {t("title")}{" "}
             <span className="bg-gradient-to-r from-[#0C5F4C] via-[#10B981] to-[#0C5F4C] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift">
               {t("titleHighlight")}

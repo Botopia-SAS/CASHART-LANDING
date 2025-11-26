@@ -11,12 +11,8 @@ export default function Home() {
     <div className="min-h-screen relative">
       <GlobalSpotlightBackground />
       <Header />
-      <div className="animate-fade-in">
-        <Hero />
-      </div>
-      <div className="animate-fade-in-up animate-delay-300 animate-fill-both">
-        <CashArtFlowSection />
-      </div>
+      <Hero />
+      <CashArtFlowSection />
       <div className="animate-fade-in-up animate-delay-400 animate-fill-both">
         <HowItWorks />
       </div>

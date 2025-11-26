@@ -476,6 +476,29 @@
     }
   }
 
+  /* Animación desde la izquierda para scroll en responsive */
+  @keyframes slideInFromLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-slide-in-left {
+    animation: slideInFromLeft 0.8s ease-out forwards;
+  }
+
+  /* Solo aplicar en móvil (responsive) */
+  @media (max-width: 1023px) {
+    .animate-slide-in-left-responsive {
+      animation: slideInFromLeft 0.8s ease-out forwards;
+    }
+  }
+
   @keyframes fadeInFromRight {
     from {
       transform: translateX(60px);
