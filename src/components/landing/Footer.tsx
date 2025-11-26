@@ -6,7 +6,7 @@ export function Footer() {
   const t = useTranslations('footer');
 
   return (
-    <footer className="relative bg-white text-gray-800 border-t border-gray-100">
+    <footer className="relative bg-white/70 backdrop-blur-xl text-gray-800 border-t border-white/90 shadow-[0_-8px_32px_rgba(0,0,0,0.08)]">
       <div className="container max-w-5xl mx-auto px-6 py-12">
         <div className="flex flex-col items-center text-center gap-6">
          
@@ -53,7 +53,7 @@ export function Footer() {
           </div>
 
           {/* Legal & Copyright */}
-          <div className="w-full border-t border-gray-100 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="w-full border-t border-white/50 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-gray-500 text-sm">
               {t('copyright')}
             </p>
