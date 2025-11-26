@@ -77,11 +77,14 @@ export function HoverBorderGradient({
       >
         {React.Children.map(children, (child) => {
           if (React.isValidElement(child)) {
+            const childProps = child.props as React.HTMLAttributes<HTMLElement> & { style?: React.CSSProperties };
             return React.cloneElement(child as React.ReactElement<any>, {
-              style: hovered ? { color: 'white', ...(child.props?.style || {}) } : child.props?.style,
+              style: hovered 
+                ? { color: 'white', ...(childProps?.style || {}) } 
+                : childProps?.style,
               className: hovered 
-                ? cn(child.props?.className, '!text-white') 
-                : child.props?.className
+                ? cn(childProps?.className, '!text-white') 
+                : childProps?.className
             });
           }
           return child;
