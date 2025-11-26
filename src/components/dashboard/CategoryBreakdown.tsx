@@ -21,16 +21,16 @@ export function CategoryBreakdown({ categories, title = 'Sales by Category' }: C
                 <CardTitle className="text-white text-lg font-semibold">{title}</CardTitle>
             </CardHeader>
             <CardContent>
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                     {categories.map((category) => (
                         <div key={category.name}>
-                            <div className="flex items-center justify-between mb-2">
-                                <span className="text-sm text-gray-300">{category.name}</span>
-                                <div className="flex items-center gap-3">
-                                    <span className="text-sm font-medium text-white">
+                            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-2 mb-2">
+                                <span className="text-xs sm:text-sm text-gray-300 truncate">{category.name}</span>
+                                <div className="flex items-center gap-2 sm:gap-3">
+                                    <span className="text-xs sm:text-sm font-medium text-white whitespace-nowrap">
                                         ${category.value.toLocaleString()}
                                     </span>
-                                    <span className="text-xs text-gray-400 w-12 text-right">
+                                    <span className="text-xs text-gray-400 w-10 sm:w-12 text-right">
                                         {category.percentage}%
                                     </span>
                                 </div>

@@ -14,9 +14,10 @@ interface Product {
 interface TopProductsProps {
     products: Product[];
     title?: string;
+    valueLabel?: string;
 }
 
-export function TopProducts({ products, title = 'Top Products' }: TopProductsProps) {
+export function TopProducts({ products, title = 'Top Products', valueLabel = 'sales' }: TopProductsProps) {
     return (
         <Card className="bg-[#252930] border-[#3a3f47]">
             <CardHeader>
@@ -26,22 +27,24 @@ export function TopProducts({ products, title = 'Top Products' }: TopProductsPro
                 </CardTitle>
             </CardHeader>
             <CardContent>
-                <div className="space-y-3">
+                <div className="space-y-2 sm:space-y-3">
                     {products.map((product) => (
                         <div
                             key={product.id}
-                            className="flex items-center justify-between p-3 rounded-lg bg-[#1a1d21] border border-[#3a3f47] hover:border-[#10B981]/30 transition-colors"
+                            className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-3 p-3 rounded-lg bg-[#1a1d21] border border-[#3a3f47] hover:border-[#10B981]/30 transition-colors"
                         >
-                            <div className="flex items-center gap-3">
-                                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-[#10B981]/10 text-[#10B981] text-sm font-bold">
+                            <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+                                <div className="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#10B981]/10 text-[#10B981] text-xs sm:text-sm font-bold flex-shrink-0">
                                     #{product.rank}
                                 </div>
-                                <div>
-                                    <p className="text-sm font-medium text-white">{product.name}</p>
-                                    <p className="text-xs text-gray-400">{product.sales} sales</p>
+                                <div className="min-w-0 flex-1">
+                                    <p className="text-xs sm:text-sm font-medium text-white break-words">{product.name}</p>
+                                    <p className="text-xs text-gray-400">
+                                        {product.sales} {valueLabel}
+                                    </p>
                                 </div>
                             </div>
-                            <div className="text-right">
+                            <div className="text-left sm:text-right flex-shrink-0">
                                 <p className="text-sm font-semibold text-[#10B981]">
                                     ${product.revenue.toLocaleString()}
                                 </p>

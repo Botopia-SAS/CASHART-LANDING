@@ -17,8 +17,8 @@ export function SalesChart({ data, title = 'Monthly Sales' }: SalesChartProps) {
             <CardHeader>
                 <CardTitle className="text-white text-lg font-semibold">{title}</CardTitle>
             </CardHeader>
-            <CardContent>
-                <ResponsiveContainer width="100%" height={300}>
+            <CardContent className="p-3 sm:p-6">
+                <ResponsiveContainer width="100%" height={250} className="sm:h-[300px]">
                     <AreaChart data={data}>
                         <defs>
                             <linearGradient id="salesGradient" x1="0" y1="0" x2="0" y2="1">
@@ -29,14 +29,15 @@ export function SalesChart({ data, title = 'Monthly Sales' }: SalesChartProps) {
                         <XAxis
                             dataKey="month"
                             stroke="#6b7280"
-                            tick={{ fill: '#9ca3af', fontSize: 12 }}
+                            tick={{ fill: '#9ca3af', fontSize: 10 }}
                             axisLine={{ stroke: '#3a3f47' }}
                         />
                         <YAxis
                             stroke="#6b7280"
-                            tick={{ fill: '#9ca3af', fontSize: 12 }}
+                            tick={{ fill: '#9ca3af', fontSize: 10 }}
                             axisLine={{ stroke: '#3a3f47' }}
                             tickFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}
+                            width={50}
                         />
                         <Tooltip
                             contentStyle={{

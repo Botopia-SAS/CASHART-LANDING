@@ -30,22 +30,22 @@ export function RecentActivity({ activities, title = 'Recent Activity' }: Recent
                 <CardTitle className="text-white text-lg font-semibold">{title}</CardTitle>
             </CardHeader>
             <CardContent>
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                     {activities.map((activity) => (
                         <div
                             key={activity.id}
-                            className="flex items-center justify-between p-4 rounded-lg bg-[#1a1d21] border border-[#3a3f47] hover:border-[#10B981]/30 transition-colors"
+                            className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4 p-3 sm:p-4 rounded-lg bg-[#1a1d21] border border-[#3a3f47] hover:border-[#10B981]/30 transition-colors"
                         >
-                            <div className="flex-1">
-                                <div className="flex items-center gap-3 mb-1">
-                                    <span className="text-sm font-medium text-white">{activity.id}</span>
+                            <div className="flex-1 min-w-0">
+                                <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-1">
+                                    <span className="text-xs sm:text-sm font-medium text-white break-all">{activity.id}</span>
                                     <Badge className={cn('text-xs', statusConfig[activity.status].color)}>
                                         {statusConfig[activity.status].label}
                                     </Badge>
                                 </div>
-                                <p className="text-xs text-gray-400">{activity.type}</p>
+                                <p className="text-xs text-gray-400 break-words">{activity.type}</p>
                             </div>
-                            <div className="text-right">
+                            <div className="text-left sm:text-right flex-shrink-0">
                                 <p className="text-sm font-semibold text-white">
                                     ${activity.amount.toLocaleString()}
                                 </p>
