@@ -1,6 +1,7 @@
 import { Header } from "@/components/landing/Header";
 import { Hero } from "@/components/landing/Hero";
 import { CashArtFlowSection } from "@/components/landing/CashArtFlowSection";
+import { TimelineSection } from "@/components/landing/TimelineSection";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { Footer } from "@/components/landing/Footer";
 import { GlobalSpotlightBackground } from "@/components/landing/GlobalSpotlightBackground";
@@ -13,6 +14,9 @@ export default function Home() {
       <Header />
       <Hero />
       <CashArtFlowSection />
+      <div className="animate-fade-in animate-delay-300 animate-fill-both">
+        <TimelineSection />
+      </div>
       <div className="animate-fade-in-up animate-delay-400 animate-fill-both">
         <HowItWorks />
       </div>

@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Shield, DollarSign, Clock, Calendar } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { AuthDialog } from "./AuthDialog";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
@@ -11,6 +11,7 @@ import { DashboardImage } from "./hero/DashboardImage";
 import { CTAButton } from "./hero/CTAButton";
 import { FeatureCard } from "./hero/FeatureCard";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+import clsx from "clsx";
 
 export function Hero() {
   const t = useTranslations("hero");
@@ -19,6 +20,27 @@ export function Hero() {
   const [showAuth, setShowAuth] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
+  const heroSectionRef = useRef<HTMLElement | null>(null);
+  const [heroInView, setHeroInView] = useState(false);
+
+  useEffect(() => {
+    const node = heroSectionRef.current;
+    if (!node) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setHeroInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(node);
+
+    return () => observer.disconnect();
+  }, []);
 
 
 
@@ -29,7 +51,13 @@ export function Hero() {
 
   return (
     <>
-      <section className="relative flex items-center overflow-hidden pt-20 pb-0">{/* Background is now global */}
+      <section
+        ref={heroSectionRef}
+        className={clsx(
+          "relative flex items-center overflow-hidden pt-20 pb-0 transform transition-all duration-700 ease-out delay-[250ms]",
+          heroInView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
+        )}
+      >{/* Background is now global */}
 
         <div className="container max-w-7xl mx-auto relative z-10 px-4 sm:px-6">
           <div className="relative grid lg:grid-cols-2 gap-0 sm:gap-2 lg:gap-8 items-center">

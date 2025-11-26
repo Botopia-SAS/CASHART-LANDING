@@ -26,7 +26,7 @@ export function HeroScrollDemo() {
         }
       >
         <img
-          src="https://res.cloudinary.com/drsvq4tm6/image/upload/v1764110994/Attached_image_wjqjqk.png"
+          src="https://res.cloudinary.com/drsvq4tm6/image/upload/v1764140792/aaaa_b5bbhd.png"
           alt={t("imageAlt")}
           height={720}
           width={1400}
