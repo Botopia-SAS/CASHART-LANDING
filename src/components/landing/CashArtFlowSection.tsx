@@ -66,7 +66,7 @@ function FlowToggle({
       <div className="relative bg-white/80 backdrop-blur-sm rounded-full p-1.5 sm:p-2 border border-[#0C5F4C]/30 shadow-lg shadow-[#0C5F4C]/10">
         {/* Animated background slider - Verde oscuro fijo */}
         <div
-          className="absolute top-1.5 bottom-1.5 sm:top-2 sm:bottom-2 rounded-full bg-[#0C5F4C] transition-all duration-500 ease-out shadow-lg shadow-[#0C5F4C]/30"
+          className="absolute top-1.5 bottom-1.5 sm:top-2 sm:bottom-2 rounded-full bg-[#0C5F4C] transition-all duration-500 ease-out shadow-lg shadow-[#0C5F4C]/30 pointer-events-none"
           style={{
             left: `calc(${(activeIndex / totalFlows) * 100}% + 0.375rem)`,
             width: `calc(${100 / totalFlows}% - 0.75rem)`,
@@ -81,13 +81,16 @@ function FlowToggle({
             return (
               <button
                 key={flow.id}
-                onClick={() => {
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
                   // 📊 ANALYTICS: Track flow switch event here
                   // Example: analytics.track('flow_switched', { from: activeFlowId, to: flow.id })
                   onFlowChange(flow.id);
                 }}
                 className={`
-                  relative z-10 px-3 py-3 sm:px-6 sm:py-4 rounded-full font-semibold text-xs sm:text-sm md:text-base transition-all duration-300
+                  relative z-20 px-3 py-3 sm:px-6 sm:py-4 rounded-full font-semibold text-xs sm:text-sm md:text-base transition-all duration-300 cursor-pointer
                   ${isActive ? "text-white" : "text-gray-700 hover:text-gray-900"}
                 `}
               >

@@ -112,9 +112,9 @@ export function Hero() {
                     <HoverBorderGradient
                       containerClassName="hidden lg:flex w-full rounded-full"
                       as="button"
-                      className="bg-transparent text-[15px] font-medium px-6 h-14 rounded-full whitespace-nowrap flex items-center justify-center w-full"
+                      className="bg-transparent text-[13px] font-medium px-3 h-10 rounded-full whitespace-normal flex items-center justify-center w-full min-w-[120px] max-w-[220px] text-center"
                     >
-                      <span className="text-[#0C5F4C]">
+                      <span className="text-[#0C5F4C] break-word leading-tight">
                         {t("collectorSurveyButton")}
                       </span>
                     </HoverBorderGradient>
@@ -123,7 +123,7 @@ export function Hero() {
                   <div className="flex flex-row gap-3 lg:hidden">
                     <Button
                       onClick={() => setShowAuth(true)}
-                      className="w-1/2 bg-[#0C5F4C] hover:bg-[#0A4F3E] text-white text-[15px] font-medium px-4 sm:px-6 h-14 rounded-full whitespace-nowrap transition-all"
+                      className="w-1/2 bg-[#0C5F4C] hover:bg-[#0A4F3E] text-white text-[13px] font-medium px-3 h-10 rounded-full whitespace-nowrap transition-all"
                     >
                       {t("registerButton")}
                     </Button>
@@ -132,9 +132,9 @@ export function Hero() {
                       <HoverBorderGradient
                         containerClassName="w-full rounded-full"
                         as="button"
-                        className="bg-transparent text-[15px] font-medium px-4 sm:px-6 h-14 rounded-full whitespace-nowrap flex items-center justify-center w-full"
+                        className="bg-transparent text-[13px] font-medium px-3 h-10 rounded-full whitespace-normal flex items-center justify-center w-full min-w-[120px] max-w-[220px] text-center"
                       >
-                        <span className="text-[#0C5F4C]">
+                        <span className="text-[#0C5F4C] break-word leading-tight">
                           {t("collectorSurveyButton")}
                         </span>
                       </HoverBorderGradient>

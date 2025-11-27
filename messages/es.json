@@ -9,7 +9,7 @@
     "descriptionSup": "1",
     "emailPlaceholder": "Ingresa tu correo electrónico",
     "registerButton": "Registra tu Galería",
-    "collectorSurveyButton": "Encuesta para Coleccionistas",
+    "collectorSurveyButton": "Are you a collector? click here!",
     "dashboardAlt": "Panel de CashArt",
     "featuresIntro": {
       "overline": "Para galerías y coleccionistas",
@@ -44,7 +44,7 @@
     "pricing": "Precios",
     "logIn": "Iniciar Sesión",
     "registerGallery": "Registra tu Galería",
-    "collectorSurveyButton": "Encuesta para Coleccionistas"
+    "collectorSurveyButton": "Are you a collector? click here!"
   },
   "videoCircle": {
     "title": "Cómo Funciona CashArt",

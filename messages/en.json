@@ -9,7 +9,7 @@
     "descriptionSup": "1",
     "emailPlaceholder": "Enter your email",
     "registerButton": "Register Your Gallery",
-    "collectorSurveyButton": "Collector Survey",
+    "collectorSurveyButton": "Are you a collector? click here!",
     "dashboardAlt": "CashArt Dashboard",
     "featuresIntro": {
       "overline": "For Galleries & Collectors",
@@ -44,7 +44,7 @@
     "pricing": "Pricing",
     "logIn": "Log In",
     "registerGallery": "Register Your Gallery",
-    "collectorSurveyButton": "Collector Survey"
+    "collectorSurveyButton": "Are you a collector? click here!"
   },
   "videoCircle": {
     "title": "How CashArt Works",
