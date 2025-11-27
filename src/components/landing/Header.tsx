@@ -89,14 +89,14 @@ export function Header() {
                     variant="secondary"
                     className="hidden xl:flex text-sm 2xl:text-base font-semibold bg-[#0f8b8c]/95 text-white hover:bg-[#0c7071] px-5 2xl:px-6 h-10 2xl:h-11 rounded-full whitespace-nowrap border border-white/80 shadow-[0_4px_18px_rgba(0,0,0,0.08)]"
                   >
-                    {t('collectorSurveyButton')}
+                    {t('collectorSurveyButtonDesktop')}
                   </Button>
                 </Link>
                 <Button
                   onClick={() => handleAuthClick('signup')}
                   className="bg-white border border-[#11a987] text-[#0b2842] text-sm 2xl:text-base font-semibold px-5 2xl:px-6 h-10 2xl:h-11 rounded-full whitespace-nowrap hover:bg-[#11a987]/10 transition"
                 >
-                  {t('registerGallery')}
+                  {t('registerGalleryDesktop')}
                 </Button>
               </div>
 

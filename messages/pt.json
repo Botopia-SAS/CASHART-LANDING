@@ -9,7 +9,7 @@
     "descriptionSup": "1",
     "emailPlaceholder": "Digite seu e-mail",
     "registerButton": "Registre sua Galeria",
-    "collectorSurveyButton": "Pesquisa para Colecionadores",
+    "collectorSurveyButton": "Are you a collector? click here!",
     "dashboardAlt": "Painel CashArt",
     "featuresIntro": {
       "overline": "Para galerias e colecionadores",
@@ -45,7 +45,10 @@
     "comingSoon": "Em Breve",
     "logIn": "Entrar",
     "registerGallery": "Registre sua Galeria",
-    "collectorSurveyButton": "Pesquisa para Colecionadores"
+    "registerGalleryMobile": "Registre sua Galeria",
+    "collectorSurveyButton": "Are you a collector? click here!",
+    "collectorSurveyButtonDesktop": "click for collector",
+    "registerGalleryDesktop": "click for gallerist"
   },
   "videoCircle": {
     "title": "Como Funciona o CashArt",
@@ -168,14 +171,17 @@
     "title": "Liquidez Inteligente para ",
     "titleHighlight": "o Mundo da Arte",
     "galleries": {
+      "label": "Para Galerias",
       "title": "Venda Mais, Risco Zero",
       "description": "Ofereça opções de pagamento flexíveis aos seus clientes enquanto você recebe adiantado. Nós cuidamos de todo o risco de crédito e processamento de pagamentos."
     },
     "collectors": {
+      "label": "Colecionadores",
       "title": "Adquira com Flexibilidade",
       "description": "Acesse as obras de arte que você ama com opções de pagamento projetadas para você."
     },
     "technology": {
+      "label": "Tecnologia",
       "title": "Seguro e Transparente",
       "description": "Uma plataforma construída por especialistas em arte e finanças."
     }

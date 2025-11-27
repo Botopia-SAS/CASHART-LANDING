@@ -9,7 +9,7 @@
     "descriptionSup": "1",
     "emailPlaceholder": "Enter your email",
     "registerButton": "Register Your Gallery",
-    "collectorSurveyButton": "Collector Survey",
+    "collectorSurveyButton": "Are you a collector? click here!",
     "dashboardAlt": "CashArt Dashboard",
     "featuresIntro": {
       "overline": "For Galleries & Collectors",
@@ -45,7 +45,10 @@
     "comingSoon": "Coming Soon",
     "logIn": "Log In",
     "registerGallery": "Register Your Gallery",
-    "collectorSurveyButton": "Collector Survey"
+    "registerGalleryMobile": "Register Your Gallery",
+    "collectorSurveyButton": "Are you a collector? click here!",
+    "collectorSurveyButtonDesktop": "click for collector",
+    "registerGalleryDesktop": "click for gallerist"
   },
   "videoCircle": {
     "title": "How CashArt Works",
@@ -168,14 +171,17 @@
     "title": "Smart Liquidity for ",
     "titleHighlight": "the Art World",
     "galleries": {
+      "label": "For Galleries",
       "title": "Sell More, Zero Risk",
       "description": "Offer flexible payment options to your clients while you get paid upfront. We handle all credit risk and payment processing."
     },
     "collectors": {
+      "label": "Collectors",
       "title": "Acquire with Flexibility",
       "description": "Access the artworks you love with payment options designed for you."
     },
     "technology": {
+      "label": "Technology",
       "title": "Secure & Transparent",
       "description": "A platform built by experts in art and finance."
     }
