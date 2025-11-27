@@ -39,9 +39,9 @@
   },
   "header": {
     "home": "Inicio",
+    "smartLiquidity": "Liquidez Inteligente",
     "howItWorks": "Cómo Funciona",
-    "about": "Acerca de",
-    "pricing": "Precios",
+    "dashboard": "Panel de Control",
     "logIn": "Iniciar Sesión",
     "registerGallery": "Registra tu Galería",
     "collectorSurveyButton": "Encuesta para Coleccionistas"

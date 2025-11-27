@@ -39,9 +39,9 @@
   },
   "header": {
     "home": "Home",
+    "smartLiquidity": "Smart Liquidity",
     "howItWorks": "How it Works",
-    "about": "About",
-    "pricing": "Pricing",
+    "dashboard": "Dashboard",
     "logIn": "Log In",
     "registerGallery": "Register Your Gallery",
     "collectorSurveyButton": "Collector Survey"

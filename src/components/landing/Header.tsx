@@ -53,31 +53,25 @@ export function Header() {
                   href={`/${locale}`}
                   className="text-sm 2xl:text-base font-semibold tracking-wide hover:text-[#048088] transition-colors whitespace-nowrap"
                 >
-                  Home
+                  {t('home')}
+                </Link>
+                <Link
+                  href="#smart-liquidity"
+                  className="text-sm 2xl:text-base font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors whitespace-nowrap"
+                >
+                  {t('smartLiquidity')}
                 </Link>
                 <Link
                   href="#how-it-works"
                   className="text-sm 2xl:text-base font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors whitespace-nowrap"
                 >
-                  How It Works
+                  {t('howItWorks')}
                 </Link>
                 <Link
-                  href="#benefits"
+                  href="#dashboard"
                   className="text-sm 2xl:text-base font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors whitespace-nowrap"
                 >
-                  Benefits
-                </Link>
-                <Link
-                  href="#why-cashart"
-                  className="text-sm 2xl:text-base font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors whitespace-nowrap"
-                >
-                  Why CashArt
-                </Link>
-                <Link
-                  href="#early-access"
-                  className="text-sm 2xl:text-base font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors whitespace-nowrap"
-                >
-                  Early Access
+                  {t('dashboard')}
                 </Link>
               </nav>
 
@@ -120,35 +114,28 @@ export function Header() {
                         onClick={() => setMobileMenuOpen(false)}
                         className="text-lg font-semibold hover:text-[#048088] transition-colors py-2 break-words"
                       >
-                        Home
+                        {t('home')}
+                      </Link>
+                      <Link
+                        href="#smart-liquidity"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="text-lg font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors py-2 break-words"
+                      >
+                        {t('smartLiquidity')}
                       </Link>
                       <Link
                         href="#how-it-works"
                         onClick={() => setMobileMenuOpen(false)}
                         className="text-lg font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors py-2 break-words"
                       >
-                        How It Works
+                        {t('howItWorks')}
                       </Link>
                       <Link
-                        href="#benefits"
+                        href="#dashboard"
                         onClick={() => setMobileMenuOpen(false)}
                         className="text-lg font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors py-2 break-words"
                       >
-                        Benefits
-                      </Link>
-                      <Link
-                        href="#why-cashart"
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="text-lg font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors py-2 break-words"
-                      >
-                        Why CashArt
-                      </Link>
-                      <Link
-                        href="#early-access"
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="text-lg font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors py-2 break-words"
-                      >
-                        Early Access
+                        {t('dashboard')}
                       </Link>
                       <div className="border-t border-[#e1e6ef] pt-4 mt-4 space-y-3">
                         <Link href={`/${locale}/survey`} onClick={() => setMobileMenuOpen(false)}>

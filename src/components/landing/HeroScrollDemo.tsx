@@ -8,7 +8,7 @@ export function HeroScrollDemo() {
   const t = useTranslations("heroScrollDemo");
 
   return (
-    <div className="flex flex-col overflow-hidden">
+    <div id="dashboard" className="flex flex-col overflow-hidden scroll-mt-32">
       <ContainerScroll
         titleComponent={
           <>
