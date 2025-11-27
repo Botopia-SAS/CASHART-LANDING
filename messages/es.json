@@ -45,7 +45,10 @@
     "comingSoon": "Próximamente",
     "logIn": "Iniciar Sesión",
     "registerGallery": "Registra tu Galería",
-    "collectorSurveyButton": "Are you a collector? click here!"
+    "registerGalleryMobile": "Registra tu Galería",
+    "collectorSurveyButton": "Are you a collector? click here!",
+    "collectorSurveyButtonDesktop": "click for collector",
+    "registerGalleryDesktop": "click for gallerist"
   },
   "videoCircle": {
     "title": "Cómo Funciona CashArt",
@@ -168,14 +171,17 @@
     "title": "Liquidez Inteligente para ",
     "titleHighlight": "el Mundo del Arte",
     "galleries": {
+      "label": "Para Galerías",
       "title": "Vende Más, Riesgo Cero",
       "description": "Ofrece opciones de pago flexibles a tus clientes mientras cobras por adelantado. Nosotros manejamos todo el riesgo crediticio y procesamiento de pagos."
     },
     "collectors": {
+      "label": "Coleccionistas",
       "title": "Adquiere con Flexibilidad",
       "description": "Accede a las obras de arte que amas con opciones de pago diseñadas para ti."
     },
     "technology": {
+      "label": "Tecnología",
       "title": "Seguro y Transparente",
       "description": "Una plataforma construida por expertos en arte y finanzas."
     }
