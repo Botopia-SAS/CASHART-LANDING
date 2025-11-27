@@ -55,8 +55,11 @@ export function HoverBorderGradient({
       return () => clearInterval(interval);
     }
   }, [hovered]);
+
+  const Component = Tag as any;
+
   return (
-    <Tag
+    <Component
       onMouseEnter={() => {
         setHovered(true);
       }}
@@ -111,6 +114,6 @@ export function HoverBorderGradient({
         "transition-colors duration-500 absolute z-1 flex-none inset-[2px] rounded-[100px]",
         hovered ? "bg-[#0C5F4C]" : "bg-teal-50"
       )} />
-    </Tag>
+    </Component>
   );
 }
