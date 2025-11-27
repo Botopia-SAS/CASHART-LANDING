@@ -42,6 +42,7 @@
     "smartLiquidity": "Smart Liquidity",
     "howItWorks": "How it Works",
     "dashboard": "Dashboard",
+    "comingSoon": "Coming Soon",
     "logIn": "Log In",
     "registerGallery": "Register Your Gallery",
     "collectorSurveyButton": "Are you a collector? click here!"
@@ -259,6 +260,11 @@
     "title": "Manage your business with",
     "titleHighlight": "Total Control",
     "imageAlt": "CashArt Dashboard for clients"
+  },
+  "comingSoon": {
+    "title": "Expanding",
+    "titleHighlight": "Globally",
+    "description": "CashArt is launching in the USA in Q1 2026. Soon after, we'll bring our platform to galleries and collectors worldwide."
   },
   "footer": {
     "tagline": "Revolutionizing art financing. Launching Q1 2026 in the USA.",

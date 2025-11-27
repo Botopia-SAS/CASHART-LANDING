@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Calendar, TrendingUp, ShoppingBag, Users, Award } from 'lucide-react';
+import { Calendar, TrendingUp, ShoppingBag, Users, Award, type LucideIcon } from 'lucide-react';
 
 const timelineEvents = [
   {
@@ -122,7 +122,7 @@ function TimelineEvent({
     date: string;
     title: string;
     description: string;
-    icon: React.ElementType;
+    icon: LucideIcon;
     color: string;
     bgColor: string;
   };
