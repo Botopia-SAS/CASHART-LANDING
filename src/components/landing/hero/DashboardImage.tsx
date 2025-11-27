@@ -7,14 +7,6 @@ export function DashboardImage({
   isHovering: boolean;
   alt: string;
 }) {
-  // Estilo con degradado en la parte superior e inferior para mobile
-  const mobileImageStyle = {
-    maskImage:
-      "linear-gradient(to bottom, black 10%, black 30%, transparent 80%)",
-    WebkitMaskImage:
-      "linear-gradient(to bottom, black 10%, black 30%, transparent 80%)",
-  };
-
   // Estilo original solo con degradado superior para desktop
   const desktopImageStyle = {
     maskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
@@ -27,21 +19,8 @@ export function DashboardImage({
     : "https://res.cloudinary.com/dzi2p0pqa/image/upload/v1764018274/mh1hkaddzwcranjmupbe.png";
 
   return (
-    <div className="absolute inset-0 flex justify-center lg:relative lg:justify-end lg:order-2 -mx-4 sm:mx-0 -mt-34 sm:mt-0 -mb-12 sm:mb-0 z-10 lg:z-auto">
-      {/* Mobile version con degradado inferior */}
-      <div className="relative w-full max-w-3xl h-[800px] sm:hidden">
-        <Image
-          src={imageSrc}
-          alt={alt}
-          fill
-          className="object-contain opacity-40 transition-all duration-300"
-          style={mobileImageStyle}
-          priority={!isHovering}
-          loading={isHovering ? "lazy" : "eager"}
-        />
-      </div>
-      {/* Desktop version sin degradado inferior */}
-      <div className="relative w-full max-w-3xl h-[800px] hidden sm:block">
+    <div className="absolute inset-0 flex flex-col justify-center items-center gap-4 lg:relative lg:justify-end lg:items-end lg:order-2 -mx-4 sm:mx-0 -mt-34 sm:mt-0 -mb-12 sm:mb-0 z-10 lg:z-auto">
+      <div className="relative w-[370px] h-[220px] sm:w-full sm:max-w-3xl sm:h-[800px]">
         <Image
           src={imageSrc}
           alt={alt}
@@ -50,6 +29,17 @@ export function DashboardImage({
           style={desktopImageStyle}
           priority={!isHovering}
           loading={isHovering ? "lazy" : "eager"}
+        />
+      </div>
+      {/* Phone animation for mobile only */}
+      <div className="relative w-[120px] h-[240px] sm:hidden animate-fade-in-up animate-delay-300 animate-fill-both">
+        <Image
+          src="https://res.cloudinary.com/dzi2p0pqa/image/upload/v1700000000/phone-mockup.png"
+          alt="Mobile phone demo"
+          fill
+          className="object-contain drop-shadow-xl"
+          priority={false}
+          loading="lazy"
         />
       </div>
     </div>

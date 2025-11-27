@@ -1,93 +1,288 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 import { Timeline } from "@/components/ui/timeline";
+import { OptionToggle } from "./howitworks/OptionToggle";
 
 export function TimelineSection() {
-    const data = [
-        {
-            title: "Step 1",
-            content: (
-                <div>
-                    <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-                        Register your gallery in under 2 minutes. Join the CashArt platform and start offering flexible payment options to your collectors.
-                    </p>
-                    <div className="rounded-lg bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 p-6 shadow-lg">
-                        <div className="flex items-center gap-3 mb-4">
-                            <div className="w-12 h-12 rounded-full bg-emerald-500 flex items-center justify-center text-white font-bold text-xl">
-                                1
-                            </div>
-                            <h3 className="text-lg font-semibold text-emerald-900 dark:text-emerald-100">Register</h3>
-                        </div>
-                        <p className="text-sm text-neutral-700 dark:text-neutral-300">
-                            Quick and easy registration process for galleries and collectors
-                        </p>
-                    </div>
-                </div>
-            ),
-        },
-        {
-            title: "Step 2",
-            content: (
-                <div>
-                    <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-                        Offer flexible financing to your clients. They choose to pay over time, and you get paid upfront.
-                    </p>
-                    <div className="grid grid-cols-2 gap-4">
-                        <div className="rounded-lg bg-gradient-to-br from-teal-50 to-cyan-50 dark:from-teal-900/20 dark:to-cyan-900/20 p-4 shadow-md">
-                            <div className="w-10 h-10 rounded-full bg-teal-500 flex items-center justify-center text-white font-bold mb-3">
-                                💰
-                            </div>
-                            <h4 className="text-sm font-semibold text-teal-900 dark:text-teal-100 mb-2">Gallery Benefits</h4>
-                            <p className="text-xs text-neutral-700 dark:text-neutral-300">Get paid immediately, no waiting</p>
-                        </div>
-                        <div className="rounded-lg bg-gradient-to-br from-cyan-50 to-emerald-50 dark:from-cyan-900/20 dark:to-emerald-900/20 p-4 shadow-md">
-                            <div className="w-10 h-10 rounded-full bg-cyan-500 flex items-center justify-center text-white font-bold mb-3">
-                                🎨
-                            </div>
-                            <h4 className="text-sm font-semibold text-cyan-900 dark:text-cyan-100 mb-2">Collector Benefits</h4>
-                            <p className="text-xs text-neutral-700 dark:text-neutral-300">Flexible payment plans</p>
-                        </div>
-                    </div>
-                </div>
-            ),
-        },
-        {
-            title: "Step 3",
-            content: (
-                <div>
-                    <p className="mb-4 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-                        Increase your sales without operational burden or credit risk
-                    </p>
-                    <div className="mb-8">
-                        <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300 mb-2">
-                            ✅ No credit risk for galleries
-                        </div>
-                        <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300 mb-2">
-                            ✅ Increase sales by up to 30%
-                        </div>
-                        <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300 mb-2">
-                            ✅ No operational burden
-                        </div>
-                        <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300 mb-2">
-                            ✅ Immediate payment processing
-                        </div>
-                        <div className="flex items-center gap-2 text-xs text-neutral-700 md:text-sm dark:text-neutral-300">
-                            ✅ Simple integration process
-                        </div>
-                    </div>
-                    <div className="rounded-lg bg-gradient-to-br from-emerald-400 to-teal-500 p-6 shadow-xl">
-                        <h4 className="text-white font-bold text-lg mb-2">Start Growing Today</h4>
-                        <p className="text-white/90 text-sm">Join the art market revolution with CashArt</p>
-                    </div>
-                </div>
-            ),
-        },
-    ];
+  const [activeOption, setActiveOption] = useState<"galleries" | "collectors">(
+    "galleries"
+  );
 
+  // Card horizontal y animada para cada step
+  const StepCard = ({
+    icon,
+    title,
+    description,
+    index,
+  }: {
+    icon: React.ReactNode;
+    title: string;
+    description: string;
+    index: number;
+  }) => {
+    const ref = React.useRef<HTMLDivElement>(null);
+    const isInView = useInView(ref, {
+      once: true,
+      margin: "-30% 0px -30% 0px",
+    });
     return (
-        <div className="relative w-full overflow-clip">
-            <Timeline data={data} />
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, x: 120 }}
+        animate={
+          isInView
+            ? {
+                opacity: 1,
+                x: 0,
+                transition: {
+                  delay: 0.1 + index * 0.2,
+                  duration: 0.6,
+                  type: "spring",
+                },
+              }
+            : {}
+        }
+        className="flex flex-row items-center gap-6 bg-white/80 backdrop-blur-md border border-emerald-100 shadow-xl rounded-2xl px-8 py-6 mb-8 max-w-2xl mx-auto hover:shadow-2xl transition-shadow duration-300"
+        style={{ color: "#134e3a" }}
+      >
+        <div className="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center bg-gradient-to-br from-emerald-200 to-teal-200 text-3xl">
+          {icon}
         </div>
+        <div>
+          <h3 className="text-xl font-bold mb-1" style={{ color: "#134e3a" }}>
+            {title}
+          </h3>
+          <p className="text-base font-normal" style={{ color: "#134e3a" }}>
+            {description}
+          </p>
+        </div>
+      </motion.div>
     );
+  };
+
+  const galleriesData = [
+    {
+      title: (
+        <span
+          className="bg-gradient-to-r from-[#0C5F4C] via-[#10B981] to-[#0C5F4C] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift drop-shadow-md"
+          style={{ textShadow: "0 0 40px rgba(16, 185, 129, 0.3)" }}
+        >
+          Step 1
+        </span>
+      ),
+      content: (
+        <StepCard
+          icon={
+            <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
+              <rect width="24" height="24" rx="6" fill="#10B981" />
+              <path
+                d="M7 20V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v13"
+                stroke="#fff"
+                strokeWidth="2"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M7 20h10"
+                stroke="#fff"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+              <path
+                d="M10 11h4"
+                stroke="#fff"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+          }
+          title="Register"
+          description="Join the waitlist in under 2 minutes."
+          index={0}
+        />
+      ),
+    },
+    {
+      title: (
+        <span
+          className="bg-gradient-to-r from-[#0C5F4C] via-[#10B981] to-[#0C5F4C] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift drop-shadow-md"
+          style={{ textShadow: "0 0 40px rgba(16, 185, 129, 0.3)" }}
+        >
+          Step 2
+        </span>
+      ),
+      content: (
+        <StepCard
+          icon={
+            <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
+              <rect width="24" height="24" rx="6" fill="#10B981" />
+              <path
+                d="M12 6v12"
+                stroke="#fff"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+              <path
+                d="M8 10h8"
+                stroke="#fff"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+              <path
+                d="M8 14h8"
+                stroke="#fff"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+          }
+          title="Offer Financing"
+          description="Your clients choose to pay over time, you get paid upfront."
+          index={1}
+        />
+      ),
+    },
+    {
+      title: (
+        <span
+          className="bg-gradient-to-r from-[#0C5F4C] via-[#10B981] to-[#0C5F4C] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift drop-shadow-md"
+          style={{ textShadow: "0 0 40px rgba(16, 185, 129, 0.3)" }}
+        >
+          Step 3
+        </span>
+      ),
+      content: (
+        <StepCard
+          icon={
+            <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
+              <rect width="24" height="24" rx="6" fill="#10B981" />
+              <path
+                d="M12 8v4l3 3"
+                stroke="#fff"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <circle cx="12" cy="12" r="10" stroke="#fff" strokeWidth="2" />
+            </svg>
+          }
+          title="Sell More"
+          description="Increase your sales without credit risk or operational burden."
+          index={2}
+        />
+      ),
+    },
+  ];
+
+  const collectorsData = [
+    {
+      title: (
+        <span
+          className="bg-gradient-to-r from-[#0C5F4C] via-[#10B981] to-[#0C5F4C] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift drop-shadow-md"
+          style={{ textShadow: "0 0 40px rgba(16, 185, 129, 0.3)" }}
+        >
+          Step 1
+        </span>
+      ),
+      content: (
+        <StepCard
+          icon={
+            <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
+              <rect width="24" height="24" rx="6" fill="#10B981" />
+              <path
+                d="M12 7a5 5 0 1 1 0 10a5 5 0 0 1 0-10z"
+                stroke="#fff"
+                strokeWidth="2"
+              />
+              <path
+                d="M8 13l2.5 2.5L16 10"
+                stroke="#fff"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+          }
+          title="Discover Art"
+          description="Discover and join exclusive art collections. Enjoy flexible payment options tailored for collectors."
+          index={0}
+        />
+      ),
+    },
+    {
+      title: (
+        <span
+          className="bg-gradient-to-r from-[#0C5F4C] via-[#10B981] to-[#0C5F4C] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift drop-shadow-md"
+          style={{ textShadow: "0 0 40px rgba(16, 185, 129, 0.3)" }}
+        >
+          Step 2
+        </span>
+      ),
+      content: (
+        <StepCard
+          icon={
+            <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
+              <rect width="24" height="24" rx="6" fill="#10B981" />
+              <path
+                d="M8 12h8M8 16h8M8 8h8"
+                stroke="#fff"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+          }
+          title="Flexible Payments"
+          description="Choose your favorite artwork and select a payment plan that fits your needs."
+          index={1}
+        />
+      ),
+    },
+    {
+      title: (
+        <span
+          className="bg-gradient-to-r from-[#0C5F4C] via-[#10B981] to-[#0C5F4C] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift drop-shadow-md"
+          style={{ textShadow: "0 0 40px rgba(16, 185, 129, 0.3)" }}
+        >
+          Step 3
+        </span>
+      ),
+      content: (
+        <StepCard
+          icon={
+            <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
+              <rect width="24" height="24" rx="6" fill="#10B981" />
+              <path
+                d="M12 8v4l3 3"
+                stroke="#fff"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <circle cx="12" cy="12" r="10" stroke="#fff" strokeWidth="2" />
+            </svg>
+          }
+          title="Enjoy Your Art"
+          description="Enjoy your new artwork and exclusive member benefits."
+          index={2}
+        />
+      ),
+    },
+  ];
+
+  const data = activeOption === "galleries" ? galleriesData : collectorsData;
+
+  return (
+    <div className="relative w-full overflow-clip">
+      <div className="flex flex-col items-center">
+        <OptionToggle
+          activeOption={activeOption}
+          onOptionChange={setActiveOption}
+        />
+        {/* Elimina el espacio extra entre el toggle y los steps */}
+        <div className="w-full">
+          <Timeline data={data} className="!pt-0 !mt-0" />
+        </div>
+      </div>
+    </div>
+  );
 }
