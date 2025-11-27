@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { motion } from 'framer-motion';
 
 type SubmitStatus = 'idle' | 'success' | 'error';
 
@@ -72,12 +73,12 @@ export function CollectorSurveyForm({ onSubmitted }: { onSubmitted?: () => void 
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
-      <div className="mb-4 text-center">
-        <p className="text-sm text-gray-500">{t('subtitle')}</p>
-        <p className="text-gray-800">{t('description')}</p>
-      </div>
-
-      <div>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.5 }}
+      >
         <label className="block text-lg font-medium text-gray-900 mb-4">
           {t('q1.question')} <span className="text-red-500">*</span>
         </label>
@@ -89,9 +90,14 @@ export function CollectorSurveyForm({ onSubmitted }: { onSubmitted?: () => void 
           className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#0C5F4C] focus:border-transparent"
           required
         />
-      </div>
+      </motion.div>
 
-      <div>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+      >
         <label className="block text-lg font-medium text-gray-900 mb-4">
           {t('q2.question')} <span className="text-red-500">*</span>
         </label>
@@ -111,9 +117,14 @@ export function CollectorSurveyForm({ onSubmitted }: { onSubmitted?: () => void 
             </label>
           ))}
         </div>
-      </div>
+      </motion.div>
 
-      <div>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         <label className="block text-lg font-medium text-gray-900 mb-4">
           {t('q3.question')} <span className="text-red-500">*</span>
         </label>
@@ -133,9 +144,14 @@ export function CollectorSurveyForm({ onSubmitted }: { onSubmitted?: () => void 
             </label>
           ))}
         </div>
-      </div>
+      </motion.div>
 
-      <div>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      >
         <label className="block text-lg font-medium text-gray-900 mb-4">
           {t('q4.question')} <span className="text-red-500">*</span>
         </label>
@@ -146,9 +162,14 @@ export function CollectorSurveyForm({ onSubmitted }: { onSubmitted?: () => void 
           className="w-full min-h-[120px] px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#0C5F4C] focus:border-transparent"
           required
         />
-      </div>
+      </motion.div>
 
-      <div>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+      >
         <label className="block text-lg font-medium text-gray-900 mb-4">
           {t('q5.question')} <span className="text-red-500">*</span>
         </label>
@@ -168,9 +189,14 @@ export function CollectorSurveyForm({ onSubmitted }: { onSubmitted?: () => void 
             </label>
           ))}
         </div>
-      </div>
+      </motion.div>
 
-      <div>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+      >
         <label className="block text-lg font-medium text-gray-900 mb-4">
           {t('q6.question')} <span className="text-red-500">*</span>
         </label>
@@ -190,9 +216,14 @@ export function CollectorSurveyForm({ onSubmitted }: { onSubmitted?: () => void 
             </label>
           ))}
         </div>
-      </div>
+      </motion.div>
 
-      <div>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+      >
         <label className="block text-lg font-medium text-gray-900 mb-4">
           {t('q7.question')} <span className="text-red-500">*</span>
         </label>
@@ -212,9 +243,15 @@ export function CollectorSurveyForm({ onSubmitted }: { onSubmitted?: () => void 
             </label>
           ))}
         </div>
-      </div>
+      </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.5, delay: 0.7 }}
+        className="grid grid-cols-1 md:grid-cols-2 gap-6"
+      >
         <div>
           <label className="block text-sm font-medium text-gray-900 mb-2">
             {t('fields.companyName')}
@@ -261,7 +298,7 @@ export function CollectorSurveyForm({ onSubmitted }: { onSubmitted?: () => void 
             className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#0C5F4C] focus:border-transparent"
           />
         </div>
-      </div>
+      </motion.div>
 
       {submitStatus === 'success' && (
         <div className="p-4 bg-green-50 border border-green-200 rounded-lg">

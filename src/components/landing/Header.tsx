@@ -50,7 +50,7 @@ export function Header() {
             {/* Desktop Navigation - Center (fixed order, same for all locales) */}
               <nav className="hidden xl:flex items-center gap-6 2xl:gap-8 text-[#0b2842]">
                 <Link
-                  href="#home"
+                  href={`/${locale}`}
                   className="text-sm 2xl:text-base font-semibold tracking-wide hover:text-[#048088] transition-colors whitespace-nowrap"
                 >
                   Home
@@ -116,7 +116,7 @@ export function Header() {
                     </SheetHeader>
                     <nav className="flex flex-col gap-4 mt-8 px-2">
                       <Link
-                        href="#home"
+                        href={`/${locale}`}
                         onClick={() => setMobileMenuOpen(false)}
                         className="text-lg font-semibold hover:text-[#048088] transition-colors py-2 break-words"
                       >
