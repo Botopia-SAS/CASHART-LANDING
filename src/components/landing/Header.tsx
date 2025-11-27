@@ -73,6 +73,12 @@ export function Header() {
                 >
                   {t('dashboard')}
                 </Link>
+                <Link
+                  href="#coming-soon"
+                  className="text-sm 2xl:text-base font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors whitespace-nowrap"
+                >
+                  {t('comingSoon')}
+                </Link>
               </nav>
 
             {/* Right Actions - Desktop */}
@@ -136,6 +142,13 @@ export function Header() {
                         className="text-lg font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors py-2 break-words"
                       >
                         {t('dashboard')}
+                      </Link>
+                      <Link
+                        href="#coming-soon"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="text-lg font-medium text-[#5a6c7f] hover:text-[#0b2842] transition-colors py-2 break-words"
+                      >
+                        {t('comingSoon')}
                       </Link>
                       <div className="border-t border-[#e1e6ef] pt-4 mt-4 space-y-3">
                         <Link href={`/${locale}/survey`} onClick={() => setMobileMenuOpen(false)}>
