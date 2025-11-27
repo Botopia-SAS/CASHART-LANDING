@@ -272,7 +272,7 @@ export function TimelineSection() {
   const data = activeOption === "galleries" ? galleriesData : collectorsData;
 
   return (
-    <div className="relative w-full overflow-clip">
+    <div id="how-it-works" className="relative w-full overflow-clip scroll-mt-32">
       <div className="flex flex-col items-center">
         <OptionToggle
           activeOption={activeOption}

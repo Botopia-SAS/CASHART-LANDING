@@ -278,8 +278,9 @@ export function CashArtFlowSection() {
 
   return (
     <section
+      id="smart-liquidity"
       ref={sectionRef}
-      className={`relative py-8 sm:py-6 lg:py-8 overflow-hidden mt-12 sm:mt-0 mb-0 ${isVisible ? 'animate-slide-in-left-responsive' : 'opacity-0'}`}
+      className={`relative py-8 sm:py-6 lg:py-8 overflow-hidden mt-12 sm:mt-0 mb-0 scroll-mt-32 ${isVisible ? 'animate-slide-in-left-responsive' : 'opacity-0'}`}
     >
       {/* Background is now global */}
 
