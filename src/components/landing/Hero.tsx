@@ -16,7 +16,7 @@ import clsx from "clsx";
 export function Hero() {
   const t = useTranslations("hero");
   const pathname = usePathname();
-  const locale = pathname.split('/')[1] || 'en';
+  const locale = pathname.split("/")[1] || "en";
   const [showAuth, setShowAuth] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
@@ -42,8 +42,6 @@ export function Hero() {
     return () => observer.disconnect();
   }, []);
 
-
-
   const handleButtonMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     setMousePosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
@@ -57,19 +55,18 @@ export function Hero() {
           "relative flex items-center overflow-hidden pt-20 pb-0 transform transition-all duration-700 ease-out delay-[250ms]",
           heroInView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
         )}
-      >{/* Background is now global */}
+      >
+        {/* Background is now global */}
 
         <div className="container max-w-7xl mx-auto relative z-10 px-4 sm:px-6">
           <div className="relative grid lg:grid-cols-2 gap-0 sm:gap-2 lg:gap-8 items-center">
             <DashboardImage isHovering={isHovering} alt={t("dashboardAlt")} />
 
             <div className="relative z-20 space-y-2 sm:space-y-3 lg:space-y-6 lg:pr-8 lg:order-1 sm:-mt-4 lg:mt-0 pt-90 sm:pt-0 text-center lg:text-left flex flex-col items-center lg:items-start lg:block">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium bg-[#0C5F4C]/10 backdrop-blur-sm text-[#0C5F4C] border border-[#0C5F4C]/20 animate-fade-in-down">
-                {t("earlyAccessBadge")}
-              </div>
-
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-[1.1] animate-fade-in-up animate-delay-100 animate-fill-both break-words hyphens-auto drop-shadow-lg">
-                <span className="text-gray-900 drop-shadow-md">{t("title")} </span>
+                <span className="text-gray-900 drop-shadow-md">
+                  {t("title")}{" "}
+                </span>
                 <br />
                 <span
                   className="bg-gradient-to-r from-[#0C5F4C] via-[#10B981] to-[#0C5F4C] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift drop-shadow-md"
@@ -83,16 +80,6 @@ export function Hero() {
                 {t("descriptionPart1")}
                 {t("descriptionPart2")}
               </p>
-
-              <div className="inline-flex sm:hidden items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-[#0C5F4C]/15 backdrop-blur-sm text-[#0C5F4C] border border-[#0C5F4C]/30 animate-fade-in-up animate-delay-200 animate-fill-both mt-2">
-                <Calendar className="h-3 w-3" />
-                {t("launchBadge")}
-              </div>
-
-              <div className="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-[#0C5F4C]/15 text-[#0C5F4C] border border-[#0C5F4C]/30 animate-fade-in-up animate-delay-200 animate-fill-both -mt-1 sm:mt-0">
-                <Calendar className="h-3 w-3" />
-                {t("launchBadge")}
-              </div>
 
               <div className="relative pt-4 group animate-scale-in animate-delay-300 animate-fill-both">
                 <div
@@ -127,7 +114,9 @@ export function Hero() {
                       as="button"
                       className="bg-transparent text-[15px] font-medium px-6 h-14 rounded-full whitespace-nowrap flex items-center justify-center w-full"
                     >
-                      <span className="text-[#0C5F4C]">{t("collectorSurveyButton")}</span>
+                      <span className="text-[#0C5F4C]">
+                        {t("collectorSurveyButton")}
+                      </span>
                     </HoverBorderGradient>
                   </Link>
 
@@ -145,7 +134,9 @@ export function Hero() {
                         as="button"
                         className="bg-transparent text-[15px] font-medium px-4 sm:px-6 h-14 rounded-full whitespace-nowrap flex items-center justify-center w-full"
                       >
-                        <span className="text-[#0C5F4C]">{t("collectorSurveyButton")}</span>
+                        <span className="text-[#0C5F4C]">
+                          {t("collectorSurveyButton")}
+                        </span>
                       </HoverBorderGradient>
                     </Link>
                   </div>

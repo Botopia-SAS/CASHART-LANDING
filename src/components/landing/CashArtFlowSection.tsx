@@ -111,8 +111,18 @@ function FlowStepCard({
   // Determinar si la imagen va a la izquierda o derecha según el índice del step
   const isImageLeft = stepIndex % 2 === 0;
 
-  // Estilo de máscara para degradado con transparencia en la parte superior
-  const imageStyle = {
+  // Estilo de máscara para degradado con transparencia en la parte superior e inferior (móvil)
+  const imageMaskMobile = {
+    maskImage:
+      "linear-gradient(to bottom, transparent 0%, black 15%, black 50%, transparent 100%), linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+    WebkitMaskImage:
+      "linear-gradient(to bottom, transparent 0%, black 15%, black 50%, transparent 100%), linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+    maskComposite: "intersect",
+    WebkitMaskComposite: "source-in",
+  };
+
+  // Estilo de máscara para desktop (sin cambios)
+  const imageMaskDesktop = {
     maskImage:
       "linear-gradient(to bottom, transparent 0%, black 15%, black 50%, transparent 100%), linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
     WebkitMaskImage:
@@ -128,19 +138,29 @@ function FlowStepCard({
       {/* IMAGE - Mobile Background / Desktop Side Image */}
       <div
         key={`image-${step.id}`}
-        className="absolute inset-0 lg:relative w-full lg:w-2/3 flex justify-center lg:justify-end -mt-12 lg:mt-0 z-0 lg:z-auto opacity-20 lg:opacity-100 pointer-events-none lg:pointer-events-auto"
+        className="absolute inset-0 lg:relative w-full lg:w-2/3 flex justify-center lg:justify-end -mt-12 lg:mt-0 z-0 lg:z-auto pointer-events-none lg:pointer-events-auto"
         style={{
-          animation: `${isImageLeft ? "flipSlideToRight" : "flipSlideToLeft"} 0.6s ease-out`,
+          maskImage: "linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%)",
         }}
       >
-        <div className="relative w-full max-w-3xl h-[500px] sm:h-[600px] lg:h-[700px]">
-          {/* 🖼️ Cloudinary Image con estilo Hero */}
+        <div className="relative w-full max-w-3xl h-[500px] sm:h-[600px] lg:h-[700px] animate-fade-in">
+          {/* 🖼️ Cloudinary Image con estilo Hero - Desktop */}
           <Image
             src={step.imageUrl}
             alt={step.title}
             fill
-            className="object-contain lg:opacity-40 transition-all duration-300"
-            style={imageStyle}
+            className="hidden lg:block object-contain opacity-40 transition-all duration-300"
+            style={imageMaskDesktop}
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 66vw, 66vw"
+            priority
+          />
+          {/* 🖼️ Cloudinary Image con estilo Hero - Mobile */}
+          <Image
+            src={step.imageUrl}
+            alt={step.title}
+            fill
+            className="lg:hidden object-contain opacity-30 transition-all duration-300"
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 66vw, 66vw"
             priority
           />
@@ -156,12 +176,12 @@ function FlowStepCard({
         }}
       >
         {/* Title - Matching Hero text style */}
-        <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+        <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
           {step.title}
         </h3>
 
         {/* Description - Matching Hero text style */}
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed max-w-md lg:max-w-none mx-auto lg:mx-0">
+        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 leading-relaxed max-w-md lg:max-w-none mx-auto lg:mx-0">
           {step.description}
         </p>
 
@@ -256,7 +276,7 @@ export function CashArtFlowSection() {
   return (
     <section
       ref={sectionRef}
-      className={`relative py-8 sm:py-6 lg:py-8 overflow-hidden mt-12 sm:mt-0 ${isVisible ? 'animate-slide-in-left-responsive' : 'opacity-0'}`}
+      className={`relative py-8 sm:py-6 lg:py-8 overflow-hidden mt-12 sm:mt-0 mb-0 ${isVisible ? 'animate-slide-in-left-responsive' : 'opacity-0'}`}
     >
       {/* Background is now global */}
 
@@ -279,8 +299,8 @@ export function CashArtFlowSection() {
           onFlowChange={handleFlowChange}
         />
 
-        {/* Main Content - Sin contenedor que englobe */}
-        <div key={activeFlowId} className="mb-8 sm:mb-10 lg:mb-12">
+        {/* Main Content - Espacio cero con toggle */}
+        <div key={activeFlowId} className="mb-8 sm:mb-10 lg:mb-12 -mt-20 sm:-mt-24 lg:-mt-28">
           <FlowStepCard step={activeStep} stepIndex={0} />
         </div>
       </div>
