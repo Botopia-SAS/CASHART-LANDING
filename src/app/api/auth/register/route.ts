@@ -8,6 +8,8 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
 
+    console.log('Received registration body:', body);
+
     // Validate input
     const validatedData = authSchema.parse(body);
 
@@ -23,11 +25,24 @@ export async function POST(request: NextRequest) {
     // Hash password
     const hashedPassword = await bcrypt.hash(validatedData.password, 10);
 
-    // Add user to Google Sheets
-    await addUserToSheet({
+    // Extract step 2 data
+    const { website, instagram, priceRange, financingExperience } = body;
+
+    console.log('Step 2 data:', { website, instagram, priceRange, financingExperience });
+
+    // Add user to Google Sheets with all data
+    const sheetData = {
       ...validatedData,
       password: hashedPassword,
-    });
+      website: website || '',
+      instagram: instagram || '',
+      priceRange: priceRange || '',
+      financingExperience: financingExperience || '',
+    };
+
+    console.log('Data being sent to sheets:', sheetData);
+
+    await addUserToSheet(sheetData);
 
     // Send welcome email to gallery
     try {
