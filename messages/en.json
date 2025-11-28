@@ -162,8 +162,11 @@
     "website": "Website",
     "instagram": "Instagram",
     "priceRange": "Price Range",
-    "priceRange250to500k": "$250k - $500k",
-    "priceRangeOver500k": "Over $500k",
+    "priceRangeUnder10k": "Under $10K",
+    "priceRange10to50k": "$10K - $50K",
+    "priceRange50to250k": "$50K - $250K",
+    "priceRange250to500k": "$250K - $500K",
+    "priceRangeOver500k": "Over $500K",
     "financingExperience": "Experience offering financing",
     "yes": "Yes",
     "no": "No"

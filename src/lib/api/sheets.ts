@@ -23,6 +23,10 @@ export async function addUserToSheet(userData: {
   password: string;
   userType: 'collector' | 'gallery';
   galleryName?: string;
+  website?: string;
+  instagram?: string;
+  priceRange?: string;
+  financingExperience?: string;
 }) {
   const sheets = await getGoogleSheetsClient();
   const spreadsheetId = process.env.GOOGLE_SHEET_ID;
@@ -37,12 +41,22 @@ export async function addUserToSheet(userData: {
       userData.userType,
       userData.galleryName || '',
       userData.password, // In production, this should be hashed
+      userData.website || '',
+      userData.instagram || '',
+      userData.priceRange || '',
+      userData.financingExperience || '',
     ],
   ];
 
+  console.log('Appending to sheets - Row data:', values[0]);
+  console.log('Column I (website):', userData.website);
+  console.log('Column J (instagram):', userData.instagram);
+  console.log('Column K (priceRange):', userData.priceRange);
+  console.log('Column L (financingExperience):', userData.financingExperience);
+
   const response = await sheets.spreadsheets.values.append({
     spreadsheetId,
-    range: 'Users!A:H',
+    range: 'Users!A:L',
     valueInputOption: 'USER_ENTERED',
     requestBody: {
       values,
@@ -58,7 +72,7 @@ export async function getUserByEmail(email: string) {
 
   const response = await sheets.spreadsheets.values.get({
     spreadsheetId,
-    range: 'Users!A:H',
+    range: 'Users!A:L',
   });
 
   const rows = response.data.values;
@@ -82,6 +96,10 @@ export async function getUserByEmail(email: string) {
     userType: userRow[5] as 'collector' | 'gallery',
     galleryName: userRow[6] || undefined,
     password: userRow[7],
+    website: userRow[8] || undefined,
+    instagram: userRow[9] || undefined,
+    priceRange: userRow[10] || undefined,
+    financingExperience: userRow[11] || undefined,
   };
 }
 

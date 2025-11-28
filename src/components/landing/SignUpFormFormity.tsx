@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -32,12 +33,13 @@ const countryCodes = [
 ];
 
 interface SignUpFormFormityProps {
-  onSuccess: () => void;
   initialEmail?: string;
 }
 
-export function SignUpFormFormity({ onSuccess, initialEmail }: SignUpFormFormityProps) {
+export function SignUpFormFormity({ initialEmail }: SignUpFormFormityProps) {
   const t = useTranslations('auth');
+  const locale = useLocale();
+  const router = useRouter();
   const [currentStep, setCurrentStep] = useState(1);
   const [userType, setUserType] = useState<'collector' | 'gallery'>('gallery');
   const [isLoading, setIsLoading] = useState(false);
@@ -45,7 +47,7 @@ export function SignUpFormFormity({ onSuccess, initialEmail }: SignUpFormFormity
   // Step 2 data
   const [website, setWebsite] = useState('');
   const [instagram, setInstagram] = useState('');
-  const [priceRange, setPriceRange] = useState<'250-500k' | 'over-500k'>('250-500k');
+  const [priceRange, setPriceRange] = useState<'under-10k' | '10-50k' | '50-250k' | '250-500k' | 'over-500k'>('under-10k');
   const [financingExperience, setFinancingExperience] = useState<'yes' | 'no'>('no');
 
   const {
@@ -85,18 +87,30 @@ export function SignUpFormFormity({ onSuccess, initialEmail }: SignUpFormFormity
         financingExperience,
       };
 
+      console.log('Sending registration data:', fullData);
+
       const response = await fetch('/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(fullData),
       });
 
+      console.log('Response status:', response.status);
+      console.log('Response ok:', response.ok);
+
       if (!response.ok) {
         const errorData = await response.json();
+        console.error('Server error response:', errorData);
         throw new Error(errorData.error || 'Registration failed');
       }
 
-      onSuccess();
+      const responseData = await response.json();
+      console.log('Registration successful:', responseData);
+
+      // Don't call onSuccess here to avoid double redirect
+      // onSuccess is already redirecting to dashboard in the parent component
+      // Just redirect to dashboard directly
+      router.push(`/${locale}/dashboard`);
     } catch (error) {
       console.error('Registration error:', error);
       alert(error instanceof Error ? error.message : 'Registration failed');
@@ -286,13 +300,16 @@ export function SignUpFormFormity({ onSuccess, initialEmail }: SignUpFormFormity
             <div className="space-y-3">
               <Label className="text-gray-900 font-semibold text-base">{t('priceRange')}</Label>
               <Select
-                onValueChange={(value) => setPriceRange(value as '250-500k' | 'over-500k')}
-                defaultValue="250-500k"
+                onValueChange={(value) => setPriceRange(value as 'under-10k' | '10-50k' | '50-250k' | '250-500k' | 'over-500k')}
+                defaultValue="under-10k"
               >
                 <SelectTrigger className="w-full px-6 py-4 text-base border-2 border-gray-300 rounded-full focus:ring-2 focus:ring-[#0C5F4C] bg-white/50">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
+                  <SelectItem value="under-10k">{t('priceRangeUnder10k')}</SelectItem>
+                  <SelectItem value="10-50k">{t('priceRange10to50k')}</SelectItem>
+                  <SelectItem value="50-250k">{t('priceRange50to250k')}</SelectItem>
                   <SelectItem value="250-500k">{t('priceRange250to500k')}</SelectItem>
                   <SelectItem value="over-500k">{t('priceRangeOver500k')}</SelectItem>
                 </SelectContent>

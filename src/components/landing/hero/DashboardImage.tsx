@@ -33,9 +33,7 @@ export function DashboardImage({
 
   // Desktop: use hover state, Mobile: use auto-toggle
   const imageSrc = isHovering ? imageWithMoney : imageWithoutMoney;
-  const mobileImageSrc = mobileImageToggle
-    ? imageWithMoney
-    : imageWithoutMoney;
+  const mobileImageSrc = mobileImageToggle ? imageWithMoney : imageWithoutMoney;
 
   return (
     <div className="absolute inset-0 flex flex-col justify-center items-center gap-4 lg:relative lg:justify-end lg:items-end lg:order-2 -mx-4 sm:mx-0 -mt-34 sm:mt-0 -mb-12 sm:mb-0 z-10 lg:z-auto">
@@ -51,8 +49,8 @@ export function DashboardImage({
           loading={isHovering ? "lazy" : "eager"}
         />
       </div>
-      {/* Mobile image with auto-toggle effect */}
-      <div className="relative w-screen h-[520px] sm:hidden left-0 right-0 -mt-12">
+      {/* Mobile image with auto-toggle effect, mayor altura para mostrar la imagen completa */}
+      <div className="relative w-screen h-[700px] sm:hidden left-0 right-0 mt-16px">
         <Image
           src={mobileImageSrc}
           alt={alt}

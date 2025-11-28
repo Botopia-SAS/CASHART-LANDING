@@ -104,7 +104,7 @@ function GallerySignupPageContent() {
             {activeMode === 'signin' ? (
               <SignInForm onSuccess={handleSuccess} initialEmail={emailParam || undefined} />
             ) : (
-              <SignUpFormFormity onSuccess={handleSuccess} initialEmail={emailParam || undefined} />
+              <SignUpFormFormity initialEmail={emailParam || undefined} />
             )}
           </div>
         </div>
