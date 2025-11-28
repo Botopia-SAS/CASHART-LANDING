@@ -274,7 +274,7 @@
       }
     },
     "fields": {
-      "companyName": "Gallery or company name",
+      "companyName": "Company name",
       "fullName": "Full name",
       "email": "Email",
       "phoneNumber": "Phone number"
