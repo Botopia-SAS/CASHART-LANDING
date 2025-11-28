@@ -1,4 +1,6 @@
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
+
+import React from "react";
 
 export function CTAButton({
   onClick,
@@ -7,9 +9,9 @@ export function CTAButton({
   onMouseMove,
   mousePosition,
   isHovering,
-  text
+  text,
 }: {
-  onClick: () => void;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   onMouseEnter: () => void;
   onMouseLeave: () => void;
   onMouseMove: (e: React.MouseEvent<HTMLButtonElement>) => void;
@@ -30,13 +32,14 @@ export function CTAButton({
         style={{
           left: `${mousePosition.x}px`,
           top: `${mousePosition.y}px`,
-          transform: 'translate(-50%, -50%)',
-          width: isHovering ? '150px' : '0px',
-          height: isHovering ? '150px' : '0px',
-          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%)',
+          transform: "translate(-50%, -50%)",
+          width: isHovering ? "150px" : "0px",
+          height: isHovering ? "150px" : "0px",
+          background:
+            "radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%)",
           opacity: isHovering ? 1 : 0,
-          transition: 'width 0.3s ease, height 0.3s ease, opacity 0.3s ease',
-          filter: 'blur(20px)',
+          transition: "width 0.3s ease, height 0.3s ease, opacity 0.3s ease",
+          filter: "blur(20px)",
         }}
       />
       <span className="relative z-10">{text}</span>

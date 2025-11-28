@@ -1,14 +1,19 @@
-type OptionType = 'galleries' | 'collectors';
+type OptionType = "galleries" | "collectors";
 
 interface OptionToggleProps {
   activeOption: OptionType;
   onOptionChange: (option: OptionType) => void;
 }
 
-export function OptionToggle({ activeOption, onOptionChange }: OptionToggleProps) {
+import { useTranslations } from "next-intl";
+export function OptionToggle({
+  activeOption,
+  onOptionChange,
+}: OptionToggleProps) {
+  const t = useTranslations("howItWorks");
   const options: { id: OptionType; label: string }[] = [
-    { id: 'galleries', label: 'For Galleries' },
-    { id: 'collectors', label: 'For Collectors' },
+    { id: "galleries", label: t("toggle.galleries") },
+    { id: "collectors", label: t("toggle.collectors") },
   ];
 
   const activeIndex = options.findIndex((opt) => opt.id === activeOption);
@@ -36,7 +41,7 @@ export function OptionToggle({ activeOption, onOptionChange }: OptionToggleProps
                 onClick={() => onOptionChange(option.id)}
                 className={`
                   relative z-10 px-4 py-3 sm:px-6 sm:py-4 rounded-full font-semibold text-xs sm:text-sm md:text-base transition-all duration-300
-                  ${isActive ? 'text-white' : 'text-gray-700 hover:text-gray-900'}
+                  ${isActive ? "text-white" : "text-gray-700 hover:text-gray-900"}
                 `}
               >
                 {option.label}

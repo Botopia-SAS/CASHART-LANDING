@@ -1,11 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
+import { useTranslations } from "next-intl";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { Timeline } from "@/components/ui/timeline";
 import { OptionToggle } from "./howitworks/OptionToggle";
 
 export function TimelineSection() {
+  const t = useTranslations("howItWorks");
   const [activeOption, setActiveOption] = useState<"galleries" | "collectors">(
     "galleries"
   );
@@ -69,12 +71,13 @@ export function TimelineSection() {
           className="bg-gradient-to-r from-[#0C5F4C] via-[#10B981] to-[#0C5F4C] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift drop-shadow-md"
           style={{ textShadow: "0 0 40px rgba(16, 185, 129, 0.3)" }}
         >
-          Step 1
+          {t("step", { number: 1 })}
         </span>
       ),
       content: (
         <StepCard
           icon={
+            /* ...icon svg... */
             <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
               <rect width="24" height="24" rx="6" fill="#10B981" />
               <path
@@ -97,8 +100,8 @@ export function TimelineSection() {
               />
             </svg>
           }
-          title="Register"
-          description="Join the waitlist in under 2 minutes."
+          title={t("galleries.step1.title")}
+          description={t("galleries.step1.description")}
           index={0}
         />
       ),
@@ -109,7 +112,7 @@ export function TimelineSection() {
           className="bg-gradient-to-r from-[#0C5F4C] via-[#10B981] to-[#0C5F4C] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift drop-shadow-md"
           style={{ textShadow: "0 0 40px rgba(16, 185, 129, 0.3)" }}
         >
-          Step 2
+          {t("step", { number: 2 })}
         </span>
       ),
       content: (
@@ -137,8 +140,8 @@ export function TimelineSection() {
               />
             </svg>
           }
-          title="Offer Financing"
-          description="Your clients choose to pay over time, you get paid upfront."
+          title={t("galleries.step2.title")}
+          description={t("galleries.step2.description")}
           index={1}
         />
       ),
@@ -149,7 +152,7 @@ export function TimelineSection() {
           className="bg-gradient-to-r from-[#0C5F4C] via-[#10B981] to-[#0C5F4C] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift drop-shadow-md"
           style={{ textShadow: "0 0 40px rgba(16, 185, 129, 0.3)" }}
         >
-          Step 3
+          {t("step", { number: 3 })}
         </span>
       ),
       content: (
@@ -167,8 +170,8 @@ export function TimelineSection() {
               <circle cx="12" cy="12" r="10" stroke="#fff" strokeWidth="2" />
             </svg>
           }
-          title="Sell More"
-          description="Increase your sales without credit risk or operational burden."
+          title={t("galleries.step3.title")}
+          description={t("galleries.step3.description")}
           index={2}
         />
       ),
@@ -182,7 +185,7 @@ export function TimelineSection() {
           className="bg-gradient-to-r from-[#0C5F4C] via-[#10B981] to-[#0C5F4C] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift drop-shadow-md"
           style={{ textShadow: "0 0 40px rgba(16, 185, 129, 0.3)" }}
         >
-          Step 1
+          {t("step", { number: 1 })}
         </span>
       ),
       content: (
@@ -203,8 +206,8 @@ export function TimelineSection() {
               />
             </svg>
           }
-          title="Discover Art"
-          description="Discover and join exclusive art collections. Enjoy flexible payment options tailored for collectors."
+          title={t("collectors.step1.title")}
+          description={t("collectors.step1.description")}
           index={0}
         />
       ),
@@ -215,7 +218,7 @@ export function TimelineSection() {
           className="bg-gradient-to-r from-[#0C5F4C] via-[#10B981] to-[#0C5F4C] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift drop-shadow-md"
           style={{ textShadow: "0 0 40px rgba(16, 185, 129, 0.3)" }}
         >
-          Step 2
+          {t("step", { number: 2 })}
         </span>
       ),
       content: (
@@ -231,8 +234,8 @@ export function TimelineSection() {
               />
             </svg>
           }
-          title="Flexible Payments"
-          description="Choose your favorite artwork and select a payment plan that fits your needs."
+          title={t("collectors.step2.title")}
+          description={t("collectors.step2.description")}
           index={1}
         />
       ),
@@ -243,7 +246,7 @@ export function TimelineSection() {
           className="bg-gradient-to-r from-[#0C5F4C] via-[#10B981] to-[#0C5F4C] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift drop-shadow-md"
           style={{ textShadow: "0 0 40px rgba(16, 185, 129, 0.3)" }}
         >
-          Step 3
+          {t("step", { number: 3 })}
         </span>
       ),
       content: (
@@ -261,8 +264,8 @@ export function TimelineSection() {
               <circle cx="12" cy="12" r="10" stroke="#fff" strokeWidth="2" />
             </svg>
           }
-          title="Enjoy Your Art"
-          description="Enjoy your new artwork and exclusive member benefits."
+          title={t("collectors.step3.title")}
+          description={t("collectors.step3.description")}
           index={2}
         />
       ),
@@ -272,7 +275,10 @@ export function TimelineSection() {
   const data = activeOption === "galleries" ? galleriesData : collectorsData;
 
   return (
-    <div id="how-it-works" className="relative w-full overflow-clip scroll-mt-32">
+    <div
+      id="how-it-works"
+      className="relative w-full overflow-clip scroll-mt-32"
+    >
       <div className="flex flex-col items-center">
         <OptionToggle
           activeOption={activeOption}

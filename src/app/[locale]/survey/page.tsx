@@ -22,7 +22,7 @@ export default function SurveyPage() {
                 {t('title')}
               </h1>
               <p className="text-base sm:text-lg text-gray-600 mb-2">
-                ⏱️ {t('subtitle')}
+                 {t('subtitle')}
               </p>
               <p className="text-sm sm:text-base text-gray-700 max-w-2xl mx-auto">
                 {t('description')}

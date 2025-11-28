@@ -22,6 +22,7 @@ export function Hero() {
   const [isHovering, setIsHovering] = useState(false);
   const heroSectionRef = useRef<HTMLElement | null>(null);
   const [heroInView, setHeroInView] = useState(false);
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
     const node = heroSectionRef.current;
@@ -80,6 +81,9 @@ export function Hero() {
                 {t("descriptionPart1")}
                 {t("descriptionPart2")}
               </p>
+              <div className="text-base sm:text-lg text-[#0C5F4C] font-semibold animate-fade-in-up animate-delay-250 animate-fill-both mb-2">
+                {t("launchBadge")}
+              </div>
 
               <div className="relative pt-4 group animate-scale-in animate-delay-300 animate-fill-both">
                 <div
@@ -95,10 +99,16 @@ export function Hero() {
                     <input
                       type="email"
                       placeholder={t("emailPlaceholder")}
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       className="w-full h-14 pl-4 pr-4 md:pr-40 text-[15px] focus:outline-none bg-transparent border-none text-gray-900 placeholder:text-gray-500"
                     />
                     <CTAButton
-                      onClick={() => setShowAuth(true)}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        const emailParam = email ? `&email=${encodeURIComponent(email)}` : '';
+                        window.location.href = `/${locale}/gallery-signup?mode=signup${emailParam}`;
+                      }}
                       onMouseEnter={() => setIsHovering(true)}
                       onMouseLeave={() => setIsHovering(false)}
                       onMouseMove={handleButtonMouseMove}
@@ -112,21 +122,22 @@ export function Hero() {
                     <HoverBorderGradient
                       containerClassName="hidden lg:flex w-full rounded-full"
                       as="button"
-                      className="bg-transparent text-[13px] font-medium px-3 h-10 rounded-full whitespace-normal flex items-center justify-center w-full min-w-[120px] max-w-[220px] text-center"
+                      className="bg-transparent text-[15px] font-medium px-4 h-14 rounded-full whitespace-nowrap flex items-center justify-center w-full text-center"
                     >
-                      <span className="text-[#0C5F4C] break-word leading-tight">
+                      <span className="text-[#0C5F4C]">
                         {t("collectorSurveyButton")}
                       </span>
                     </HoverBorderGradient>
                   </Link>
 
                   <div className="flex flex-row gap-3 lg:hidden">
-                    <Button
-                      onClick={() => setShowAuth(true)}
-                      className="w-1/2 bg-[#0C5F4C] hover:bg-[#0A4F3E] text-white text-[13px] font-medium px-3 h-10 rounded-full whitespace-nowrap transition-all"
-                    >
-                      {t("registerButton")}
-                    </Button>
+                    <Link href={`/${locale}/gallery-signup?mode=signup`} className="w-1/2">
+                      <Button
+                        className="w-full bg-[#0C5F4C] hover:bg-[#0A4F3E] text-white text-[13px] font-medium px-3 h-10 rounded-full whitespace-nowrap transition-all"
+                      >
+                        {t("registerButton")}
+                      </Button>
+                    </Link>
 
                     <Link href={`/${locale}/survey`} className="w-1/2">
                       <HoverBorderGradient

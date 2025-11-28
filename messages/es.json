@@ -38,6 +38,7 @@
     }
   },
   "header": {
+    "signUpGallerist": "Iniciar sesión como galerista",
     "home": "Inicio",
     "smartLiquidity": "Liquidez Inteligente",
     "howItWorks": "Cómo Funciona",
@@ -47,8 +48,8 @@
     "registerGallery": "Registra tu Galería",
     "registerGalleryMobile": "Registra tu Galería",
     "collectorSurveyButton": "Are you a collector? click here!",
-    "collectorSurveyButtonDesktop": "click for collector",
-    "registerGalleryDesktop": "click for gallerist"
+    "collectorSurveyButtonDesktop": "coleccionista",
+    "registerGalleryDesktop": "galerista"
   },
   "videoCircle": {
     "title": "Cómo Funciona CashArt",
@@ -70,6 +71,11 @@
     "imageAlt": "Plataforma CashArt"
   },
   "howItWorks": {
+    "step": "Paso {number}",
+    "toggle": {
+      "galleries": "Galerías",
+      "collectors": "Coleccionistas"
+    },
     "badge": "Onboarding guiado",
     "title": "Una Experiencia Sin Fricciones",
     "subtitle": "Desde el registro hasta el pago, cada paso está diseñado para simplicidad y velocidad.",
@@ -79,26 +85,26 @@
         "description": "Únete a la lista de espera en menos de 2 minutos."
       },
       "step2": {
-        "title": "Ofrece Financiamiento",
+        "title": "Ofrece financiamiento",
         "description": "Tus clientes eligen pagar a plazos, tú cobras por adelantado."
       },
       "step3": {
-        "title": "Vende Más",
+        "title": "Vende más",
         "description": "Aumenta tus ventas sin riesgo crediticio ni carga operativa."
       }
     },
     "collectors": {
       "step1": {
-        "title": "Encuentra tu Pieza",
-        "description": "Descubre una obra de arte que ames en una de nuestras galerías aliadas."
+        "title": "Encuentra tu obra",
+        "description": "Descubre una obra de arte que te encante en una de nuestras galerías aliadas."
       },
       "step2": {
         "title": "Paga con CashArt",
         "description": "Elige términos de pago flexibles que se ajusten a tu presupuesto."
       },
       "step3": {
-        "title": "Disfruta tu Arte",
-        "description": "Lleva tu nueva adquisición a casa hoy y paga a plazos."
+        "title": "Disfruta tu arte",
+        "description": "Llévate tu nueva adquisición a casa hoy y págala a plazos."
       }
     }
   },
@@ -191,8 +197,30 @@
     "subtitle": "Solo toma 1 minuto",
     "description": "Tus respuestas nos ayudan a adaptar el financiamiento de CashArt a coleccionistas serios como tú.",
     "q1": {
-      "question": "¿Qué tipo de arte coleccionas principalmente?",
-      "placeholder": "Ej.: Contemporáneo, Moderno, Maestros Antiguos, Digital"
+      "question": "¿Con qué frecuencia adquieres nuevas obras de arte?",
+      "options": {
+        "monthly": "Mensualmente",
+        "everyFewMonths": "Cada pocos meses",
+        "onceAYearOrLess": "Una vez al año o menos"
+      }
+    },
+    "q3": {
+      "question": "¿Alguna vez has querido acceder a liquidez sin vender tus obras de arte?",
+      "options": {
+        "often": "Sí, a menudo",
+        "sometimes": "Sí, a veces",
+        "never": "Nunca"
+      }
+    },
+    "q5": {
+      "question": "Si pudieras obtener hasta el 70% del valor de una obra en efectivo en pocos días (sin venderla), ¿qué tan atractivo te parecería?",
+      "options": {
+        "1": "Nada atractivo",
+        "2": "Poco atractivo",
+        "3": "Neutral",
+        "4": "Atractivo",
+        "5": "Muy atractivo"
+      }
     },
     "q2": {
       "question": "¿Cuál es tu rango de precio típico para una nueva adquisición?",
@@ -211,8 +239,13 @@
       }
     },
     "q4": {
-      "question": "¿Cuál es el mayor punto de fricción al adquirir una nueva obra?",
-      "placeholder": "Comparte tus ideas..."
+      "question": "¿Qué te ha impedido usar tu arte como garantía en el pasado?",
+      "options": {
+        "processComplexOrSlow": "Proceso demasiado complejo o lento",
+        "highInterestRates": "Tasas de interés altas",
+        "didntKnowPossible": "No sabía que era posible",
+        "didntWantToGiveUpPossession": "No quería renunciar a la posesión"
+      }
     },
     "q5": {
       "question": "¿El acceso a financiamiento fluido te animaría a adquirir más obras?",
@@ -224,18 +257,19 @@
       }
     },
     "q6": {
-      "question": "¿Qué tan importante es la velocidad de aprobación cuando estás listo para comprar?",
+      "question": "¿Qué tan importante es para ti mantener la posesión física de tus obras mientras accedes a liquidez?",
       "options": {
-        "critical": "Crítico — Mismo día",
-        "important": "Importante — Dentro de 48 horas",
-        "moderate": "Moderado — Dentro de una semana",
-        "flexible": "Flexible — Sin prisa"
+        "1": "No importante",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "Absolutamente esencial"
       }
     },
     "q7": {
-      "question": "¿Te gustaría unirte a nuestro beta privado para coleccionistas?",
+      "question": "¿Te gustaría unirte a nuestra lista de espera privada para estar entre los primeros coleccionistas en acceder a este servicio de financiamiento de arte sin custodia?",
       "options": {
-        "yesDefinitely": "Sí, mantenme al tanto",
+        "yesDefinitely": "Sí, definitivamente",
         "notRightNow": "Ahora no"
       }
     },
