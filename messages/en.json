@@ -38,6 +38,7 @@
     }
   },
   "header": {
+    "signUpGallerist": "Sign in for gallerist",
     "home": "Home",
     "smartLiquidity": "Smart Liquidity",
     "howItWorks": "How it Works",
@@ -70,6 +71,11 @@
     "imageAlt": "CashArt Platform"
   },
   "howItWorks": {
+    "step": "Step {number}",
+    "toggle": {
+      "galleries": "For Galleries",
+      "collectors": "For Collectors"
+    },
     "badge": "Guided onboarding",
     "title": "A Seamless Experience",
     "subtitle": "From registration to payment, every step is designed for simplicity and speed.",
@@ -147,7 +153,20 @@
     "submit": "Submit",
     "alreadyHaveAccount": "Already have an account?",
     "noAccount": "Don't have an account?",
-    "signUp": "Sign Up"
+    "signUp": "Sign Up",
+    "step": "Step",
+    "of": "of",
+    "next": "Next",
+    "back": "Back",
+    "optional": "Optional",
+    "website": "Website",
+    "instagram": "Instagram",
+    "priceRange": "Price Range",
+    "priceRange250to500k": "$250k - $500k",
+    "priceRangeOver500k": "Over $500k",
+    "financingExperience": "Experience offering financing",
+    "yes": "Yes",
+    "no": "No"
   },
   "dashboard": {
     "overview": "Overview",
@@ -191,11 +210,15 @@
     "subtitle": "Takes just 1 minute",
     "description": "Your answers help us tailor CashArt financing for serious collectors like you.",
     "q1": {
-      "question": "What type of art do you primarily collect?",
-      "placeholder": "e.g., Contemporary, Modern, Old Masters, Digital"
+      "question": "How often do you acquire new artworks?",
+      "options": {
+        "monthly": "Monthly",
+        "everyFewMonths": "Every few months",
+        "onceAYearOrLess": "Once a year or less"
+      }
     },
     "q2": {
-      "question": "What is your typical price range for a new acquisition?",
+      "question": "What’s the typical price range of the artworks you collect?",
       "options": {
         "under10k": "Under $10K",
         "10kTo50k": "$10K – $50K",
@@ -204,38 +227,46 @@
       }
     },
     "q3": {
-      "question": "Have you used payment plans or financing to acquire art before?",
+      "question": "Have you ever wanted to access liquidity without selling your artworks?",
       "options": {
-        "yes": "Yes",
-        "no": "No"
+        "often": "Yes, often",
+        "sometimes": "Yes, sometimes",
+        "never": "Never"
       }
     },
     "q4": {
-      "question": "What is the single biggest point of friction for you when acquiring a new piece of art?",
-      "placeholder": "Share your thoughts..."
+      "question": "What has stopped you from using your art as collateral in the past?",
+      "options": {
+        "processComplexOrSlow": "Process too complex or slow",
+        "highInterestRates": "High interest rates",
+        "didntKnowPossible": "Didn't know it was possible",
+        "didntWantToGiveUpPossession": "Didn't want to give up possession"
+      }
     },
     "q5": {
-      "question": "Would access to seamless, elegant financing encourage you to acquire more works?",
+      "question": "If you could get up to 70% of an artwork’s value in cash within a few days (without selling it), how appealing would that be?",
       "options": {
-        "definitely": "Definitely",
-        "probably": "Probably",
-        "maybe": "Maybe",
-        "unlikely": "Unlikely"
+        "1": "Not appealing at all",
+        "2": "Slightly appealing",
+        "3": "Neutral",
+        "4": "Appealing",
+        "5": "Extremely appealing"
       }
     },
     "q6": {
-      "question": "How important is the speed of approval when you are ready to purchase?",
+      "question": "How important is it for you to keep physical possession of your artworks while accessing liquidity?",
       "options": {
-        "critical": "Critical — Same day",
-        "important": "Important — Within 48 hours",
-        "moderate": "Moderate — Within a week",
-        "flexible": "Flexible — No rush"
+        "1": "Not important",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "Absolutely essential"
       }
     },
     "q7": {
-      "question": "Would you like to join our private beta for collectors?",
+      "question": "Would you like to join our private waitlist to be among the first collectors to access this non-custodial art financing service?",
       "options": {
-        "yesDefinitely": "Yes, keep me in the loop",
+        "yesDefinitely": "Yes, definitely",
         "notRightNow": "Not right now"
       }
     },
