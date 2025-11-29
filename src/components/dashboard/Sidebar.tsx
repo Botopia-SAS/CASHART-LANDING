@@ -1,49 +1,58 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
-import { useTranslations } from 'next-intl';
-import { cn } from '@/lib/utils';
-import { LayoutDashboard, Package, ShoppingBag, BarChart3, Settings, LogOut, Menu, X } from 'lucide-react';
-import { useAuthStore } from '@/lib/store/auth-store';
-import { Button } from '@/components/ui/button';
-import { useState } from 'react';
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { cn } from "@/lib/utils";
+import {
+  LayoutDashboard,
+  Handshake,
+  Users,
+  CreditCard,
+  BarChart3,
+  LogOut,
+  Menu,
+  X,
+} from "lucide-react";
+import { useAuthStore } from "@/lib/store/auth-store";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 const menuItems = [
   {
-    key: 'overview',
-    label: 'Dashboard',
+    key: "overview",
+    label: "Dashboard",
     icon: LayoutDashboard,
-    href: '/dashboard',
+    href: "/en/dashboard",
     enabled: true,
   },
   {
-    key: 'products',
-    label: 'Products',
-    icon: Package,
-    href: '/dashboard/products',
+    key: "deals",
+    label: "Deals",
+    icon: Handshake,
+    href: "/dashboard/products",
     enabled: false,
   },
   {
-    key: 'orders',
-    label: 'Orders',
-    icon: ShoppingBag,
-    href: '/dashboard/orders',
+    key: "clients",
+    label: "Clients",
+    icon: Users,
+    href: "/dashboard/orders",
     enabled: false,
   },
   {
-    key: 'analytics',
-    label: 'Analytics',
+    key: "payments",
+    label: "Payments",
+    icon: CreditCard,
+    href: "/dashboard/settings",
+    enabled: false,
+  },
+  {
+    key: "analytics",
+    label: "Analytics",
     icon: BarChart3,
-    href: '/dashboard/analytics',
-    enabled: false,
-  },
-  {
-    key: 'settings',
-    label: 'Settings',
-    icon: Settings,
-    href: '/dashboard/settings',
+    href: "/dashboard/analytics",
     enabled: false,
   },
 ];
@@ -55,7 +64,7 @@ export function Sidebar() {
 
   const handleLogout = () => {
     logout();
-    window.location.href = '/';
+    window.location.href = "/";
   };
 
   return (
@@ -77,11 +86,15 @@ export function Sidebar() {
       )}
 
       {/* Sidebar */}
-      <aside className={cn(
-        "w-64 border-r border-[#3a3f47] bg-[#1a1d21] h-screen flex flex-col transition-transform duration-300 lg:sticky lg:top-0",
-        "fixed top-0 left-0 z-50",
-        mobileMenuOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
-      )}>
+      <aside
+        className={cn(
+          "w-64 border-r border-[#3a3f47] bg-[#1a1d21] h-screen flex flex-col transition-transform duration-300 lg:sticky lg:top-0",
+          "fixed top-0 left-0 z-50",
+          mobileMenuOpen
+            ? "translate-x-0"
+            : "-translate-x-full lg:translate-x-0"
+        )}
+      >
         <div className="p-6 border-b border-[#3a3f47] flex items-center justify-between">
           <div className="relative h-10 w-32">
             <Image
@@ -102,17 +115,16 @@ export function Sidebar() {
         <nav className="flex-1 p-4 space-y-2">
           {menuItems.map((item) => {
             const Icon = item.icon;
-            const isActive = pathname === item.href || (item.href !== '/dashboard' && pathname?.startsWith(item.href));
+            const isActive =
+              pathname === item.href ||
+              (item.href !== "/dashboard" && pathname?.startsWith(item.href));
 
             if (!item.enabled) {
               return (
-                <div
-                  key={item.key}
-                  className="relative group"
-                >
+                <div key={item.key} className="relative group">
                   <div
                     className={cn(
-                      'flex items-center gap-3 px-4 py-3 rounded-lg transition-colors cursor-not-allowed opacity-50 text-gray-500'
+                      "flex items-center gap-3 px-4 py-3 rounded-lg transition-colors cursor-not-allowed opacity-50 text-gray-500"
                     )}
                   >
                     <Icon className="h-5 w-5" />
@@ -133,10 +145,10 @@ export function Sidebar() {
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
                 className={cn(
-                  'flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200',
+                  "flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200",
                   isActive
-                    ? 'bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/30'
-                    : 'text-gray-400 hover:bg-[#252930] hover:text-white'
+                    ? "bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/30"
+                    : "text-gray-400 hover:bg-[#252930] hover:text-white"
                 )}
               >
                 <Icon className="h-5 w-5" />
