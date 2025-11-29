@@ -542,4 +542,18 @@
   .animate-card-scale-4 {
     animation: card-scale-in 0.6s ease-out 5s forwards;
   }
+
+  /* Shimmer animation for progress bar */
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s ease-in-out infinite;
+  }
 }
