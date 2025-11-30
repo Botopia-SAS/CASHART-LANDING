@@ -10,6 +10,7 @@ import {
   Download,
   FileText,
   Users,
+  Mail,
 } from "lucide-react";
 
 export default function DashboardPage() {
@@ -244,10 +245,9 @@ export default function DashboardPage() {
             </p>
             <a
               href="mailto:hello@cashart.ai?subject=CashArt%20Inquiry"
-              className="px-12 py-4 bg-[#10B981] hover:bg-[#0C5F4C] text-white text-lg font-semibold rounded-xl shadow-lg shadow-[#10B981]/20 hover:shadow-[#10B981]/30 transition-all duration-200 transform hover:scale-105 inline-block"
-              target="_blank"
-              rel="noopener noreferrer"
+              className="px-12 py-4 bg-[#10B981] hover:bg-[#0C5F4C] text-white text-lg font-semibold rounded-xl shadow-lg shadow-[#10B981]/20 hover:shadow-[#10B981]/30 transition-all duration-200 transform hover:scale-105 inline-flex items-center gap-2"
             >
+              <Mail className="w-5 h-5" />
               Contact Our Team
             </a>
           </div>
