@@ -96,13 +96,13 @@ export function Sidebar() {
         )}
       >
         <div className="p-6 border-b border-[#3a3f47] flex items-center justify-between">
-          <div className="relative h-10 w-32">
+          <div className="relative h-24 w-60">
             <Image
-              src="https://res.cloudinary.com/dzi2p0pqa/image/upload/v1763664313/y2mjn6ltzclwzo2zw0xv.png"
-              alt="CashArt"
+              src="/Diseño sin título - 2025-11-30T134705.012.png"
+              alt="CashArt Logo"
               fill
               className="object-contain object-left"
-              unoptimized
+              priority
             />
           </div>
           <button

@@ -1,7 +1,16 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Lock, BarChart3, DollarSign, ShieldCheck, Download, FileText, Users } from "lucide-react";
+import {
+  Calendar,
+  Lock,
+  BarChart3,
+  DollarSign,
+  ShieldCheck,
+  Download,
+  FileText,
+  Users,
+} from "lucide-react";
 
 export default function DashboardPage() {
   return (
@@ -30,11 +39,14 @@ export default function DashboardPage() {
                 Welcome to CashArt Early Access
               </h2>
               <p className="text-gray-300 text-base sm:text-lg mb-6 max-w-3xl">
-                You are officially on the waitlist. We are preparing for our official launch in{" "}
-                <span className="text-[#10B981] font-semibold">April 2026</span>. Explore the dashboard to learn more about our vision and roadmap.
+                You are officially on the waitlist. We are preparing for our
+                official launch in{" "}
+                <span className="text-[#10B981] font-semibold">Q1 2026</span>
+                . Explore the dashboard to learn more about our vision and
+                roadmap.
               </p>
               <button className="px-6 py-2.5 bg-[#23272f] hover:bg-[#2d3139] text-[#10B981] font-medium rounded-lg border border-[#10B981]/30 transition-all duration-200">
-                Launch: April 2026
+                Launch: Q1 2026
               </button>
             </div>
           </div>
@@ -54,7 +66,9 @@ export default function DashboardPage() {
                 </div>
                 <div className="text-left">
                   <p className="text-xs text-gray-400">2025</p>
-                  <p className="text-sm font-semibold text-white">Current Phase</p>
+                  <p className="text-sm font-semibold text-white">
+                    Current Phase
+                  </p>
                 </div>
               </div>
 
@@ -65,7 +79,9 @@ export default function DashboardPage() {
                 </div>
                 <div className="text-left">
                   <p className="text-xs text-gray-400">2026</p>
-                  <p className="text-sm font-semibold text-gray-300">Next Milestone</p>
+                  <p className="text-sm font-semibold text-gray-300">
+                    Next Milestone
+                  </p>
                 </div>
               </div>
 
@@ -82,8 +98,10 @@ export default function DashboardPage() {
 
             {/* Progress Bar */}
             <div className="relative w-full h-3 bg-[#23272f] rounded-full overflow-hidden border border-[#3a3f47]">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#10B981] via-[#10B981] to-[#0C5F4C] rounded-full shadow-lg shadow-[#10B981]/30"
-                   style={{ width: "35%" }}>
+              <div
+                className="absolute inset-0 bg-gradient-to-r from-[#10B981] via-[#10B981] to-[#0C5F4C] rounded-full shadow-lg shadow-[#10B981]/30"
+                style={{ width: "35%" }}
+              >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
               </div>
             </div>
@@ -103,9 +121,12 @@ export default function DashboardPage() {
                     <div className="w-3 h-3 bg-white rounded-full"></div>
                   </div>
                 </div>
-                <h4 className="text-xl font-bold text-white mb-2">Private Alpha</h4>
+                <h4 className="text-xl font-bold text-white mb-2">
+                  Private Alpha
+                </h4>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  Founding galleries test core platform features and provide feedback.
+                  Founding galleries test core platform features and provide
+                  feedback.
                 </p>
               </div>
             </div>
@@ -122,7 +143,9 @@ export default function DashboardPage() {
                     <div className="w-3 h-3 bg-white/70 rounded-full"></div>
                   </div>
                 </div>
-                <h4 className="text-xl font-bold text-white mb-2">Expanded Beta</h4>
+                <h4 className="text-xl font-bold text-white mb-2">
+                  Expanded Beta
+                </h4>
                 <p className="text-gray-400 text-sm leading-relaxed">
                   Onboard additional galleries and refine collector experience.
                 </p>
@@ -141,7 +164,9 @@ export default function DashboardPage() {
                     <div className="w-3 h-3 bg-gray-500 rounded-full"></div>
                   </div>
                 </div>
-                <h4 className="text-xl font-bold text-white mb-2">Official Launch</h4>
+                <h4 className="text-xl font-bold text-white mb-2">
+                  Official Launch
+                </h4>
                 <p className="text-gray-400 text-sm leading-relaxed">
                   Full platform release with all features available worldwide.
                 </p>
@@ -161,56 +186,79 @@ export default function DashboardPage() {
                 <FileText className="w-7 h-7 text-[#10B981]" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-white mb-2">Resources</h3>
+                <h3 className="text-2xl font-bold text-white mb-2">
+                  Resources
+                </h3>
                 <p className="text-gray-400 text-sm">
-                  Download materials to learn more about CashArt and share with your team.
+                  Download materials to learn more about CashArt and share with
+                  your team.
                 </p>
               </div>
             </div>
 
             <div className="space-y-3">
-              <button className="w-full flex items-center justify-between px-5 py-4 bg-[#23272f] hover:bg-[#2d3139] rounded-xl border border-[#10B981]/20 hover:border-[#10B981]/40 transition-all duration-200 group">
-                <div className="flex items-center gap-3">
-                  <Download className="w-5 h-5 text-[#10B981]" />
-                  <span className="text-white font-medium">Download One-Pager (PDF)</span>
+              <div className="relative group">
+                <button
+                  className="w-full flex items-center justify-between px-5 py-4 bg-[#23272f] rounded-xl border border-[#2d3139] cursor-not-allowed opacity-80"
+                  disabled
+                  aria-disabled="true"
+                  type="button"
+                >
+                  <div className="flex items-center gap-3">
+                    <Download className="w-5 h-5 text-[#3a3f47]" />
+                    <span className="text-gray-300 font-medium">
+                      Download One-Pager (PDF)
+                    </span>
+                  </div>
+                  <div className="text-[#3a3f47]">
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
+                </button>
+                <div className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 -translate-y-full mb-2 opacity-0 group-hover:opacity-100 transition-opacity bg-[#23272f] text-gray-200 text-xs px-3 py-1 rounded shadow-lg border border-[#2d3139] whitespace-nowrap z-10">
+                  Coming soon
                 </div>
-                <div className="text-gray-400 group-hover:text-[#10B981] transition-colors">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </button>
-
-              <button className="w-full flex items-center justify-between px-5 py-4 bg-[#23272f] hover:bg-[#2d3139] rounded-xl border border-[#10B981]/20 hover:border-[#10B981]/40 transition-all duration-200 group">
-                <div className="flex items-center gap-3">
-                  <FileText className="w-5 h-5 text-[#10B981]" />
-                  <span className="text-white font-medium">Request to Join Pilot Program</span>
-                </div>
-                <div className="text-gray-400 group-hover:text-[#10B981] transition-colors">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </button>
+              </div>
             </div>
           </div>
 
           {/* Questions or Feedback Card */}
           <div className="bg-gradient-to-br from-[#10B981]/10 via-[#0C5F4C]/5 to-transparent rounded-2xl border border-[#10B981]/20 p-8 shadow-xl flex flex-col items-center justify-center text-center">
-            <h3 className="text-2xl font-bold text-white mb-3">Questions or Feedback?</h3>
+            <h3 className="text-2xl font-bold text-white mb-3">
+              Questions or Feedback?
+            </h3>
             <p className="text-gray-300 text-sm mb-6 max-w-md">
-              We're building CashArt with galleries like yours in mind. Share your thoughts or reach out to our team.
+              We're building CashArt with galleries like yours in mind. Share
+              your thoughts or reach out to our team.
             </p>
-            <button className="px-8 py-3 bg-[#10B981] hover:bg-[#0C5F4C] text-white font-semibold rounded-xl shadow-lg shadow-[#10B981]/20 hover:shadow-[#10B981]/30 transition-all duration-200 transform hover:scale-105">
+            <a
+              href="mailto:hello@cashart.ai?subject=CashArt%20Inquiry"
+              className="px-12 py-4 bg-[#10B981] hover:bg-[#0C5F4C] text-white text-lg font-semibold rounded-xl shadow-lg shadow-[#10B981]/20 hover:shadow-[#10B981]/30 transition-all duration-200 transform hover:scale-105 inline-block"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Contact Our Team
-            </button>
+            </a>
           </div>
         </div>
       </section>
 
       {/* Platform Features (Coming Soon) */}
       <section className="mt-8 mb-8">
-        <h3 className="text-2xl font-bold text-white mb-6">Platform Features (Coming Soon)</h3>
+        <h3 className="text-2xl font-bold text-white mb-6">
+          Platform Features (Coming Soon)
+        </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Deals */}
           <div className="bg-gradient-to-br from-[#1a1d21] to-[#1f2328] rounded-xl border border-[#2d3139] p-6 relative overflow-hidden group hover:border-[#3a3f47] transition-all duration-200">
@@ -221,7 +269,9 @@ export default function DashboardPage() {
               <BarChart3 className="w-6 h-6 text-gray-500 group-hover:text-[#10B981]/50 transition-colors" />
             </div>
             <h4 className="text-lg font-bold text-white mb-2">Deals</h4>
-            <p className="text-gray-500 text-sm">Track and manage all your art financing deals</p>
+            <p className="text-gray-500 text-sm">
+              Track and manage all your art financing deals
+            </p>
           </div>
 
           {/* Clients */}
@@ -233,7 +283,9 @@ export default function DashboardPage() {
               <Users className="w-6 h-6 text-gray-500 group-hover:text-[#10B981]/50 transition-colors" />
             </div>
             <h4 className="text-lg font-bold text-white mb-2">Clients</h4>
-            <p className="text-gray-500 text-sm">Manage collector relationships and profiles</p>
+            <p className="text-gray-500 text-sm">
+              Manage collector relationships and profiles
+            </p>
           </div>
 
           {/* Payments */}
@@ -245,7 +297,9 @@ export default function DashboardPage() {
               <DollarSign className="w-6 h-6 text-gray-500 group-hover:text-[#10B981]/50 transition-colors" />
             </div>
             <h4 className="text-lg font-bold text-white mb-2">Payments</h4>
-            <p className="text-gray-500 text-sm">Monitor payment schedules and transactions</p>
+            <p className="text-gray-500 text-sm">
+              Monitor payment schedules and transactions
+            </p>
           </div>
 
           {/* Risk Analytics */}
@@ -256,8 +310,12 @@ export default function DashboardPage() {
             <div className="w-12 h-12 bg-[#23272f] rounded-lg flex items-center justify-center mb-4 border border-[#3a3f47] group-hover:border-[#10B981]/20 transition-all">
               <ShieldCheck className="w-6 h-6 text-gray-500 group-hover:text-[#10B981]/50 transition-colors" />
             </div>
-            <h4 className="text-lg font-bold text-white mb-2">Risk Analytics</h4>
-            <p className="text-gray-500 text-sm">View risk assessments and approval rates</p>
+            <h4 className="text-lg font-bold text-white mb-2">
+              Risk Analytics
+            </h4>
+            <p className="text-gray-500 text-sm">
+              View risk assessments and approval rates
+            </p>
           </div>
         </div>
       </section>

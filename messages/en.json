@@ -169,7 +169,8 @@
     "priceRangeOver500k": "Over $500K",
     "financingExperience": "Experience offering financing",
     "yes": "Yes",
-    "no": "No"
+    "no": "No",
+    "redirecting": "Redirecting to signup page..."
   },
   "dashboard": {
     "overview": "Overview",
@@ -221,12 +222,13 @@
       }
     },
     "q2": {
-      "question": "What’s the typical price range of the artworks you collect?",
+      "question": "What's the typical price range of the artworks you collect?",
       "options": {
         "under10k": "Under $10K",
         "10kTo50k": "$10K – $50K",
         "50kTo250k": "$50K – $250K",
-        "over250k": "Over $250K"
+        "250kTo500k": "$250K – $500K",
+        "over500k": "Over $500K"
       }
     },
     "q3": {

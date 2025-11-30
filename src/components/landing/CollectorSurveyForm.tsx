@@ -143,7 +143,7 @@ export function CollectorSurveyForm({
           {t("q2.question")} <span className="text-red-500">*</span>
         </label>
         <div className="space-y-3">
-          {["under10k", "10kTo50k", "50kTo250k", "over250k"].map(
+          {["under10k", "10kTo50k", "50kTo250k", "250kTo500k", "over500k"].map(
             (option, index) => (
               <label
                 key={option}
