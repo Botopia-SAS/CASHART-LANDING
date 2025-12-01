@@ -66,8 +66,8 @@ export const CollectorWelcomeEmail = ({
           <Hr style={hr} />
 
           <Section style={footer}>
-            <Link href="https://cashart-landing.vercel.app/en" style={footerLink}>
-              cashart-landing.vercel.app
+            <Link href="https://cashart.ai" style={footerLink}>
+              cashart.ai
             </Link>
             <Text style={footerSeparator}>•</Text>
             <Link href="mailto:hello@cashart.ai" style={footerLink}>

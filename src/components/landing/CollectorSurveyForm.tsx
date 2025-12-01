@@ -448,17 +448,24 @@ export function CollectorSurveyForm({
             <label className="block text-sm font-medium text-gray-900 mb-2">
               {t("fields.phoneNumber")}
             </label>
-            <input
-              type="tel"
-              value={formData.phoneNumber}
-              onChange={(e) => {
-                const value = e.target.value.replace(/\D/g, '');
-                handleChange("phoneNumber", value);
-              }}
-              pattern="[0-9]*"
-              inputMode="numeric"
-              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#0C5F4C] focus:border-transparent"
-            />
+            <div className="relative">
+              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none">+</span>
+              <input
+                type="tel"
+                value={formData.phoneNumber}
+                onChange={(e) => {
+                  let value = e.target.value;
+                  // Allow numbers, spaces, and hyphens
+                  value = value.replace(/[^\d\s-]/g, '');
+                  handleChange("phoneNumber", value);
+                }}
+                placeholder="1 1234567890"
+                className="w-full pl-8 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#0C5F4C] focus:border-transparent"
+              />
+            </div>
+            <p className="text-xs text-gray-500 mt-1">
+              {t("fields.phoneHint")}
+            </p>
           </div>
         </motion.div>
       )}

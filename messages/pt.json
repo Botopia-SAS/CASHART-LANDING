@@ -9,7 +9,7 @@
     "descriptionSup": "1",
     "emailPlaceholder": "Digite seu e-mail",
     "registerButton": "Registre sua Galeria",
-    "collectorSurveyButton": "Are you a collector? click here!",
+    "collectorSurveyButton": "Você é um colecionador? clique aqui!",
     "dashboardAlt": "Painel CashArt",
     "featuresIntro": {
       "overline": "Para galerias e colecionadores",
@@ -47,7 +47,7 @@
     "logIn": "Entrar",
     "registerGallery": "Registre sua Galeria",
     "registerGalleryMobile": "Registre sua Galeria",
-    "collectorSurveyButton": "Are you a collector? click here!",
+    "collectorSurveyButton": "Você é um colecionador? clique aqui!",
     "collectorSurveyButtonDesktop": "colecionador",
     "registerGalleryDesktop": "galerista"
   },
@@ -153,7 +153,9 @@
     "submit": "Enviar",
     "alreadyHaveAccount": "Já tem uma conta?",
     "noAccount": "Não tem uma conta?",
-    "signUp": "Cadastrar"
+    "signUp": "Cadastrar",
+    "phoneHint": "Digite código do país e número (ex: 1 234567890)",
+    "redirecting": "Redirecionando para a página de cadastro..."
   },
   "dashboard": {
     "overview": "Visão Geral",
@@ -277,7 +279,8 @@
       "companyName": "Nome da empresa",
       "fullName": "Nome completo",
       "email": "E-mail",
-      "phoneNumber": "Telefone"
+      "phoneNumber": "Telefone",
+      "phoneHint": "Digite código do país e número (ex: 1 234567890)"
     },
     "submit": "Enviar pesquisa",
     "submitting": "Enviando...",
