@@ -19,19 +19,6 @@ import { authSchema, type AuthFormData } from '@/lib/validations/auth';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 
-const countryCodes = [
-  { code: '+1', country: 'US/CA' },
-  { code: '+34', country: 'ES' },
-  { code: '+55', country: 'BR' },
-  { code: '+351', country: 'PT' },
-  { code: '+44', country: 'UK' },
-  { code: '+33', country: 'FR' },
-  { code: '+49', country: 'DE' },
-  { code: '+39', country: 'IT' },
-  { code: '+52', country: 'MX' },
-  { code: '+54', country: 'AR' },
-];
-
 interface SignUpFormFormityProps {
   initialEmail?: string;
 }
@@ -65,6 +52,8 @@ export function SignUpFormFormity({ initialEmail }: SignUpFormFormityProps) {
       email: initialEmail || '',
     },
   });
+
+  const [phoneInput, setPhoneInput] = useState('');
 
   const handleNextStep = async () => {
     // Validate all fields in step 1
@@ -198,39 +187,46 @@ export function SignUpFormFormity({ initialEmail }: SignUpFormFormityProps) {
             {/* Phone Number Group */}
             <div className="space-y-3">
               <Label className="text-gray-900 font-semibold text-base">{t('phone')}</Label>
-              <div className="flex gap-3">
-                <Select
-                  onValueChange={(value) => setValue('countryCode', value)}
-                  defaultValue="+1"
-                >
-                  <SelectTrigger className="w-[140px] px-4 py-4 text-base border-2 border-gray-300 rounded-full focus:ring-2 focus:ring-[#0C5F4C] bg-white/50">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {countryCodes.map((cc) => (
-                      <SelectItem key={cc.code} value={cc.code}>
-                        {cc.code} {cc.country}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+              <div className="relative">
+                <span className="absolute left-6 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none text-base">+</span>
                 <Input
                   id="phone"
-                  {...register('phone')}
-                  placeholder="1234567890"
                   type="tel"
-                  pattern="[0-9]*"
-                  inputMode="numeric"
-                  onInput={(e) => {
-                    const target = e.target as HTMLInputElement;
-                    target.value = target.value.replace(/\D/g, '');
+                  value={phoneInput}
+                  onChange={(e) => {
+                    let value = e.target.value;
+
+                    // Only allow numbers, spaces, and hyphens
+                    value = value.replace(/[^\d\s-]/g, '');
+
+                    setPhoneInput(value);
+
+                    // Extract country code and phone number
+                    const match = value.match(/^(\d{1,4})\s*(.*)$/);
+                    if (match) {
+                      setValue('countryCode', `+${match[1]}`);
+                      setValue('phone', match[2].replace(/[\s-]/g, ''));
+                    } else {
+                      // User is still typing or only has numbers
+                      setValue('countryCode', value ? `+${value.replace(/[\s-]/g, '')}` : '+1');
+                      setValue('phone', '');
+                    }
                   }}
-                  className="flex-1 px-6 py-4 text-base border-2 border-gray-300 rounded-full focus:ring-2 focus:ring-[#0C5F4C] focus:border-[#0C5F4C] transition-all bg-white/50"
+                  placeholder="1 1234567890"
+                  className="w-full pl-9 pr-6 py-4 text-base border-2 border-gray-300 rounded-full focus:ring-2 focus:ring-[#0C5F4C] focus:border-[#0C5F4C] transition-all bg-white/50"
                 />
               </div>
+              <p className="text-xs text-gray-500 px-2">
+                {t('phoneHint')}
+              </p>
               {errors.phone && (
                 <p className="text-sm text-red-600 animate-in fade-in slide-in-from-top-1 px-2">
                   {errors.phone.message}
+                </p>
+              )}
+              {errors.countryCode && (
+                <p className="text-sm text-red-600 animate-in fade-in slide-in-from-top-1 px-2">
+                  {errors.countryCode.message}
                 </p>
               )}
             </div>
@@ -273,7 +269,7 @@ export function SignUpFormFormity({ initialEmail }: SignUpFormFormityProps) {
               </Label>
               <Input
                 id="website"
-                type="url"
+                type="text"
                 value={website}
                 onChange={(e) => setWebsite(e.target.value)}
                 placeholder="https://www.yourgallery.com"

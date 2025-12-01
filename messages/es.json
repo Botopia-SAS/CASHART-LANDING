@@ -9,7 +9,7 @@
     "descriptionSup": "1",
     "emailPlaceholder": "Ingresa tu correo electrónico",
     "registerButton": "Registra tu Galería",
-    "collectorSurveyButton": "Are you a collector? click here!",
+    "collectorSurveyButton": "¿Eres coleccionista? ¡haz clic aquí!",
     "dashboardAlt": "Panel de CashArt",
     "featuresIntro": {
       "overline": "Para galerías y coleccionistas",
@@ -47,7 +47,7 @@
     "logIn": "Iniciar Sesión",
     "registerGallery": "Registra tu Galería",
     "registerGalleryMobile": "Registra tu Galería",
-    "collectorSurveyButton": "Are you a collector? click here!",
+    "collectorSurveyButton": "¿Eres coleccionista? ¡haz clic aquí!",
     "collectorSurveyButtonDesktop": "coleccionista",
     "registerGalleryDesktop": "galerista"
   },
@@ -169,7 +169,9 @@
     "priceRangeOver500k": "Más de $500K",
     "financingExperience": "Experiencia ofreciendo financiamiento",
     "yes": "Sí",
-    "no": "No"
+    "no": "No",
+    "phoneHint": "Ingresa código de país y número (ej: 1 234567890)",
+    "redirecting": "Redirigiendo a la página de registro..."
   },
   "dashboard": {
     "overview": "Resumen",
@@ -220,38 +222,22 @@
         "onceAYearOrLess": "Una vez al año o menos"
       }
     },
+    "q2": {
+      "question": "¿Cuál es el rango de precios típico de las obras de arte que coleccionas?",
+      "options": {
+        "under10k": "Menos de $10K",
+        "10kTo50k": "$10K – $50K",
+        "50kTo250k": "$50K – $250K",
+        "250kTo500k": "$250K – $500K",
+        "over500k": "Más de $500K"
+      }
+    },
     "q3": {
       "question": "¿Alguna vez has querido acceder a liquidez sin vender tus obras de arte?",
       "options": {
         "often": "Sí, a menudo",
         "sometimes": "Sí, a veces",
         "never": "Nunca"
-      }
-    },
-    "q5": {
-      "question": "Si pudieras obtener hasta el 70% del valor de una obra en efectivo en pocos días (sin venderla), ¿qué tan atractivo te parecería?",
-      "options": {
-        "1": "Nada atractivo",
-        "2": "Poco atractivo",
-        "3": "Neutral",
-        "4": "Atractivo",
-        "5": "Muy atractivo"
-      }
-    },
-    "q2": {
-      "question": "¿Cuál es tu rango de precio típico para una nueva adquisición?",
-      "options": {
-        "under10k": "Menos de $10K",
-        "10kTo50k": "$10K – $50K",
-        "50kTo250k": "$50K – $250K",
-        "over250k": "Más de $250K"
-      }
-    },
-    "q3": {
-      "question": "¿Has usado planes de pago o financiamiento para comprar arte?",
-      "options": {
-        "yes": "Sí",
-        "no": "No"
       }
     },
     "q4": {
@@ -264,12 +250,13 @@
       }
     },
     "q5": {
-      "question": "¿El acceso a financiamiento fluido te animaría a adquirir más obras?",
+      "question": "Si pudieras obtener hasta el 70% del valor de una obra en efectivo en pocos días (sin venderla), ¿qué tan atractivo te parecería?",
       "options": {
-        "definitely": "Definitivamente",
-        "probably": "Probablemente",
-        "maybe": "Tal vez",
-        "unlikely": "Poco probable"
+        "1": "Nada atractivo",
+        "2": "Poco atractivo",
+        "3": "Neutral",
+        "4": "Atractivo",
+        "5": "Muy atractivo"
       }
     },
     "q6": {
@@ -293,7 +280,8 @@
       "companyName": "Nombre de la empresa",
       "fullName": "Nombre completo",
       "email": "Correo electrónico",
-      "phoneNumber": "Número de teléfono"
+      "phoneNumber": "Número de teléfono",
+      "phoneHint": "Ingresa código de país y número (ej: 1 234567890)"
     },
     "submit": "Enviar encuesta",
     "submitting": "Enviando...",

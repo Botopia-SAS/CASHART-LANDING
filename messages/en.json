@@ -170,7 +170,8 @@
     "financingExperience": "Experience offering financing",
     "yes": "Yes",
     "no": "No",
-    "redirecting": "Redirecting to signup page..."
+    "redirecting": "Redirecting to signup page...",
+    "phoneHint": "Enter country code and number (e.g., 1 234567890)"
   },
   "dashboard": {
     "overview": "Overview",
@@ -279,7 +280,8 @@
       "companyName": "Company name",
       "fullName": "Full name",
       "email": "Email",
-      "phoneNumber": "Phone number"
+      "phoneNumber": "Phone number",
+      "phoneHint": "Enter country code and number (e.g., 1 234567890)"
     },
     "submit": "Submit survey",
     "submitting": "Submitting...",

@@ -185,8 +185,10 @@ export function GlobeDemo() {
   return (
     <div id="coming-soon" className="flex flex-row items-center justify-center py-10 md:py-20 min-h-[100vh] md:min-h-[50rem] relative w-full scroll-mt-32">
       <div className="max-w-7xl mx-auto w-full relative overflow-visible h-full min-h-[800px] md:h-[50rem] px-4">
-        <div className="absolute w-full h-[500px] md:h-[600px] z-10 top-56 md:top-40 mt-12 md:mt-16 mb-0">
-          <World data={sampleArcs} globeConfig={globeConfig} />
+        <div className="absolute w-full z-10 top-56 md:top-40 mt-12 md:mt-16 mb-0">
+          <div className="w-full max-w-[500px] md:max-w-[600px] mx-auto aspect-square">
+            <World data={sampleArcs} globeConfig={globeConfig} />
+          </div>
         </div>
         <motion.div
           initial={{
