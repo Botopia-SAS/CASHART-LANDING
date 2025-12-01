@@ -1,9 +1,13 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 export function Footer() {
   const t = useTranslations('footer');
+  const pathname = usePathname();
+  const locale = pathname.split('/')[1] || 'en';
 
   return (
     <footer className="relative bg-white text-gray-800 border-t border-gray-100">
@@ -58,12 +62,12 @@ export function Footer() {
               {t('copyright')}
             </p>
             <div className="flex gap-6 text-sm">
-              <a href="/Terms & Conditions.pdf" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-[#0C5F4C] transition-colors">
+              <Link href={`/${locale}/terms`} className="text-gray-500 hover:text-[#0C5F4C] transition-colors">
                 {t('legal.terms')}
-              </a>
-              <a href="/Privacy Policy.pdf" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-[#0C5F4C] transition-colors">
+              </Link>
+              <Link href={`/${locale}/privacy`} className="text-gray-500 hover:text-[#0C5F4C] transition-colors">
                 {t('legal.privacy')}
-              </a>
+              </Link>
             </div>
           </div>
         </div>

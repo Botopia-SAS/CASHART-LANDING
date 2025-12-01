@@ -318,5 +318,175 @@
       "terms": "Terms",
       "privacy": "Privacy"
     }
+  },
+  "terms": {
+    "title": "TERMS & CONDITIONS",
+    "subtitle": "Applicable to Gallery Early-Access Registration & Collector Surveys",
+    "lastUpdated": "Last updated: November 2025",
+    "contact": "Contact:",
+    "intro": "These Terms govern your use of CashArt's pre-launch website, early-access registration, and collector survey.",
+    "section1": {
+      "title": "1. Nature of the Pre-Launch Experience",
+      "content": "CashArt is currently not a financial service provider.\nThis site is a pre-launch demonstration designed to:",
+      "list": [
+        "Present the upcoming product vision",
+        "Allow galleries to register interest",
+        "Collect feedback from collectors"
+      ],
+      "footer": "No financial services, approvals, or lending functionality are active."
+    },
+    "section2": {
+      "title": "2. Eligibility",
+      "content": "By registering or completing a survey, you confirm that:",
+      "list": [
+        "You are at least 18 years old",
+        "You are authorized to act on behalf of a gallery (if registering a gallery)"
+      ]
+    },
+    "section3": {
+      "title": "3. Acceptable Use",
+      "content": "You agree not to:",
+      "list": [
+        "Provide false information",
+        "Attempt to access restricted parts of the system",
+        "Reverse engineer, copy, or misuse any content"
+      ],
+      "footer": "The website is for informational purposes only."
+    },
+    "section4": {
+      "title": "4. Early Access Registration",
+      "content": "Submitting your gallery information:",
+      "list": [
+        "Does not constitute acceptance into any financial program",
+        "Does not create any commercial or legal relationship",
+        "Is solely a registration of interest"
+      ],
+      "footer": "We may contact you regarding early access or product updates."
+    },
+    "section5": {
+      "title": "5. No Financial Commitments or Offers",
+      "content": "The site does not:",
+      "list": [
+        "Offer financing",
+        "Approve financing",
+        "Provide legal, tax, or financial advice"
+      ],
+      "footer": "All product descriptions are conceptual until launch."
+    },
+    "section6": {
+      "title": "6. Intellectual Property",
+      "content": "All logos, branding, layouts, graphics, and content are owned by CashArt or licensed to us. You may not reuse or reproduce these without written permission."
+    },
+    "section7": {
+      "title": "7. Disclaimer of Warranties",
+      "content": "This pre-launch site is provided \"as is\", without guarantees of:",
+      "list": [
+        "Accuracy",
+        "Availability",
+        "Functionality",
+        "Error-free performance"
+      ]
+    },
+    "section8": {
+      "title": "8. Limitation of Liability",
+      "content": "CashArt will not be liable for:",
+      "list": [
+        "Data loss",
+        "Website downtime",
+        "Inaccuracies in pre-launch information",
+        "Decisions made based on conceptual product descriptions"
+      ]
+    },
+    "section9": {
+      "title": "9. Termination",
+      "content": "We may modify or discontinue the pre-launch experience at any time without notice."
+    },
+    "section10": {
+      "title": "10. Governing Law",
+      "content": "These terms are governed by the laws of the State of Florida, United States."
+    },
+    "section11": {
+      "title": "11. Contact",
+      "content": "For questions about these policies, email:"
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "subtitle": "Applicable to Gallery Early-Access Registration & Collector Surveys",
+    "lastUpdated": "Last updated: November 2025",
+    "contact": "Contact:",
+    "intro": "CashArt (\"we\", \"our\", \"us\") is currently in a pre-launch phase. This Privacy Policy explains how we collect and use information submitted through our early-access registration form for galleries and our collector survey.",
+    "section1": {
+      "title": "1. Information We Collect",
+      "subsection1": {
+        "title": "1.1 Gallery Registration",
+        "content": "When a gallery registers for early access, we may collect:",
+        "list": [
+          "Gallery name",
+          "Email address",
+          "Country",
+          "Website or social links (optional)",
+          "Phone number (optional)",
+          "Price range and experience with payment plans (optional)"
+        ]
+      },
+      "subsection2": {
+        "title": "1.2 Collector Survey",
+        "content": "When collectors complete our survey, we may collect:",
+        "list": [
+          "Survey responses",
+          "Email address (optional)",
+          "Name (optional)"
+        ]
+      },
+      "subsection3": {
+        "title": "1.3 Automatically Collected Data",
+        "content": "We may collect basic analytics such as:",
+        "list": [
+          "Page views",
+          "Device type",
+          "Completion rates for forms"
+        ],
+        "footer": "No tracking cookies for marketing are used at this stage."
+      }
+    },
+    "section2": {
+      "title": "2. How We Use the Information",
+      "content": "Your information is used solely for:",
+      "list": [
+        "Understanding market demand for CashArt's future services",
+        "Contacting you with relevant product updates",
+        "Selecting galleries or collectors for our 2026 pilot",
+        "Improving the design and usability of the early-access experience",
+        "Internal research and validation for investors"
+      ],
+      "footer": "We do not sell, lease, or share your data with third-party advertisers."
+    },
+    "section3": {
+      "title": "3. Data Storage & Security",
+      "content": "Information submitted is stored securely in our internal databases and/or Google Sheets. We apply reasonable security measures appropriate for a pre-launch stage.\n\nOnce CashArt's full platform launches, all data will be migrated into our production environment following industry standards."
+    },
+    "section4": {
+      "title": "4. Third-Party Services",
+      "content": "We may use third-party tools (e.g., Google Sheets, Mailchimp, Airtable) strictly for data storage and email communication.\n\nThese services process data under their own privacy policies."
+    },
+    "section5": {
+      "title": "5. Your Choices",
+      "content": "You may request at any time to:",
+      "list": [
+        "Access the data we have about you",
+        "Correct your information",
+        "Remove your information from our early-access list"
+      ],
+      "footer": "Contact:"
+    },
+    "section6": {
+      "title": "6. Pre-Launch Disclaimer",
+      "content": "CashArt is not yet offering financial services.\n\nThis early-access experience is informational only and does not constitute a loan offer, financing agreement, or obligation of any kind."
+    },
+    "section7": {
+      "title": "7. Contact",
+      "content": "If you have questions about this policy, contact us at:"
+    }
   }
 }

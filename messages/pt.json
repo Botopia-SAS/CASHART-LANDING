@@ -302,5 +302,175 @@
       "terms": "Termos",
       "privacy": "Privacidade"
     }
+  },
+  "terms": {
+    "title": "TERMOS E CONDIÇÕES",
+    "subtitle": "Aplicáveis ao Registro de Acesso Antecipado para Galerias e Pesquisas de Colecionadores",
+    "lastUpdated": "Última atualização: Novembro 2025",
+    "contact": "Contato:",
+    "intro": "Estes Termos regem o uso do site de pré-lançamento do CashArt, o registro de acesso antecipado e a pesquisa de colecionadores.",
+    "section1": {
+      "title": "1. Natureza da Experiência de Pré-Lançamento",
+      "content": "CashArt atualmente não é um provedor de serviços financeiros.\nEste site é uma demonstração de pré-lançamento projetada para:",
+      "list": [
+        "Apresentar a visão do produto futuro",
+        "Permitir que galerias registrem interesse",
+        "Coletar feedback de colecionadores"
+      ],
+      "footer": "Nenhum serviço financeiro, aprovação ou funcionalidade de empréstimo está ativo."
+    },
+    "section2": {
+      "title": "2. Elegibilidade",
+      "content": "Ao se registrar ou completar uma pesquisa, você confirma que:",
+      "list": [
+        "Tem pelo menos 18 anos de idade",
+        "Está autorizado a agir em nome de uma galeria (se estiver registrando uma galeria)"
+      ]
+    },
+    "section3": {
+      "title": "3. Uso Aceitável",
+      "content": "Você concorda em não:",
+      "list": [
+        "Fornecer informações falsas",
+        "Tentar acessar partes restritas do sistema",
+        "Fazer engenharia reversa, copiar ou usar indevidamente qualquer conteúdo"
+      ],
+      "footer": "O site é apenas para fins informativos."
+    },
+    "section4": {
+      "title": "4. Registro de Acesso Antecipado",
+      "content": "Enviar as informações de sua galeria:",
+      "list": [
+        "Não constitui aceitação em nenhum programa financeiro",
+        "Não cria nenhuma relação comercial ou legal",
+        "É apenas um registro de interesse"
+      ],
+      "footer": "Podemos contatá-lo sobre acesso antecipado ou atualizações de produtos."
+    },
+    "section5": {
+      "title": "5. Sem Compromissos ou Ofertas Financeiras",
+      "content": "O site não:",
+      "list": [
+        "Oferece financiamento",
+        "Aprova financiamento",
+        "Fornece aconselhamento legal, fiscal ou financeiro"
+      ],
+      "footer": "Todas as descrições de produtos são conceituais até o lançamento."
+    },
+    "section6": {
+      "title": "6. Propriedade Intelectual",
+      "content": "Todos os logotipos, marcas, layouts, gráficos e conteúdo são de propriedade do CashArt ou licenciados para nós. Você não pode reutilizar ou reproduzir estes sem permissão por escrito."
+    },
+    "section7": {
+      "title": "7. Isenção de Garantias",
+      "content": "Este site de pré-lançamento é fornecido \"como está\", sem garantias de:",
+      "list": [
+        "Precisão",
+        "Disponibilidade",
+        "Funcionalidade",
+        "Desempenho livre de erros"
+      ]
+    },
+    "section8": {
+      "title": "8. Limitação de Responsabilidade",
+      "content": "CashArt não será responsável por:",
+      "list": [
+        "Perda de dados",
+        "Tempo de inatividade do site",
+        "Imprecisões nas informações de pré-lançamento",
+        "Decisões tomadas com base em descrições conceituais de produtos"
+      ]
+    },
+    "section9": {
+      "title": "9. Rescisão",
+      "content": "Podemos modificar ou descontinuar a experiência de pré-lançamento a qualquer momento sem aviso prévio."
+    },
+    "section10": {
+      "title": "10. Lei Aplicável",
+      "content": "Estes termos são regidos pelas leis do Estado da Flórida, Estados Unidos."
+    },
+    "section11": {
+      "title": "11. Contato",
+      "content": "Para dúvidas sobre estas políticas, envie um e-mail para:"
+    }
+  },
+  "privacy": {
+    "title": "Política de Privacidade",
+    "subtitle": "Aplicável ao Registro de Acesso Antecipado para Galerias e Pesquisas de Colecionadores",
+    "lastUpdated": "Última atualização: Novembro 2025",
+    "contact": "Contato:",
+    "intro": "CashArt (\"nós\", \"nosso\", \"nos\") está atualmente em uma fase de pré-lançamento. Esta Política de Privacidade explica como coletamos e usamos informações enviadas através do nosso formulário de registro de acesso antecipado para galerias e nossa pesquisa de colecionadores.",
+    "section1": {
+      "title": "1. Informações que Coletamos",
+      "subsection1": {
+        "title": "1.1 Registro de Galerias",
+        "content": "Quando uma galeria se registra para acesso antecipado, podemos coletar:",
+        "list": [
+          "Nome da galeria",
+          "Endereço de e-mail",
+          "País",
+          "Site ou links de redes sociais (opcional)",
+          "Número de telefone (opcional)",
+          "Faixa de preço e experiência com planos de pagamento (opcional)"
+        ]
+      },
+      "subsection2": {
+        "title": "1.2 Pesquisa de Colecionadores",
+        "content": "Quando colecionadores completam nossa pesquisa, podemos coletar:",
+        "list": [
+          "Respostas da pesquisa",
+          "Endereço de e-mail (opcional)",
+          "Nome (opcional)"
+        ]
+      },
+      "subsection3": {
+        "title": "1.3 Dados Coletados Automaticamente",
+        "content": "Podemos coletar análises básicas como:",
+        "list": [
+          "Visualizações de página",
+          "Tipo de dispositivo",
+          "Taxas de conclusão de formulários"
+        ],
+        "footer": "Nenhum cookie de rastreamento para marketing é usado nesta fase."
+      }
+    },
+    "section2": {
+      "title": "2. Como Usamos as Informações",
+      "content": "Suas informações são usadas exclusivamente para:",
+      "list": [
+        "Entender a demanda do mercado pelos serviços futuros do CashArt",
+        "Contatá-lo com atualizações de produtos relevantes",
+        "Selecionar galerias ou colecionadores para nosso piloto de 2026",
+        "Melhorar o design e a usabilidade da experiência de acesso antecipado",
+        "Pesquisa interna e validação para investidores"
+      ],
+      "footer": "Não vendemos, arrendamos ou compartilhamos seus dados com anunciantes terceiros."
+    },
+    "section3": {
+      "title": "3. Armazenamento e Segurança de Dados",
+      "content": "As informações enviadas são armazenadas com segurança em nossos bancos de dados internos e/ou Google Sheets. Aplicamos medidas de segurança razoáveis apropriadas para uma fase de pré-lançamento.\n\nQuando a plataforma completa do CashArt for lançada, todos os dados serão migrados para nosso ambiente de produção seguindo os padrões da indústria."
+    },
+    "section4": {
+      "title": "4. Serviços de Terceiros",
+      "content": "Podemos usar ferramentas de terceiros (por exemplo, Google Sheets, Mailchimp, Airtable) estritamente para armazenamento de dados e comunicação por e-mail.\n\nEstes serviços processam dados sob suas próprias políticas de privacidade."
+    },
+    "section5": {
+      "title": "5. Suas Escolhas",
+      "content": "Você pode solicitar a qualquer momento:",
+      "list": [
+        "Acessar os dados que temos sobre você",
+        "Corrigir suas informações",
+        "Remover suas informações de nossa lista de acesso antecipado"
+      ],
+      "footer": "Contato:"
+    },
+    "section6": {
+      "title": "6. Isenção de Responsabilidade de Pré-Lançamento",
+      "content": "CashArt ainda não está oferecendo serviços financeiros.\n\nEsta experiência de acesso antecipado é apenas informativa e não constitui uma oferta de empréstimo, acordo de financiamento ou obrigação de qualquer tipo."
+    },
+    "section7": {
+      "title": "7. Contato",
+      "content": "Se você tiver dúvidas sobre esta política, entre em contato conosco em:"
+    }
   }
 }
