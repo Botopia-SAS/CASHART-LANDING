@@ -37,12 +37,13 @@ export function CollectorSurveyForm({
 
     try {
       // Si el usuario selecciona "Not right now", llenar los campos personales con "N/A"
+      // Si selecciona "Yes definitely", validar que fullName y email no estén vacíos
       const submissionData = {
         ...formData,
-        companyName: formData.q7 === "notRightNow" ? "N/A" : formData.companyName,
-        fullName: formData.q7 === "notRightNow" ? "N/A" : formData.fullName,
-        email: formData.q7 === "notRightNow" ? "N/A" : formData.email,
-        phoneNumber: formData.q7 === "notRightNow" ? "N/A" : formData.phoneNumber,
+        companyName: formData.q7 === "notRightNow" ? "N/A" : (formData.companyName || ""),
+        fullName: formData.q7 === "notRightNow" ? "N/A" : (formData.fullName || "N/A"),
+        email: formData.q7 === "notRightNow" ? "N/A" : (formData.email || "N/A"),
+        phoneNumber: formData.q7 === "notRightNow" ? "N/A" : (formData.phoneNumber || ""),
       };
 
       const response = await fetch("/api/survey", {

@@ -6,8 +6,8 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
 
-    // Validate required fields
-    if (!body.fullName || !body.email || !body.phoneNumber) {
+    // Validate required fields (only fullName and email are required)
+    if (!body.fullName || !body.email) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
@@ -15,26 +15,31 @@ export async function POST(request: NextRequest) {
     }
 
     // Add survey to Google Sheets
-    await addSurveyToSheet({
-      q1: body.q1 || '',
-      q2: body.q2 || '',
-      q3: body.q3 || '',
-      q4: body.q4 || '',
-      q5: body.q5 || '',
-      q6: body.q6 || '',
-      q7: body.q7 || '',
-      companyName: body.companyName || '',
-      fullName: body.fullName,
-      email: body.email,
-      phoneNumber: body.phoneNumber,
-    });
+    try {
+      await addSurveyToSheet({
+        q1: body.q1 || '',
+        q2: body.q2 || '',
+        q3: body.q3 || '',
+        q4: body.q4 || '',
+        q5: body.q5 || '',
+        q6: body.q6 || '',
+        q7: body.q7 || '',
+        companyName: body.companyName || '',
+        fullName: body.fullName,
+        email: body.email,
+        phoneNumber: body.phoneNumber || '',
+      });
+    } catch (sheetsError) {
+      console.error('Google Sheets error:', sheetsError);
+      // Continue even if sheets fails - we still want to send the email
+    }
 
     // Send welcome email to collector
     try {
       await emailService.sendCollectorWelcomeEmail({
         fullName: body.fullName,
         email: body.email,
-        phoneNumber: body.phoneNumber,
+        phoneNumber: body.phoneNumber || undefined,
         artType: body.q1,
         priceRange: body.q2,
         usedFinancing: body.q3,

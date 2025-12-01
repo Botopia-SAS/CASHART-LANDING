@@ -58,10 +58,10 @@ export function Footer() {
               {t('copyright')}
             </p>
             <div className="flex gap-6 text-sm">
-              <a href="#" className="text-gray-500 hover:text-[#0C5F4C] transition-colors">
+              <a href="/Terms & Conditions.pdf" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-[#0C5F4C] transition-colors">
                 {t('legal.terms')}
               </a>
-              <a href="#" className="text-gray-500 hover:text-[#0C5F4C] transition-colors">
+              <a href="/Privacy Policy.pdf" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-[#0C5F4C] transition-colors">
                 {t('legal.privacy')}
               </a>
             </div>
