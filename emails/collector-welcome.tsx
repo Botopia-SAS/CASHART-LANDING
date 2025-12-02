@@ -66,7 +66,7 @@ export const CollectorWelcomeEmail = ({
               .
             </Text>
 
-            <Text style={signature}>Best regards</Text>
+            <Text style={signature}>Best regards, The CashArt Team</Text>
           </Section>
 
           <Hr style={hr} />
