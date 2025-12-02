@@ -1,17 +1,17 @@
-import { google } from 'googleapis';
+import { google } from "googleapis";
 
-const SCOPES = ['https://www.googleapis.com/auth/spreadsheets'];
+const SCOPES = ["https://www.googleapis.com/auth/spreadsheets"];
 
 export async function getGoogleSheetsClient() {
   const auth = new google.auth.GoogleAuth({
     credentials: {
       client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-      private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+      private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
     },
     scopes: SCOPES,
   });
 
-  const sheets = google.sheets({ version: 'v4', auth });
+  const sheets = google.sheets({ version: "v4", auth });
   return sheets;
 }
 
@@ -21,7 +21,7 @@ export async function addUserToSheet(userData: {
   phone: string;
   countryCode: string;
   password: string;
-  userType: 'collector' | 'gallery';
+  userType: "collector" | "gallery";
   galleryName?: string;
   website?: string;
   instagram?: string;
@@ -39,25 +39,25 @@ export async function addUserToSheet(userData: {
       userData.countryCode,
       userData.phone,
       userData.userType,
-      userData.galleryName || '',
+      userData.galleryName || "",
       userData.password, // In production, this should be hashed
-      userData.website || '',
-      userData.instagram || '',
-      userData.priceRange || '',
-      userData.financingExperience || '',
+      userData.website || "",
+      userData.instagram || "",
+      userData.priceRange || "",
+      userData.financingExperience || "",
     ],
   ];
 
-  console.log('Appending to sheets - Row data:', values[0]);
-  console.log('Column I (website):', userData.website);
-  console.log('Column J (instagram):', userData.instagram);
-  console.log('Column K (priceRange):', userData.priceRange);
-  console.log('Column L (financingExperience):', userData.financingExperience);
+  console.log("Appending to sheets - Row data:", values[0]);
+  console.log("Column I (website):", userData.website);
+  console.log("Column J (instagram):", userData.instagram);
+  console.log("Column K (priceRange):", userData.priceRange);
+  console.log("Column L (financingExperience):", userData.financingExperience);
 
   const response = await sheets.spreadsheets.values.append({
     spreadsheetId,
-    range: 'Users!A:L',
-    valueInputOption: 'USER_ENTERED',
+    range: "Users!A:L",
+    valueInputOption: "USER_ENTERED",
     requestBody: {
       values,
     },
@@ -72,7 +72,7 @@ export async function getUserByEmail(email: string) {
 
   const response = await sheets.spreadsheets.values.get({
     spreadsheetId,
-    range: 'Users!A:L',
+    range: "Users!A:L",
   });
 
   const rows = response.data.values;
@@ -81,7 +81,7 @@ export async function getUserByEmail(email: string) {
   }
 
   // Find user by email (column B, index 1)
-  const userRow = rows.find(row => row[1] === email);
+  const userRow = rows.find((row) => row[1] === email);
 
   if (!userRow) {
     return null;
@@ -93,7 +93,7 @@ export async function getUserByEmail(email: string) {
     fullName: userRow[2],
     countryCode: userRow[3],
     phone: userRow[4],
-    userType: userRow[5] as 'collector' | 'gallery',
+    userType: userRow[5] as "collector" | "gallery",
     galleryName: userRow[6] || undefined,
     password: userRow[7],
     website: userRow[8] || undefined,
@@ -138,8 +138,8 @@ export async function addSurveyToSheet(surveyData: {
 
   const response = await sheets.spreadsheets.values.append({
     spreadsheetId,
-    range: 'A:L', // Using Sheet1 by default (no sheet name prefix)
-    valueInputOption: 'USER_ENTERED',
+    range: "Collector Survey!A:L", // Guardar en la hoja correcta
+    valueInputOption: "USER_ENTERED",
     requestBody: {
       values,
     },
