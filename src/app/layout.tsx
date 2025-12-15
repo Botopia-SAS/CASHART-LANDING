@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Cash Art - Fintech for Art Collectors and Galleries",
+  title: "CashArt",
   description: "Revolutionary fintech platform connecting collectors and galleries",
 };
 
