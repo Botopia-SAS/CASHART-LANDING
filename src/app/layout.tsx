@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { SiteUnavailablePopup } from "@/components/landing/SiteUnavailablePopup";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +28,7 @@ export default function RootLayout({ children }: Props) {
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
+        <SiteUnavailablePopup />
       </body>
     </html>
   );
